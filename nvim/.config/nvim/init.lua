@@ -10,8 +10,8 @@ require('vc/util')
 require('vc/yank')
 
 local function config_exists(name)
-  local configPath = vim.fn.stdpath('config')
-  return vim.fn.filereadable(configPath .. '/lua/' .. name .. '/init.lua') == 1
+  local config_path = vim.fn.stdpath('config')
+  return vim.fn.filereadable(config_path .. '/lua/' .. name .. '/init.lua') == 1
 end
 
 if config_exists('google') then
