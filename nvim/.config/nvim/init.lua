@@ -17,3 +17,7 @@ if config_exists('google') then
   require('google')
 end
 
+if config_exists('te') then
+  require('te')
+end
+
