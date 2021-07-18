@@ -3,13 +3,13 @@ local M = {}
 local telescope_builtin = require('telescope.builtin')
 
 M.find_dotfiles = function()
-  -- TODO: Implement find_dotfiles now that the dotfiles are symlinked across
-  -- several directories.
-  print('find_dotfiles unimplemented')
-  --[[ telescope_builtin.find_files {
-    cwd = '~/.config/nvim/',
+  telescope_builtin.find_files {
+    follow = true,
     prompt_title = 'Find in Dotfiles',
-  } ]]
+    search_dirs = {
+      vim.fn.stdpath('config')
+    },
+  }
 end
 
 M.find_history = function()
@@ -19,13 +19,13 @@ M.find_history = function()
 end
 
 M.grep_dotfiles = function()
-  -- TODO: Implement grep_dotfiles now that the dotfiles are symlinked across
-  -- several directories.
-  print('grep_dotfiles unimplemented')
-  --[[ telescope_builtin.live_grep {
-    cwd = '~/.config/nvim/',
+  telescope_builtin.live_grep {
+    follow = true,
     prompt_title = 'Search Dotfiles',
-  } ]]
+    search_dirs = {
+      vim.fn.stdpath('config')
+    },
+  }
 end
 
 return M
