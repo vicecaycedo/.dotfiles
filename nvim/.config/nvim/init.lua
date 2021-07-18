@@ -7,7 +7,6 @@ require('vc/symbols-outline')
 require('vc/telescope')
 require('vc/treesitter')
 require('vc/util')
-require('vc/yank')
 
 local function config_exists(name)
   local config_path = vim.fn.stdpath('config')
