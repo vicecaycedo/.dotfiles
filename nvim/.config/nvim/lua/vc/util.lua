@@ -20,10 +20,19 @@ end
 
 M.grep_dotfiles = function()
   telescope_builtin.live_grep {
-    follow = true,
     prompt_title = 'Search Dotfiles',
     search_dirs = {
       vim.fn.stdpath('config')
+    },
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--follow',
     },
   }
 end
