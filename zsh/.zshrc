@@ -94,6 +94,7 @@ alias c="clear"
 alias nv="nvim"
 
 # Git.
+alias lg="lazygit"
 alias gs="git status"
 alias ga="git add"
 alias gap="git add -p"
