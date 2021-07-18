@@ -10,6 +10,12 @@ A collection of configuration files for my development environment.
 **Shell**: [Zsh](https://www.zsh.org/) with [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
 **Editor**: [Neovim](https://neovim.io)  
 
+## Dependencies
+
+* fzf
+* ripgrep
+* stow
+
 ## FAQs
 
 ### How do you manage your dotfiles?
