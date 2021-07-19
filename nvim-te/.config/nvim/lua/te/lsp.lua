@@ -1,4 +1,4 @@
-local on_attach = function(client, bufnr)
+local on_attach = function(client)
    if client.resolved_capabilities.document_formatting then
         vim.cmd([[
           aug lsp_format
