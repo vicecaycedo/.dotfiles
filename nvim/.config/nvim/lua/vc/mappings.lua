@@ -27,9 +27,7 @@ keys.register {
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
-    -- WhichKey had trouble mapping the command with a <CR> in the middle, so
-    -- this is just the label. The mapping is created at the end of the file
-    -- in VimScript.
+    -- WhichKey had trouble mapping this command, so this is just the label.
     B = { 'open buffer' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
@@ -116,11 +114,14 @@ vim.cmd([[
 " Open buffer.
 nnoremap <leader>B :buffers<CR>:buffer<Space>
 
+" Tag navigation in help menu.
+nnoremap gt <C-]>
+
 " Terminal.
 tnoremap <Esc> <C-\><C-n>
 
 " Autocomplete.
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 ]])
 
