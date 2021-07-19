@@ -27,8 +27,7 @@ keys.register {
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
-    -- WhichKey had trouble mapping this command, so this is just the label.
-    B = { 'open buffer' },
+    B = { '<Cmd>Telescope buffers<CR>', 'open buffer' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
     -- Window management.
@@ -110,9 +109,6 @@ keys.register {
 vim.cmd([[
 " Only remap <CR> to newline if not in quickfix.
 "nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : 'o<Esc>'
-
-" Open buffer.
-nnoremap <leader>B :buffers<CR>:buffer<Space>
 
 " Tag navigation in help menu.
 nnoremap gt <C-]>
