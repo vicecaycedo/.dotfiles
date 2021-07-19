@@ -16,6 +16,10 @@ A collection of configuration files for my development environment.
 * ripgrep
 * stow
 
+Language Servers
+* [dart](https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec)
+  (Bundled with [Flutter](https://flutter.dev/))
+
 ## FAQs
 
 ### How do you manage your dotfiles?
