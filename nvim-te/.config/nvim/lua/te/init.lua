@@ -1,2 +1,2 @@
-require('te/lsp')
+require('te.lsp')
 

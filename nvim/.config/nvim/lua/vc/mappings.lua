@@ -65,7 +65,7 @@ keys.register {
   ['<leader>f'] = {
     name = 'grep file(s)',
     d = {
-      [[<Cmd>lua require('vc/util').grep_dotfiles()<CR>]],
+      [[<Cmd>lua require('vc.util').grep_dotfiles()<CR>]],
       'grep dotfiles'
     },
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
@@ -79,11 +79,11 @@ keys.register {
   ['<leader>p'] = {
     name = 'open file',
     d = {
-      [[<Cmd>lua require('vc/util').find_dotfiles()<CR>]],
+      [[<Cmd>lua require('vc.util').find_dotfiles()<CR>]],
       'open dotfile'
     },
     h = {
-      [[<Cmd>lua require('vc/util').find_history()<CR>]],
+      [[<Cmd>lua require('vc.util').find_history()<CR>]],
       'open from history'
     },
     l = { '<Cmd>lopen<CR>', 'open loclist' },
