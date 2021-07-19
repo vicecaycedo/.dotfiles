@@ -4,11 +4,9 @@ local telescope_builtin = require('telescope.builtin')
 
 M.find_dotfiles = function()
   telescope_builtin.find_files {
+    cwd = vim.fn.stdpath('config'),
     follow = true,
     prompt_title = 'Find in Dotfiles',
-    search_dirs = {
-      vim.fn.stdpath('config')
-    },
   }
 end
 
@@ -20,10 +18,8 @@ end
 
 M.grep_dotfiles = function()
   telescope_builtin.live_grep {
+    cwd = vim.fn.stdpath('config'),
     prompt_title = 'Search Dotfiles',
-    search_dirs = {
-      vim.fn.stdpath('config')
-    },
     vimgrep_arguments = {
       'rg',
       '--color=never',
