@@ -1,3 +1,11 @@
+-- Pretty-print objects.
+-- Source: https://github.com/nanotee/nvim-lua-guide
+function _G.pprint(...)
+    local objects = vim.tbl_map(vim.inspect, {...})
+    print(unpack(objects))
+    return ...
+end
+
 local M = {}
 
 local telescope_builtin = require('telescope.builtin')
