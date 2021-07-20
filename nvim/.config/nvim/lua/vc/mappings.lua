@@ -14,6 +14,26 @@ keys.setup {
   show_help = false,
 }
 
+-- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
+-- internal representation.
+local function t(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+function _G.smart_enter()
+  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+  if buftype == '' then
+    return t'o<Esc>'
+  elseif buftype == 'help' then
+    return t'<C-]>'
+  else
+    return t'<CR>'
+  end
+end
+
+local remap = vim.api.nvim_set_keymap
+remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
+
 keys.register {
   g = {
     a = { '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'code actions' },
@@ -110,12 +130,6 @@ keys.register {
 }
 
 vim.cmd([[
-" Only remap <CR> to newline if not in quickfix.
-"nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : 'o<Esc>'
-
-" Tag navigation in help menu.
-nnoremap gt <C-]>
-
 " Terminal.
 tnoremap <Esc> <C-\><C-n>
 
