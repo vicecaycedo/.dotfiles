@@ -1,19 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
-local keys = require('which-key')
-
-keys.setup {
-  plugins = {
-    presets = {
-      operators = false,
-      motions = false,
-      text_objects = false,
-    },
-  },
-  show_help = false,
-}
-
 -- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
 -- internal representation.
 local function t(str)
@@ -48,6 +35,19 @@ remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
 remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
 remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true, })
 remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true, noremap = true, })
+
+local keys = require('which-key')
+
+keys.setup {
+  plugins = {
+    presets = {
+      operators = false,
+      motions = false,
+      text_objects = false,
+    },
+  },
+  show_help = false,
+}
 
 keys.register {
   g = {
