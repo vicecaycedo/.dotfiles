@@ -31,8 +31,18 @@ function _G.smart_enter()
   end
 end
 
+function _G.smart_tab()
+  return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
+end
+
+function _G.smart_s_tab()
+  return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<C-h>'
+end
+
 local remap = vim.api.nvim_set_keymap
 remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
+remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
+remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true, })
 
 keys.register {
   g = {
@@ -132,9 +142,5 @@ keys.register {
 vim.cmd([[
 " Terminal.
 tnoremap <Esc> <C-\><C-n>
-
-" Autocomplete.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 ]])
 
