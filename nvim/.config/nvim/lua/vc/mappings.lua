@@ -39,10 +39,15 @@ function _G.smart_s_tab()
   return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<C-h>'
 end
 
+function _G.terminal_esc()
+  return t'<C-\\>'..t'<C-n>'
+end
+
 local remap = vim.api.nvim_set_keymap
 remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
 remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
 remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true, })
+remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true, noremap = true, })
 
 keys.register {
   g = {
@@ -138,9 +143,4 @@ keys.register {
   ['ys'] = 'which_key_ignore',
   ['yS'] = 'which_key_ignore',
 }
-
-vim.cmd([[
-" Terminal.
-tnoremap <Esc> <C-\><C-n>
-]])
 
