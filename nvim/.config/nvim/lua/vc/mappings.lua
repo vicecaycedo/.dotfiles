@@ -88,7 +88,10 @@ keys.register {
     },
     l = { '<Cmd>lopen<CR>', 'open loclist' },
     p = { '<Cmd>Telescope find_files<CR>', 'open file' },
-    q = { '<Cmd>copen<CR>', 'open quickfix' },
+    q = {
+      [[<Cmd>lua require('vc.util').toggle_quickfix()<CR>]],
+      'toggle quickfix'
+    },
   },
   ['<leader>t'] = {
     c = { '<Cmd>Telescope commands<CR>', 'available commands' },
