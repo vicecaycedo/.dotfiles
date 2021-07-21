@@ -36,10 +36,3 @@ for key, val in pairs(
   vim.o[key] = val
 end
 
--- Themes.
-vim.g.gruvbox_italic = 1
-vim.g.gruvbox_invert_selection = 0
---vim.cmd([[colorscheme gruvbox]])
-vim.g.vscode_style = "dark"
-vim.cmd[[colorscheme vscode]]
-

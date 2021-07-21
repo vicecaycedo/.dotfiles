@@ -1,12 +1,6 @@
-require('vc.compe')
-require('vc.lualine')
 require('vc.mappings')
 require('vc.plugins')
-require('vc.settings')
-require('vc.symbols-outline')
-require('vc.telescope')
-require('vc.treesitter')
-require('vc.util')
+require('vc.options')
 
 local function config_exists(name)
   local config_path = vim.fn.stdpath('config')

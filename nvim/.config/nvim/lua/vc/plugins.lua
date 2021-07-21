@@ -7,34 +7,99 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
-  use 'bkad/camelcasemotion'             -- CamelCase objects.
+  use 'bkad/camelcasemotion'             -- Camelcase and underscore objects.
   use 'b3nj5m1n/kommentary'              -- Toggle comments.
-  use 'hoob3rt/lualine.nvim'             -- Statusline.
-  use 'hrsh7th/nvim-compe'               -- Autocompletion.
   use 'neovim/nvim-lspconfig'            -- LSP.
-  use 'kyazdani42/nvim-tree.lua'         -- File explorer.
-  use 'kyazdani42/nvim-web-devicons'     -- Icons.
-  use 'wbthomason/packer.nvim'           -- Packer package manager.
+  use 'wbthomason/packer.nvim'           -- Package manager.
   use 'michaeljsmith/vim-indent-object'  -- Indent objects.
   use 'tpope/vim-repeat'                 -- Repeat plugin commands.
   use 'mhinz/vim-signify'                -- VCS sign column.
   use 'tpope/vim-surround'               -- Surroundings.
-  use 'simrat39/symbols-outline.nvim'    -- Symbols outline.
   use 'folke/which-key.nvim'             -- Keybindings.
 
-  -- Themes.
-  use 'morhetz/gruvbox'
-  use 'mofiqul/vscode.nvim'
+  -- Statusline.
+  use {
+    'hoob3rt/lualine.nvim',
+    config = function()
+      require('vc.config.lualine')
+    end,
+  }
+
+  -- Autocompletion.
+  use {
+    'hrsh7th/nvim-compe',
+    config = function()
+      require('vc.config.compe')
+    end,
+    event = 'InsertEnter',
+  }
+
+  -- File explorer.
+  use {
+    'kyazdani42/nvim-tree.lua',
+    cmd = {
+      'NvimTreeToggle',
+      'NvimTreeFindFile',
+    }
+  }
+
+  -- Treesitter.
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('vc.config.treesitter')
+    end,
+    event = 'BufRead',
+    run = ':TSUpdate',
+  }
+
+  -- Icons.
+  use {
+    'kyazdani42/nvim-web-devicons',
+    module = 'nvim-web-devicons',
+  }
+
+  -- Symbols outline.
+  use {
+    'simrat39/symbols-outline.nvim',
+    cmd = 'SymbolsOutline',
+    setup = function()
+      require('vc.config.symbols-outline')
+    end,
+  }
 
   -- Telescope.
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' }
+    cmd = 'Telescope',
+    config = function()
+      require('vc.config.telescope')
+    end,
+    module = 'telescope',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-lua/popup.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    },
   }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  -- Treesitter.
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  -- Themes.
+  use {
+    'morhetz/gruvbox',
+    setup = function()
+      vim.g.gruvbox_italic = 1
+      vim.g.gruvbox_invert_selection = 0
+    end,
+  }
+  use {
+    'mofiqul/vscode.nvim',
+    config = function()
+      vim.cmd[[colorscheme vscode]]
+    end,
+    setup = function()
+      vim.g.vscode_style = 'dark'
+    end,
+  }
 
 end)
 
