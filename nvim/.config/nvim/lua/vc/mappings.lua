@@ -67,18 +67,14 @@ keys.register {
     q = { '<Cmd>q<CR>', 'close window' },
     v = { '<Cmd>vsplit<CR>', 'vertical split' },
     ['-'] = { '<Cmd>split<CR>', 'horizontal split' },
-    h = { '<Cmd>wincmd h<CR>', 'focus left' },
-    l = { '<Cmd>wincmd l<CR>', 'focus right' },
-    k = { '<Cmd>wincmd k<CR>', 'focus up' },
-    j = { '<Cmd>wincmd j<CR>', 'focus down' },
     -- Buffer management.
     x = { '<Cmd>bd<CR>', 'close buffer' },
     X = { '<Cmd>bd!<CR>', 'force close buffer' },
     n = { '<Cmd>bnext<CR>', 'next buffer' },
     N = { '<Cmd>bprevious<CR>', 'previous buffer' },
     -- Quickfix navigation.
-    [','] = { '<Cmd>cprev<CR>' , 'previous quickfix' },
-    [';'] = { '<Cmd>cnext<CR>' , 'next quickfix' },
+    j = { '<Cmd>cnext<CR>' , 'next quickfix' },
+    k = { '<Cmd>cprev<CR>' , 'previous quickfix' },
   },
   ['<leader>c'] = {
     name = 'clear',
