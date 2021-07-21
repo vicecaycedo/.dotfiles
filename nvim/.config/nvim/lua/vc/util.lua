@@ -20,7 +20,7 @@ end
 
 M.find_history = function()
   telescope_builtin.oldfiles {
-    prompt_title = "History",
+    prompt_title = 'History',
   }
 end
 
