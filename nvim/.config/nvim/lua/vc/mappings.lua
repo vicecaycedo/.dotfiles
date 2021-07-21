@@ -56,8 +56,6 @@ keys.register {
     h = { '<Cmd>lua vim.lsp.buf.hover()<CR>', 'show documentation' },
     r = { '<Cmd>lua vim.lsp.buf.references()<CR>', 'open references' },
     R = { '<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
-    [','] = { '<Plug>(signify-prev-hunk)' , 'prev diff' },
-    [';'] = { '<Plug>(signify-next-hunk)' , 'next diff' },
   },
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
@@ -106,6 +104,13 @@ keys.register {
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
     p = { '<Cmd>Telescope live_grep<CR>' , 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
+  },
+  ['<leader>m'] = {
+    name = 'version control',
+    d = { '<Cmd>SignifyHunkDiff<CR>', 'hunk diff' },
+    j = { '<Plug>(signify-next-hunk)' , 'next diff' },
+    k = { '<Plug>(signify-prev-hunk)' , 'prev diff' },
+    u = { '<Cmd>SignifyHunkUndo<CR>', 'hunk undo' },
   },
   ['<leader>P'] = {
     name = 'explore',
