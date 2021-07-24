@@ -5,6 +5,3 @@ export PATH=$PATH:/opt/homebrew/bin
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Aliases.
-alias luamake=/Users/vc/.bin/lua-language-server/3rd/luamake/luamake
-

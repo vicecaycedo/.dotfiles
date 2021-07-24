@@ -19,7 +19,6 @@ A collection of configuration files for my development environment.
 Language Servers
 * [dart](https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec)
   (Bundled with [Flutter](https://flutter.dev/))
-* [lua](https://github.com/sumneko/lua-language-server)
 
 ## FAQs
 
