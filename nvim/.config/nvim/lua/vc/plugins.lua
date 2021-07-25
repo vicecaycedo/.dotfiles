@@ -60,6 +60,14 @@ require('packer').startup(function(use)
     module = 'nvim-web-devicons',
   }
 
+  -- Startify.
+  use {
+    'mhinz/vim-startify',
+    setup = function()
+      require('vc.setup.startify')
+    end,
+  }
+
   -- Symbols outline.
   use {
     'simrat39/symbols-outline.nvim',

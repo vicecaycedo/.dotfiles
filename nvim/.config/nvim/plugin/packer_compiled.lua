@@ -160,6 +160,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vc/.local/share/nvim/site/pack/packer/start/vim-signify"
   },
+  ["vim-startify"] = {
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/vc/.local/share/nvim/site/pack/packer/opt/vim-startify"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/vc/.local/share/nvim/site/pack/packer/start/vim-surround"
@@ -206,13 +211,13 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Setup for: vscode.nvim
-time([[Setup for vscode.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\tdark\17vscode_style\6g\bvim\0", "setup", "vscode.nvim")
-time([[Setup for vscode.nvim]], false)
-time([[packadd for vscode.nvim]], true)
-vim.cmd [[packadd vscode.nvim]]
-time([[packadd for vscode.nvim]], false)
+-- Setup for: vim-startify
+time([[Setup for vim-startify]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22vc.setup.startify\frequire\0", "setup", "vim-startify")
+time([[Setup for vim-startify]], false)
+time([[packadd for vim-startify]], true)
+vim.cmd [[packadd vim-startify]]
+time([[packadd for vim-startify]], false)
 -- Setup for: gruvbox
 time([[Setup for gruvbox]], true)
 try_loadstring("\27LJ\2\nY\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\29gruvbox_invert_selection\19gruvbox_italic\6g\bvim\0", "setup", "gruvbox")
@@ -220,6 +225,13 @@ time([[Setup for gruvbox]], false)
 time([[packadd for gruvbox]], true)
 vim.cmd [[packadd gruvbox]]
 time([[packadd for gruvbox]], false)
+-- Setup for: vscode.nvim
+time([[Setup for vscode.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\tdark\17vscode_style\6g\bvim\0", "setup", "vscode.nvim")
+time([[Setup for vscode.nvim]], false)
+time([[packadd for vscode.nvim]], true)
+vim.cmd [[packadd vscode.nvim]]
+time([[packadd for vscode.nvim]], false)
 -- Setup for: symbols-outline.nvim
 time([[Setup for symbols-outline.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29vc.setup.symbols-outline\frequire\0", "setup", "symbols-outline.nvim")
@@ -253,8 +265,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
