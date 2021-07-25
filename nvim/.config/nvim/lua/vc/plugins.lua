@@ -65,7 +65,7 @@ require('packer').startup(function(use)
     'simrat39/symbols-outline.nvim',
     cmd = 'SymbolsOutline',
     setup = function()
-      require('vc.config.symbols-outline')
+      require('vc.setup.symbols-outline')
     end,
   }
 

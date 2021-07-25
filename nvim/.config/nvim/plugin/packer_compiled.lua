@@ -206,13 +206,6 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Setup for: gruvbox
-time([[Setup for gruvbox]], true)
-try_loadstring("\27LJ\2\nY\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\29gruvbox_invert_selection\19gruvbox_italic\6g\bvim\0", "setup", "gruvbox")
-time([[Setup for gruvbox]], false)
-time([[packadd for gruvbox]], true)
-vim.cmd [[packadd gruvbox]]
-time([[packadd for gruvbox]], false)
 -- Setup for: vscode.nvim
 time([[Setup for vscode.nvim]], true)
 try_loadstring("\27LJ\2\n3\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\tdark\17vscode_style\6g\bvim\0", "setup", "vscode.nvim")
@@ -220,9 +213,16 @@ time([[Setup for vscode.nvim]], false)
 time([[packadd for vscode.nvim]], true)
 vim.cmd [[packadd vscode.nvim]]
 time([[packadd for vscode.nvim]], false)
+-- Setup for: gruvbox
+time([[Setup for gruvbox]], true)
+try_loadstring("\27LJ\2\nY\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\29gruvbox_invert_selection\19gruvbox_italic\6g\bvim\0", "setup", "gruvbox")
+time([[Setup for gruvbox]], false)
+time([[packadd for gruvbox]], true)
+vim.cmd [[packadd gruvbox]]
+time([[packadd for gruvbox]], false)
 -- Setup for: symbols-outline.nvim
 time([[Setup for symbols-outline.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30vc.config.symbols-outline\frequire\0", "setup", "symbols-outline.nvim")
+try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29vc.setup.symbols-outline\frequire\0", "setup", "symbols-outline.nvim")
 time([[Setup for symbols-outline.nvim]], false)
 -- Config for: vscode.nvim
 time([[Config for vscode.nvim]], true)
@@ -235,14 +235,14 @@ time([[Config for lualine.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-if vim.fn.exists(":Telescope") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+if vim.fn.exists(":NvimTreeFindFile") ~= 2 then
+vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeFindFile lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeFindFile", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 end
 if vim.fn.exists(":NvimTreeToggle") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 end
-if vim.fn.exists(":NvimTreeFindFile") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeFindFile lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeFindFile", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+if vim.fn.exists(":Telescope") ~= 2 then
+vim.cmd [[command! -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 end
 if vim.fn.exists(":SymbolsOutline") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file SymbolsOutline lua require("packer.load")({'symbols-outline.nvim'}, { cmd = "SymbolsOutline", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
