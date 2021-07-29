@@ -66,8 +66,6 @@ keys.register {
     r = { '<C-^>', 'return to previous file' },
     -- Window management.
     q = { '<Cmd>q<CR>', 'close window' },
-    v = { '<Cmd>vsplit<CR>', 'vertical split' },
-    ['-'] = { '<Cmd>split<CR>', 'horizontal split' },
     -- Buffer management.
     x = { '<Cmd>bd<CR>', 'close buffer' },
     X = { '<Cmd>bd!<CR>', 'force close buffer' },
