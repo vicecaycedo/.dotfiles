@@ -68,6 +68,15 @@ require('packer').startup(function(use)
     end,
   }
 
+  -- Toggle True/False.
+  use {
+    'AndrewRadev/switch.vim',
+    cmd = 'Switch',
+    setup = function()
+      require('vc.setup.switch')
+    end,
+  }
+
   -- Symbols outline.
   use {
     'simrat39/symbols-outline.nvim',
