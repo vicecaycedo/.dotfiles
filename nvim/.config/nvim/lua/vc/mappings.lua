@@ -58,10 +58,13 @@ keys.register {
     r = { '<Cmd>lua vim.lsp.buf.references()<CR>', 'open references' },
     R = { '<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
   },
+  J = { '<Plug>(signify-next-hunk)' , 'next diff' },
+  K = { '<Plug>(signify-prev-hunk)' , 'prev diff' },
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
     B = { '<Cmd>Telescope buffers<CR>', 'open buffer' },
+    J = { 'J', 'join lines' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
     -- Window management.
@@ -103,8 +106,6 @@ keys.register {
   ['<leader>m'] = {
     name = 'version control',
     d = { '<Cmd>SignifyHunkDiff<CR>', 'hunk diff' },
-    j = { '<Plug>(signify-next-hunk)' , 'next diff' },
-    k = { '<Plug>(signify-prev-hunk)' , 'prev diff' },
     u = { '<Cmd>SignifyHunkUndo<CR>', 'hunk undo' },
   },
   ['<leader>P'] = {
