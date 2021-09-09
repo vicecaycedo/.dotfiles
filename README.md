@@ -7,7 +7,7 @@ A collection of configuration files for my development environment.
 **OS**: MacOS and Linux  
 **WM**: [Amethyst](https://github.com/ianyh/Amethyst) and [i3wm](https://i3wm.org)  
 **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty)  
-**Shell**: [Zsh](https://www.zsh.org/) with [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
+**Shell**: [Zsh](https://www.zsh.org/)  
 **Editor**: [Neovim](https://neovim.io)  
 
 ## Dependencies
