@@ -5,7 +5,7 @@ A collection of configuration files for my development environment.
 ## Overview
 
 **OS**: MacOS and Linux  
-**WM**: [Amethyst](https://github.com/ianyh/Amethyst) and [i3wm](https://i3wm.org)  
+**WM**: [Amethyst](https://github.com/ianyh/Amethyst)  
 **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty)  
 **Shell**: [Zsh](https://www.zsh.org/)  
 **Editor**: [Neovim](https://neovim.io)  
@@ -15,10 +15,6 @@ A collection of configuration files for my development environment.
 * fzf
 * ripgrep
 * stow
-
-Language Servers
-* [dart](https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec)
-  (Bundled with [Flutter](https://flutter.dev/))
 
 ## FAQs
 
