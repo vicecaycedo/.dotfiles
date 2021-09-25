@@ -14,7 +14,6 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'           -- Package manager.
   use 'michaeljsmith/vim-indent-object'  -- Indent objects.
   use 'tpope/vim-repeat'                 -- Repeat plugin commands.
-  use 'mhinz/vim-signify'                -- VCS sign column.
   use 'tpope/vim-surround'               -- Surroundings.
   use 'folke/which-key.nvim'             -- Keybindings.
 
@@ -65,6 +64,14 @@ require('packer').startup(function(use)
   use {
     'kyazdani42/nvim-web-devicons',
     module = 'nvim-web-devicons',
+  }
+
+  -- VCS sign column.
+  use {
+    'mhinz/vim-signify',
+    setup = function()
+      require('vc.setup.signify')
+    end,
   }
 
   -- Startify.
