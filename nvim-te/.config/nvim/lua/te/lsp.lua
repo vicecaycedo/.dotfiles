@@ -4,6 +4,15 @@
 --   Through nvim-lspinstall (`:LspInstall <server>`):
 --     angular, bash, css, html, json, lua, python, vim, yaml
 
+-- Configure how diagnostics are displayed.
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = false,
+    -- underline = false,
+  }
+)
+
 local on_attach = function(client)
    -- Autoformat on save, if possible.
    if client.resolved_capabilities.document_formatting then
@@ -14,6 +23,14 @@ local on_attach = function(client)
           aug END
         ]])
     end
+
+    -- Show diagnostics when hovering over the line.
+    vim.cmd([[
+      aug lsp_hover
+        au! * <buffer>
+        au CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics({focusable = false})
+      aug END
+    ]])
 end
 
 local lsp_settings = {
