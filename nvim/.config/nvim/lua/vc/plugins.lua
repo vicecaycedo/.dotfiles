@@ -41,7 +41,14 @@ require('packer').startup(function(use)
     cmd = {
       'NvimTreeToggle',
       'NvimTreeFindFile',
-    }
+    },
+    config = function()
+      require('nvim-tree').setup()
+    end,
+    requires = 'kyazdani42/nvim-web-devicons',
+    setup = function()
+      require('vc.setup.nvim-tree')
+    end,
   }
 
   -- Treesitter.
