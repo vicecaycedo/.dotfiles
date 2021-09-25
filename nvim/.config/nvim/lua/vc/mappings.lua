@@ -129,7 +129,6 @@ keys.register {
   ['<leader>t'] = {
     c = { '<Cmd>Telescope commands<CR>', 'available commands' },
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
-    f = { '<Cmd>NvimTreeFindFile<CR>', 'find file in file explorer' },
     h = { '<Cmd>Telescope command_history<CR>', 'command history' },
     s = { '<Cmd>Telescope search_history<CR>', 'search history' },
   },
