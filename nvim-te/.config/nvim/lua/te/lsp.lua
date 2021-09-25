@@ -47,14 +47,12 @@ local lsp_settings = {
       },
       diagnostics = {
         globals = {
-          -- Neovim
-          'vim',
-          -- Packer
-          'use',
+          'vim',  -- Neovim
+          'use',  -- Packer
         },
       },
       workspace = {
-        -- Make the server aware of Neovim runtime files
+        -- Make the server aware of Neovim runtime files.
         library = {
           [vim.fn.expand('$VIMRUNTIME/lua')] = true,
           [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
