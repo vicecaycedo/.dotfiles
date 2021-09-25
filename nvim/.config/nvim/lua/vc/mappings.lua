@@ -143,5 +143,10 @@ keys.register {
   ['dS'] = 'which_key_ignore',
   ['ys'] = 'which_key_ignore',
   ['yS'] = 'which_key_ignore',
+  -- Ignore camelcasemotion mappings.
+  ['<leader>b'] = 'which_key_ignore',
+  ['<leader>e'] = 'which_key_ignore',
+  ['<leader>ge'] = 'which_key_ignore',
+  ['<leader>w'] = 'which_key_ignore',
 }
 
