@@ -48,7 +48,7 @@ require('packer').startup(function(use)
       'NvimTreeFindFile',
     },
     config = function()
-      require('nvim-tree').setup()
+      require('vc.config.nvim-tree')
     end,
     requires = 'kyazdani42/nvim-web-devicons',
     setup = function()
