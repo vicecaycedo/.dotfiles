@@ -34,11 +34,6 @@ local on_attach = function(client)
 end
 
 local lsp_settings = {
-  dart = {
-    allowAnalytics = false,
-    flutterCreateOrganization = 'com.thresholdeng',
-    flutterHotReloadOnSave = 'always',
-  },
   lua = {
     Lua = {
       runtime = {
@@ -67,10 +62,6 @@ local function server_config(server)
     on_attach = on_attach,
   }
 
-  if server == 'dartls' then
-    config.settings = lsp_settings.dart
-  end
-
   if server == 'lua' then
     config.settings = lsp_settings.lua
   end
@@ -84,8 +75,6 @@ local function setup_servers()
   lsp_install.setup()
 
   local servers = lsp_install.installed_servers()
-  table.insert(servers, 'dartls')
-
   for _, server in pairs(servers) do
     local config = server_config(server)
     require('lspconfig')[server].setup(config)
@@ -102,4 +91,17 @@ require('lspinstall').post_install_hook = function()
   -- Trigger FileType autocommands that start the servers.
   vim.cmd([[bufdo e]])
 end
+
+-- Manage Flutter LSP separately.
+require('flutter-tools').setup {
+  lsp = {
+    on_attach = on_attach,
+    settings = {
+      allowAnalytics = false,
+      flutterCreateOrganization = 'com.thresholdeng',
+      flutterHotReloadOnSave = 'always',
+      showTodos = false,
+    }
+  }
+}
 

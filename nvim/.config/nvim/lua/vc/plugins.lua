@@ -17,6 +17,12 @@ require('packer').startup(function(use)
   use 'tpope/vim-surround'               -- Surroundings.
   use 'folke/which-key.nvim'             -- Keybindings.
 
+  -- Flutter.
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+  }
+
   -- Statusline.
   use {
     'hoob3rt/lualine.nvim',
