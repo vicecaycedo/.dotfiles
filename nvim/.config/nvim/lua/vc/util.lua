@@ -51,5 +51,11 @@ M.toggle_quickfix = function()
   vim.cmd('copen')
 end
 
+-- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
+-- internal representation.
+M.replace_termcodes = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 return M
 

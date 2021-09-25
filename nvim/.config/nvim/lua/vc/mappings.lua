@@ -1,11 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
--- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
--- internal representation.
-local function t(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+local t = require('vc.util').replace_termcodes
 
 function _G.smart_enter()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')

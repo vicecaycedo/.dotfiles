@@ -109,11 +109,9 @@ require('packer').startup(function(use)
   -- Telescope.
   use {
     'nvim-telescope/telescope.nvim',
-    cmd = 'Telescope',
     config = function()
       require('vc.config.telescope')
     end,
-    module = 'telescope',
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim',

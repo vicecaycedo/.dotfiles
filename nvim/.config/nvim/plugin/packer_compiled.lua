@@ -153,11 +153,9 @@ _G.packer_plugins = {
     path = "/Users/vc/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
-    commands = { "Telescope" },
     config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24vc.config.telescope\frequire\0" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/Users/vc/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
+    loaded = true,
+    path = "/Users/vc/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-indent-object"] = {
     loaded = true,
@@ -195,8 +193,7 @@ _G.packer_plugins = {
 
 time([[Defining packer_plugins]], false)
 local module_lazy_loads = {
-  ["^nvim%-web%-devicons"] = "nvim-web-devicons",
-  ["^telescope"] = "telescope.nvim"
+  ["^nvim%-web%-devicons"] = "nvim-web-devicons"
 }
 local lazy_load_called = {['packer.load'] = true}
 local function lazy_load_module(module_name)
@@ -227,13 +224,13 @@ end
 time([[Setup for symbols-outline.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29vc.setup.symbols-outline\frequire\0", "setup", "symbols-outline.nvim")
 time([[Setup for symbols-outline.nvim]], false)
--- Setup for: vscode.nvim
-time([[Setup for vscode.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\tdark\17vscode_style\6g\bvim\0", "setup", "vscode.nvim")
-time([[Setup for vscode.nvim]], false)
-time([[packadd for vscode.nvim]], true)
-vim.cmd [[packadd vscode.nvim]]
-time([[packadd for vscode.nvim]], false)
+-- Setup for: gruvbox
+time([[Setup for gruvbox]], true)
+try_loadstring("\27LJ\2\nY\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\29gruvbox_invert_selection\19gruvbox_italic\6g\bvim\0", "setup", "gruvbox")
+time([[Setup for gruvbox]], false)
+time([[packadd for gruvbox]], true)
+vim.cmd [[packadd gruvbox]]
+time([[packadd for gruvbox]], false)
 -- Setup for: nvim-tree.lua
 time([[Setup for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23vc.setup.nvim-tree\frequire\0", "setup", "nvim-tree.lua")
@@ -256,29 +253,32 @@ time([[packadd for vim-startify]], false)
 time([[Setup for switch.vim]], true)
 try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20vc.setup.switch\frequire\0", "setup", "switch.vim")
 time([[Setup for switch.vim]], false)
--- Setup for: gruvbox
-time([[Setup for gruvbox]], true)
-try_loadstring("\27LJ\2\nY\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0K\0\1\0\29gruvbox_invert_selection\19gruvbox_italic\6g\bvim\0", "setup", "gruvbox")
-time([[Setup for gruvbox]], false)
-time([[packadd for gruvbox]], true)
-vim.cmd [[packadd gruvbox]]
-time([[packadd for gruvbox]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22vc.config.lualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
+-- Setup for: vscode.nvim
+time([[Setup for vscode.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\tdark\17vscode_style\6g\bvim\0", "setup", "vscode.nvim")
+time([[Setup for vscode.nvim]], false)
+time([[packadd for vscode.nvim]], true)
+vim.cmd [[packadd vscode.nvim]]
+time([[packadd for vscode.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24vc.config.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
 -- Config for: vscode.nvim
 time([[Config for vscode.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme vscode\bcmd\bvim\0", "config", "vscode.nvim")
 time([[Config for vscode.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22vc.config.lualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeFindFile lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeFindFile", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file SymbolsOutline lua require("packer.load")({'symbols-outline.nvim'}, { cmd = "SymbolsOutline", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Switch lua require("packer.load")({'switch.vim'}, { cmd = "Switch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeFindFile lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeFindFile", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
