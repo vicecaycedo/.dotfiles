@@ -5,6 +5,7 @@
 --     angular, bash, css, html, json, lua, python, vim, yaml
 
 local on_attach = function(client)
+   -- Autoformat on save, if possible.
    if client.resolved_capabilities.document_formatting then
         vim.cmd([[
           aug lsp_format
