@@ -8,7 +8,6 @@ end
 
 require('packer').startup(function(use)
   use 'bkad/camelcasemotion'             -- Camelcase and underscore objects.
-  use 'b3nj5m1n/kommentary'              -- Toggle comments.
   use 'neovim/nvim-lspconfig'            -- LSP.
   use 'kabouzeid/nvim-lspinstall'        -- Language server installer.
   use 'wbthomason/packer.nvim'           -- Package manager.
@@ -21,6 +20,14 @@ require('packer').startup(function(use)
   use {
     'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim',
+  }
+
+  -- Toggle comments.
+  use {
+    'b3nj5m1n/kommentary',
+    config = function ()
+      require('vc.config.kommentary')
+    end,
   }
 
   -- Statusline.
