@@ -1,7 +1,6 @@
 for key, val in pairs(
   {
     hidden = true, -- Hide (don't unload) buffers when abandoned.
-    shortmess = vim.o.shortmess .. 'I', -- Disable intro message.
     showmode = false, -- Don't show MODE messages.
     termguicolors = true, -- True colors.
     timeoutlen = 400, -- Shorter timeout for WhichKey.
