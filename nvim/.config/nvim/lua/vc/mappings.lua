@@ -52,6 +52,10 @@ keys.register {
     a = { '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'code actions' },
     d = { '<Cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
     h = { '<Cmd>lua vim.lsp.buf.hover()<CR>', 'show documentation' },
+    H = {
+      '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})<CR>',
+      'show line diagnostics',
+    },
     r = { '<Cmd>lua vim.lsp.buf.references()<CR>', 'open references' },
     R = { '<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
   },

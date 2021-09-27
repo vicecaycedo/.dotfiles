@@ -23,14 +23,6 @@ local on_attach = function(client)
           aug END
         ]])
     end
-
-    -- Show diagnostics when hovering over the line.
-    vim.cmd([[
-      aug lsp_hover
-        au! * <buffer>
-        au CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics({focusable = false})
-      aug END
-    ]])
 end
 
 local lsp_settings = {
