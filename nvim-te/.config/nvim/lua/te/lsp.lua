@@ -86,6 +86,9 @@ end
 
 -- Manage Flutter LSP separately.
 require('flutter-tools').setup {
+  dev_tools = {
+    auto_open_browser = true,
+  },
   lsp = {
     on_attach = on_attach,
     settings = {
