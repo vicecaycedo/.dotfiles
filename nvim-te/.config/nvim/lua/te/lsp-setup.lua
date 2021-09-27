@@ -14,15 +14,15 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 )
 
 local on_attach = function(client)
-   -- Autoformat on save, if available.
-   if client.resolved_capabilities.document_formatting then
-     vim.cmd([[
-       aug lsp_format
-         au! * <buffer>
-         au BufWritePre <buffer> lua require('te.lsp-util').format_buffer()
-       aug END
-     ]])
-   end
+  -- Autoformat on save, if available.
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd([[
+      aug lsp_format
+        au! * <buffer>
+        au BufWritePre <buffer> lua require('te.lsp-util').format_buffer()
+      aug END
+    ]])
+  end
 end
 
 local lsp_settings = {
