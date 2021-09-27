@@ -23,6 +23,17 @@ local on_attach = function(client)
       aug END
     ]])
   end
+
+  -- Organize imports, if available.
+  local code_actions = client.resolved_capabilities.code_action.codeActionKinds
+  if _G.has(code_actions, 'source.organizeImports') then
+    vim.cmd([[
+      aug lsp_organize_imports
+        au! * <buffer>
+        au BufWritePre <buffer> lua require('te.lsp-util').organize_imports()
+      aug END
+    ]])
+  end
 end
 
 local lsp_settings = {

@@ -6,6 +6,16 @@ function _G.pprint(...)
     return ...
 end
 
+-- Returns true if value is in table.
+function _G.has(table, value)
+  for _, v in ipairs(table) do
+    if v == value then
+        return true
+    end
+  end
+  return false
+end
+
 local M = {}
 
 local telescope_builtin = require('telescope.builtin')
