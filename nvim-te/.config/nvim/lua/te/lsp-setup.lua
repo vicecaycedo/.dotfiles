@@ -19,7 +19,7 @@ local on_attach = function(client)
      vim.cmd([[
        aug lsp_format
          au! * <buffer>
-         au BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+         au BufWritePre <buffer> lua require('te.lsp-util').format_buffer()
        aug END
      ]])
    end

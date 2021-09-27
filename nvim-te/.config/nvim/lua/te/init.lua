@@ -1,3 +1,3 @@
-require('te.lsp')
+require('te.lsp-setup')
 require('te.mappings')
 
