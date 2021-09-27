@@ -1,6 +1,5 @@
 for key, val in pairs(
   {
-    guicursor = '', -- Cursor styling.
     hidden = true, -- Hide (don't unload) buffers when abandoned.
     shortmess = vim.o.shortmess .. 'I', -- Disable intro message.
     showmode = false, -- Don't show MODE messages.
