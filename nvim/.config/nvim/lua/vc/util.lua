@@ -1,16 +1,16 @@
 -- Pretty-print objects.
 -- Source: https://github.com/nanotee/nvim-lua-guide
 function _G.pprint(...)
-    local objects = vim.tbl_map(vim.inspect, {...})
-    print(unpack(objects))
-    return ...
+  local objects = vim.tbl_map(vim.inspect, { ... })
+  print(unpack(objects))
+  return ...
 end
 
 -- Returns true if value is in table.
 function _G.has(table, value)
   for _, v in ipairs(table) do
     if v == value then
-        return true
+      return true
     end
   end
   return false
@@ -39,14 +39,8 @@ M.grep_dotfiles = function()
     cwd = vim.fn.stdpath('config'),
     prompt_title = 'Search Dotfiles',
     vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--follow',
+      'rg', '--color=never', '--no-heading', '--with-filename', '--line-number',
+      '--column', '--smart-case', '--follow',
     },
   }
 end
@@ -64,7 +58,7 @@ end
 -- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
 -- internal representation.
 M.replace_termcodes = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 return M

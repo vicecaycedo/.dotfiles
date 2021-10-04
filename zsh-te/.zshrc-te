@@ -1,5 +1,6 @@
 # PATH.
 export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/opt/homebrew/lib/luarocks/rocks-5.4/luaformatter/scm-1/bin/lua-format
 
 # Editors.
 export EDITOR="nvim"

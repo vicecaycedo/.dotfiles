@@ -6,24 +6,24 @@ local t = require('vc.util').replace_termcodes
 function _G.smart_enter()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == '' then
-    return t'o<Esc>'
+    return t 'o<Esc>'
   elseif buftype == 'help' then
-    return t'<C-]>'
+    return t '<C-]>'
   else
-    return t'<CR>'
+    return t '<CR>'
   end
 end
 
 function _G.smart_tab()
-  return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
+  return vim.fn.pumvisible() == 1 and t '<C-n>' or t '<Tab>'
 end
 
 function _G.smart_s_tab()
-  return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<C-h>'
+  return vim.fn.pumvisible() == 1 and t '<C-p>' or t '<C-h>'
 end
 
 function _G.terminal_esc()
-  return t'<C-\\>'..t'<C-n>'
+  return t '<C-\\>' .. t '<C-n>'
 end
 
 local remap = vim.api.nvim_set_keymap
@@ -60,8 +60,8 @@ keys.register {
     r = { '<Cmd>lua vim.lsp.buf.references()<CR>', 'open references' },
     R = { '<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
   },
-  J = { '<Plug>(signify-next-hunk)' , 'next diff' },
-  K = { '<Plug>(signify-prev-hunk)' , 'prev diff' },
+  J = { '<Plug>(signify-next-hunk)', 'next diff' },
+  K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
@@ -77,8 +77,8 @@ keys.register {
     n = { '<Cmd>bnext<CR>', 'next buffer' },
     N = { '<Cmd>bprevious<CR>', 'previous buffer' },
     -- Quickfix navigation.
-    j = { '<Cmd>cnext<CR>' , 'next quickfix' },
-    k = { '<Cmd>cprev<CR>' , 'previous quickfix' },
+    j = { '<Cmd>cnext<CR>', 'next quickfix' },
+    k = { '<Cmd>cprev<CR>', 'previous quickfix' },
   },
   ['<leader>c'] = {
     name = 'clear',
@@ -88,21 +88,18 @@ keys.register {
     name = 'open diagnostics',
     d = {
       '<Cmd>Telescope lsp_document_diagnostics<CR>',
-      'open document diagnostics'
+      'open document diagnostics',
     },
     D = {
       '<Cmd>Telescope lsp_workspace_diagnostics<CR>',
-      'open workspace diagnostics'
+      'open workspace diagnostics',
     },
   },
   ['<leader>f'] = {
     name = 'grep file(s)',
-    d = {
-      [[<Cmd>lua require('vc.util').grep_dotfiles()<CR>]],
-      'grep dotfiles'
-    },
+    d = { [[<Cmd>lua require('vc.util').grep_dotfiles()<CR>]], 'grep dotfiles' },
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
-    p = { '<Cmd>Telescope live_grep<CR>' , 'grep project' },
+    p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
   },
   ['<leader>m'] = {
@@ -116,19 +113,14 @@ keys.register {
   },
   ['<leader>p'] = {
     name = 'open file',
-    d = {
-      [[<Cmd>lua require('vc.util').find_dotfiles()<CR>]],
-      'open dotfile'
-    },
+    d = { [[<Cmd>lua require('vc.util').find_dotfiles()<CR>]], 'open dotfile' },
     h = {
-      [[<Cmd>lua require('vc.util').find_history()<CR>]],
-      'open from history'
+      [[<Cmd>lua require('vc.util').find_history()<CR>]], 'open from history',
     },
     l = { '<Cmd>lopen<CR>', 'open loclist' },
     p = { '<Cmd>Telescope find_files<CR>', 'open file' },
     q = {
-      [[<Cmd>lua require('vc.util').toggle_quickfix()<CR>]],
-      'toggle quickfix'
+      [[<Cmd>lua require('vc.util').toggle_quickfix()<CR>]], 'toggle quickfix',
     },
   },
   ['<leader>t'] = {

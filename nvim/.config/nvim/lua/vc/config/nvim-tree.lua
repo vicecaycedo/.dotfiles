@@ -4,7 +4,10 @@ require('nvim-tree').setup {
   view = {
     mappings = {
       list = {
-        { key = '<Esc>', cb = '<Cmd>NvimTreeToggle<CR>' },
+        {
+          key = '<Esc>',
+          cb = '<Cmd>NvimTreeToggle<CR>',
+        },
       },
     },
   },

@@ -3,20 +3,18 @@
 --     dart (bundled with Flutter)
 --   Through nvim-lspinstall (`:LspInstall <server>`):
 --     angular, bash, css, html, json, lua, python, vim, yaml
-
 -- Configure how diagnostics are displayed.
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
+  vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = false,
     -- underline = false,
-  }
-)
+  })
 
 local on_attach = function(client)
   -- Autoformat on save, if available.
   if client.resolved_capabilities.document_formatting then
-    vim.cmd([[
+    vim.cmd(
+      [[
       aug lsp_format
         au! * <buffer>
         au BufWritePre <buffer> lua require('te.lsp-util').format_buffer()
@@ -27,7 +25,8 @@ local on_attach = function(client)
   -- Organize imports, if available.
   local code_actions = client.resolved_capabilities.code_action.codeActionKinds
   if _G.has(code_actions, 'source.organizeImports') then
-    vim.cmd([[
+    vim.cmd(
+      [[
       aug lsp_organize_imports
         au! * <buffer>
         au BufWritePre <buffer> lua require('te.lsp-util').organize_imports()
@@ -45,8 +44,8 @@ local lsp_settings = {
       },
       diagnostics = {
         globals = {
-          'vim',  -- Neovim
-          'use',  -- Packer
+          'vim', -- Neovim
+          'use', -- Packer
         },
       },
       workspace = {
@@ -54,7 +53,7 @@ local lsp_settings = {
         library = {
           [vim.fn.expand('$VIMRUNTIME/lua')] = true,
           [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        }
+        },
       },
     },
   },
@@ -107,7 +106,7 @@ require('flutter-tools').setup {
       flutterCreateOrganization = 'com.thresholdeng',
       flutterHotReloadOnSave = 'always',
       showTodos = false,
-    }
-  }
+    },
+  },
 }
 

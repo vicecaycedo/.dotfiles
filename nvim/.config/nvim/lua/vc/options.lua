@@ -30,8 +30,7 @@ for key, val in pairs(
     -- Autocomplete.
     completeopt = 'menuone,preview,noselect',
     shortmess = vim.o.shortmess .. 'c',
-  }
-) do
+  }) do
   vim.o[key] = val
 end
 
