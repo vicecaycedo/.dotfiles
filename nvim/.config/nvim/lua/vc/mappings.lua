@@ -54,7 +54,7 @@ keys.setup {
 }
 
 keys.register {
-  ['-'] = { ':Switch<CR>', 'switch' },
+  ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
     a = { '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'code actions' },
     d = { '<Cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
