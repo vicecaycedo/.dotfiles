@@ -15,7 +15,7 @@ function _G.terminal_esc()
   return t '<C-\\>' .. t '<C-n>'
 end
 
-function toggleStripTrailingWhitespace()
+local function toggleStripTrailingWhitespace()
   -- See /plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
   print('b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
