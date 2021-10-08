@@ -99,7 +99,7 @@ require('packer').startup(function(use)
 
   -- Toggle True/False.
   use {
-    'AndrewRadev/switch.vim',
+    'andrewradev/switch.vim',
     cmd = 'Switch',
     setup = function()
       require('vc.setup.switch')
