@@ -34,3 +34,7 @@ for key, val in pairs(
   vim.o[key] = val
 end
 
+-- Don't load builtin plugins.
+vim.g.loaded_matchit = true
+vim.g.loaded_netrwPlugin = true
+
