@@ -1,4 +1,8 @@
 require('lualine').setup {
+  extensions = {
+    'nvim-tree',
+    'quickfix',
+  },
   options = {
     theme = 'vscode',
   },
