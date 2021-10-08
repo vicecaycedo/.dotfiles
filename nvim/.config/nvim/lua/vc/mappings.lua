@@ -26,6 +26,12 @@ function _G.terminal_esc()
   return t '<C-\\>' .. t '<C-n>'
 end
 
+function toggleStripTrailingWhitespace()
+  -- See /plugin/strip_trailing_whitespace.vim.
+  vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
+  print('b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
+end
+
 local remap = vim.api.nvim_set_keymap
 remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
 remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
@@ -127,6 +133,7 @@ keys.register {
     c = { '<Cmd>Telescope commands<CR>', 'available commands' },
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
     h = { '<Cmd>Telescope command_history<CR>', 'command history' },
+    r = { toggleStripTrailingWhitespace, 'toggle StripTrailingWhitespace' },
     s = { '<Cmd>Telescope search_history<CR>', 'search history' },
   },
   -- Labels for Abolish plugin.
