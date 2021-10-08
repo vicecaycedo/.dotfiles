@@ -72,7 +72,7 @@ keys.register {
     -- Window management.
     q = { '<Cmd>q<CR>', 'close window' },
     -- Buffer management.
-    x = { '<Cmd>bd<CR>', 'close buffer' },
+    x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
     n = { '<Cmd>bnext<CR>', 'next buffer' },
     N = { '<Cmd>bprevious<CR>', 'previous buffer' },
     -- Quickfix navigation.
