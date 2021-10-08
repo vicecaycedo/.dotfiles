@@ -7,8 +7,6 @@ function _G.smart_enter()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == '' then
     return t 'o<Esc>'
-  elseif buftype == 'help' then
-    return t '<C-]>'
   else
     return t '<CR>'
   end
