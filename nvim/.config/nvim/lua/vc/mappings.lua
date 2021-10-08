@@ -103,7 +103,7 @@ keys.register {
   },
   ['<leader>f'] = {
     name = 'grep file(s)',
-    d = { require('vc.util').grep_dotfiles, 'grep dotfiles' },
+    d = { require('vc.grep').grep_dotfiles, 'grep dotfiles' },
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
     p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
@@ -119,8 +119,8 @@ keys.register {
   },
   ['<leader>p'] = {
     name = 'open file',
-    d = { require('vc.util').find_dotfiles, 'open dotfile' },
-    h = { require('vc.util').find_history, 'open from history' },
+    d = { require('vc.find').find_dotfiles, 'open dotfile' },
+    h = { require('vc.find').find_history, 'open from history' },
     l = { '<Cmd>lopen<CR>', 'open loclist' },
     p = { '<Cmd>Telescope find_files<CR>', 'open file' },
     q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
