@@ -73,7 +73,6 @@ keys.register {
     q = { '<Cmd>q<CR>', 'close window' },
     -- Buffer management.
     x = { '<Cmd>bd<CR>', 'close buffer' },
-    X = { '<Cmd>bd!<CR>', 'force close buffer' },
     n = { '<Cmd>bnext<CR>', 'next buffer' },
     N = { '<Cmd>bprevious<CR>', 'previous buffer' },
     -- Quickfix navigation.
