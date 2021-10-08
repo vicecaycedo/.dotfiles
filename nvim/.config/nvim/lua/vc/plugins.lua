@@ -11,6 +11,7 @@ require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'            -- LSP.
   use 'kabouzeid/nvim-lspinstall'        -- Language server installer.
   use 'wbthomason/packer.nvim'           -- Package manager.
+  use 'tpope/vim-abolish'                -- Support word variants.
   use 'michaeljsmith/vim-indent-object'  -- Indent objects.
   use 'tpope/vim-repeat'                 -- Repeat plugin commands.
   use 'tpope/vim-surround'               -- Surroundings.

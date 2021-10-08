@@ -129,6 +129,17 @@ keys.register {
     h = { '<Cmd>Telescope command_history<CR>', 'command history' },
     s = { '<Cmd>Telescope search_history<CR>', 'search history' },
   },
+  -- Labels for Abolish plugin.
+  ['cr'] = {
+    name = 'coerce',
+    ['<Space>'] = { 'to space case' },
+    ['.'] = { 'to.dot.case' },
+    ['-'] = { 'to-dash-case' },
+    c = { 'toCamelCase' },
+    m = { 'ToMixedCase' },
+    s = { 'to_snake_case' },
+    u = { 'TO_UPPER_SNAKE_CASE' },
+  },
   -- Ignore vim-surround mappings.
   ['cs'] = 'which_key_ignore',
   ['cS'] = 'which_key_ignore',
