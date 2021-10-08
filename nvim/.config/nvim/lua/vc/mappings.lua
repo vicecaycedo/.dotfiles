@@ -38,8 +38,9 @@ local keys = require('which-key')
 keys.setup {
   plugins = {
     presets = {
-      operators = false,
+      g = false,
       motions = false,
+      operators = false,
       text_objects = false,
     },
   },
