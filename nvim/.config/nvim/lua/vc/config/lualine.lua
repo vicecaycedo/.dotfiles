@@ -7,6 +7,12 @@ require('lualine').setup {
     theme = 'vscode',
   },
   sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 1, -- Relative path.
+      },
+    },
     lualine_x = {},
     lualine_y = { 'diagnostics' },
   },
