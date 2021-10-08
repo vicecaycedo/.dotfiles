@@ -56,16 +56,16 @@ keys.setup {
 keys.register {
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
-    a = { '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'code actions' },
-    d = { '<Cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
+    a = { vim.lsp.buf.code_action, 'code actions' },
+    d = { vim.lsp.buf.definition, 'go to definition' },
     F = { '<Cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>', 'format' },
-    h = { '<Cmd>lua vim.lsp.buf.hover()<CR>', 'show documentation' },
+    h = { vim.lsp.buf.hover, 'show documentation' },
     H = {
       '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})<CR>',
       'show line diagnostics',
     },
-    r = { '<Cmd>lua vim.lsp.buf.references()<CR>', 'open references' },
-    R = { '<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
+    r = { vim.lsp.buf.references, 'open references' },
+    R = { vim.lsp.buf.rename, 'rename' },
   },
   J = { '<Plug>(signify-next-hunk)', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
@@ -103,7 +103,7 @@ keys.register {
   },
   ['<leader>f'] = {
     name = 'grep file(s)',
-    d = { [[<Cmd>lua require('vc.util').grep_dotfiles()<CR>]], 'grep dotfiles' },
+    d = { require('vc.util').grep_dotfiles, 'grep dotfiles' },
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
     p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
@@ -119,15 +119,11 @@ keys.register {
   },
   ['<leader>p'] = {
     name = 'open file',
-    d = { [[<Cmd>lua require('vc.util').find_dotfiles()<CR>]], 'open dotfile' },
-    h = {
-      [[<Cmd>lua require('vc.util').find_history()<CR>]], 'open from history',
-    },
+    d = { require('vc.util').find_dotfiles, 'open dotfile' },
+    h = { require('vc.util').find_history, 'open from history' },
     l = { '<Cmd>lopen<CR>', 'open loclist' },
     p = { '<Cmd>Telescope find_files<CR>', 'open file' },
-    q = {
-      [[<Cmd>lua require('vc.util').toggle_quickfix()<CR>]], 'toggle quickfix',
-    },
+    q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
   },
   ['<leader>t'] = {
     c = { '<Cmd>Telescope commands<CR>', 'available commands' },
