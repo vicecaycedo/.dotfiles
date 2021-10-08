@@ -140,6 +140,8 @@ keys.register {
     s = { 'to_snake_case' },
     u = { 'TO_UPPER_SNAKE_CASE' },
   },
+  -- Ignore kommentary mappings.
+  ['gc'] = 'which_key_ignore',
   -- Ignore vim-surround mappings.
   ['cs'] = 'which_key_ignore',
   ['cS'] = 'which_key_ignore',
