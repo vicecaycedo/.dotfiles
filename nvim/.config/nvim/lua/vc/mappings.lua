@@ -3,15 +3,6 @@ vim.g.camelcasemotion_key = '<leader>'
 
 local t = require('vc.util').replace_termcodes
 
-function _G.smart_enter()
-  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
-  if buftype == '' then
-    return t 'o<Esc>'
-  else
-    return t '<CR>'
-  end
-end
-
 function _G.smart_tab()
   return vim.fn.pumvisible() == 1 and t '<C-n>' or t '<Tab>'
 end
@@ -31,7 +22,6 @@ function toggleStripTrailingWhitespace()
 end
 
 local remap = vim.api.nvim_set_keymap
-remap('n', '<CR>', 'v:lua.smart_enter()', { expr = true, noremap = true, })
 remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
 remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true, })
 remap('i', '<CR>', [[compe#confirm('<CR>')]], { expr = true, noremap = true, })
@@ -52,6 +42,7 @@ keys.setup {
 }
 
 keys.register {
+  ['<CR>'] = { 'o<Esc>', 'new line' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
     a = { vim.lsp.buf.code_action, 'code actions' },
