@@ -4,6 +4,7 @@ require('lualine').setup {
     theme = 'vscode',
   },
   sections = {
+    lualine_b = {},
     lualine_c = {
       {
         'filename',
