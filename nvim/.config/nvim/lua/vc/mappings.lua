@@ -16,7 +16,7 @@ function _G.terminal_esc()
 end
 
 local function toggleStripTrailingWhitespace()
-  -- See /plugin/strip_trailing_whitespace.vim.
+  -- See plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
   print(
     'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
