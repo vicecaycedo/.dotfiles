@@ -23,10 +23,10 @@ local function toggleStripTrailingWhitespace()
 end
 
 local remap = vim.api.nvim_set_keymap
-remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true, })
-remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true, })
-remap('i', '<CR>', [[compe#confirm('<CR>')]], { expr = true, noremap = true, })
-remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true, noremap = true, })
+remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true })
+remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true })
+remap('i', '<CR>', [[compe#confirm('<CR>')]], { expr = true })
+remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local keys = require('which-key')
 
