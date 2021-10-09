@@ -9,19 +9,6 @@ local function smart_outline()
   end
 end
 
-local t = require('vc.util').replace_termcodes
-function _G.smart_esc()
-  local ft = vim.api.nvim_buf_get_option(0, 'filetype')
-  if ft == 'flutterToolsOutline' then
-    return t '<Cmd>FlutterOutlineToggle<CR>'
-  else
-    return t '<Esc>'
-  end
-end
-
-local remap = vim.api.nvim_set_keymap
-remap('n', '<Esc>', 'v:lua.smart_esc()', { expr = true, noremap = true, })
-
 keys.register {
   ['<leader>'] = {
     F = { [[<Cmd>Telescope flutter commands<CR>]], 'flutter' },
