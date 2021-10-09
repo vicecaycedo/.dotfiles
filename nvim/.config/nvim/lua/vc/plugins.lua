@@ -52,10 +52,7 @@ require('packer').startup(function(use)
   -- File explorer.
   use {
     'kyazdani42/nvim-tree.lua',
-    cmd = {
-      'NvimTreeToggle',
-      'NvimTreeFindFile',
-    },
+    cmd = 'NvimTreeToggle',
     config = function()
       require('vc.config.nvim-tree')
     end,
