@@ -18,7 +18,8 @@ end
 local function toggleStripTrailingWhitespace()
   -- See /plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
-  print('b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
+  print(
+    'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
 end
 
 local remap = vim.api.nvim_set_keymap
