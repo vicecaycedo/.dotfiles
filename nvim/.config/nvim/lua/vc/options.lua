@@ -1,12 +1,11 @@
 for key, val in pairs(
   {
+    colorcolumn = '80', -- Line limit column.
     hidden = true, -- Hide (don't unload) buffers when abandoned.
     showmode = false, -- Don't show MODE messages.
     termguicolors = true, -- True colors.
     timeoutlen = 400, -- Shorter timeout for WhichKey.
     updatetime = 100, -- Decrease updatetime for a better experience.
-
-    colorcolumn = '80', -- Line limit column.
 
     -- Search case sensitivity.
     ignorecase = true,
@@ -22,10 +21,10 @@ for key, val in pairs(
 
     -- Tabs/indents.
     expandtab = true,
-    tabstop = 2,
-    softtabstop = 2,
     shiftwidth = 2,
     smartindent = true,
+    softtabstop = 2,
+    tabstop = 2,
 
     -- Autocomplete.
     completeopt = 'menuone,preview,noselect',
