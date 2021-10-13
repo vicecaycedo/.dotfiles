@@ -62,7 +62,7 @@ keys.register {
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
-    B = { '<Cmd>Telescope buffers<CR>', 'open buffer' },
+    B = { require('vc.find').find_buffers, 'open buffer' },
     J = { 'J', 'join lines' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
