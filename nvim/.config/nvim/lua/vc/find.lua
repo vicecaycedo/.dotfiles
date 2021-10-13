@@ -12,6 +12,7 @@ end
 
 M.find_history = function()
   telescope_builtin.oldfiles {
+    initial_mode = 'normal',
     prompt_title = 'History',
   }
 end
