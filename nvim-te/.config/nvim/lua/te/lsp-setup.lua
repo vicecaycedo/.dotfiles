@@ -17,7 +17,7 @@ local on_attach = function(client)
       [[
       aug lsp_format
         au! * <buffer>
-        au BufWritePre <buffer> lua require('vc.lsp-util').format_buffer()
+        au BufWritePre <buffer> lua require('vc.lsp.util').format_buffer()
       aug END
     ]])
   end
@@ -29,7 +29,7 @@ local on_attach = function(client)
       [[
       aug lsp_organize_imports
         au! * <buffer>
-        au BufWritePre <buffer> lua require('vc.lsp-util').organize_imports()
+        au BufWritePre <buffer> lua require('vc.lsp.util').organize_imports()
       aug END
     ]])
   end

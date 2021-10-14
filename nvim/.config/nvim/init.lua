@@ -1,4 +1,4 @@
-require('vc.lsp-setup')
+require('vc.lsp.setup')
 require('vc.mappings')
 require('vc.options')
 require('vc.plugins')
