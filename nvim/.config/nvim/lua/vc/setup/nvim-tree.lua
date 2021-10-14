@@ -1,4 +1,3 @@
--- vim.g.nvim_tree_side = 'right'
 vim.g.nvim_tree_show_icons = {
   files = 0,
   folders = 1,
