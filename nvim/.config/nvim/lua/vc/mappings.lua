@@ -98,6 +98,7 @@ keys.register {
     h = { '<Cmd>Telescope help_tags<CR>', 'grep help tags' },
     p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
+    t = { '<Cmd>Telescope treesitter<CR>', 'grep treesitter' },
   },
   ['<leader>m'] = {
     name = 'version control',
