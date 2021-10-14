@@ -1,6 +1,6 @@
 require('nvim-tree').setup {
   hijack_cursor = true,
-  lsp_diagnostics = true,
+  diagnostics = { enable = true },
   view = {
     mappings = {
       list = {
