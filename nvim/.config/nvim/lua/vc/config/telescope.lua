@@ -12,7 +12,7 @@ telescope.setup {
   pickers = {
     buffers = { theme = 'ivy' },
     find_files = { theme = 'ivy' },
-    old_files = { theme = 'ivy' },
+    oldfiles = { theme = 'ivy' },
   },
 }
 telescope.load_extension('fzf')
