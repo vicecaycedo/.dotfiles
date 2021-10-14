@@ -95,6 +95,7 @@ keys.register {
     name = 'grep file(s)',
     d = { require('vc.grep').grep_dotfiles, 'grep dotfiles' },
     f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
+    h = { '<Cmd>Telescope help_tags<CR>', 'grep help tags' },
     p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
   },
