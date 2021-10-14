@@ -8,9 +8,7 @@
 
 -- Configure how diagnostics are displayed.
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false,
-  })
+  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
 
 local on_attach = function(client)
   -- Autoformat on save, if available.
@@ -39,9 +37,7 @@ end
 
 -- Manage Flutter LSP separately.
 require('flutter-tools').setup {
-  dev_tools = {
-    auto_open_browser = true,
-  },
+  dev_tools = { auto_open_browser = true },
   lsp = {
     on_attach = on_attach,
     settings = {

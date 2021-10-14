@@ -4,9 +4,7 @@
 
 -- Configure how diagnostics are displayed.
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false,
-  })
+  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
 
 local on_attach = function(client)
   -- Autoformat on save, if available.
@@ -58,9 +56,7 @@ local lsp_settings = {
 }
 
 local function server_config(server)
-  local config = {
-    on_attach = on_attach,
-  }
+  local config = { on_attach = on_attach }
 
   if server == 'lua' then
     config.settings = lsp_settings.lua
