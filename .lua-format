@@ -4,6 +4,7 @@ align_args: false
 align_parameter: false
 break_after_functioncall_lp: true
 break_after_functiondef_lp: true
+chop_down_table: true
 continuation_indent_width: 2
 double_quote_to_single_quote: true
 extra_sep_at_table_end: true
