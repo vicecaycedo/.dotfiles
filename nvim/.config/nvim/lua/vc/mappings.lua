@@ -103,10 +103,6 @@ keys.register {
     d = { '<Cmd>SignifyHunkDiff<CR>', 'hunk diff' },
     u = { '<Cmd>SignifyHunkUndo<CR>', 'hunk undo' },
   },
-  ['<leader>P'] = {
-    name = 'explore',
-    p = { '<Cmd>Telescope file_browser<CR>', 'explore dir' },
-  },
   ['<leader>p'] = {
     name = 'open file',
     d = { require('vc.find').find_dotfiles, 'open dotfile' },
