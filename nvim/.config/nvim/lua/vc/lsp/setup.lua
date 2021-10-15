@@ -1,14 +1,17 @@
 -- Configure how diagnostics are displayed.
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = false,
+  }
+)
 
 local on_attach = function(client)
   local capabilities = client.resolved_capabilities
 
   -- Autoformat on save, if available.
   if capabilities.document_formatting then
-    vim.cmd(
-      [[
+    vim.cmd([[
       aug lsp_format
         au! * <buffer>
         au BufWritePre <buffer> lua require('vc.lsp.util').format_buffer()
@@ -19,8 +22,7 @@ local on_attach = function(client)
   -- Organize imports, if available.
   if capabilities.code_action and capabilities.code_action.codeActionKinds and
     capabilities.code_action.codeActionKinds['source.organizeImports'] then
-    vim.cmd(
-      [[
+    vim.cmd([[
       aug lsp_organize_imports
         au! * <buffer>
         au BufWritePre <buffer> lua require('vc.lsp.util').organize_imports()
@@ -45,16 +47,18 @@ for _, server in pairs(servers) do
   lsp_config[server].setup(config)
 end
 
--- Set up EFM language server.
-require'lspconfig'.efm.setup {
-  filetypes = { 'lua' },
-  init_options = { documentFormatting = true },
-  on_attach = on_attach,
-  settings = {
-    rootMarkers = { '.git/' },
-    languages = {
-      lua = { { formatCommand = 'lua-format -i', formatStdin = true } },
-    },
+-- Set up null-ls (general purpose language server).
+local null_ls = require('null-ls')
+null_ls.config({
+  sources = {
+    null_ls.builtins.formatting.stylua.with({
+      extra_args = {
+        '--config-path',
+        vim.fn.expand('~/.config/stylua/stylua.toml'),
+      },
+    }),
   },
-}
-
+})
+lsp_config['null-ls'].setup({
+  on_attach = on_attach,
+})

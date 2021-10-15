@@ -4,22 +4,23 @@ vim.g.camelcasemotion_key = '<leader>'
 local t = require('vc.util').replace_termcodes
 
 function _G.smart_tab()
-  return vim.fn.pumvisible() == 1 and t '<C-n>' or t '<Tab>'
+  return vim.fn.pumvisible() == 1 and t('<C-n>') or t('<Tab>')
 end
 
 function _G.smart_s_tab()
-  return vim.fn.pumvisible() == 1 and t '<C-p>' or t '<C-h>'
+  return vim.fn.pumvisible() == 1 and t('<C-p>') or t('<C-h>')
 end
 
 function _G.terminal_esc()
-  return t '<C-\\>' .. t '<C-n>'
+  return t('<C-\\>') .. t('<C-n>')
 end
 
 local function toggleStripTrailingWhitespace()
   -- See plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
   print(
-    'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace))
+    'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace)
+  )
 end
 
 local remap = vim.api.nvim_set_keymap
@@ -30,7 +31,7 @@ remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local keys = require('which-key')
 
-keys.setup {
+keys.setup({
   plugins = {
     presets = {
       g = false,
@@ -40,9 +41,9 @@ keys.setup {
     },
   },
   show_help = false,
-}
+})
 
-keys.register {
+keys.register({
   ['<CR>'] = { 'o<Esc>', 'new line' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
@@ -145,5 +146,4 @@ keys.register {
   ['<leader>e'] = 'which_key_ignore',
   ['<leader>ge'] = 'which_key_ignore',
   ['<leader>w'] = 'which_key_ignore',
-}
-
+})

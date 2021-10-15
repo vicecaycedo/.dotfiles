@@ -6,4 +6,3 @@ vim.g.symbols_outline = {
   show_symbol_details = false,
   width = 40,
 }
-

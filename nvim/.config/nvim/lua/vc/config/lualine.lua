@@ -1,6 +1,11 @@
-require('lualine').setup {
-  extensions = { 'nvim-tree', 'quickfix' },
-  options = { theme = 'vscode' },
+require('lualine').setup({
+  extensions = {
+    'nvim-tree',
+    'quickfix',
+  },
+  options = {
+    theme = 'vscode',
+  },
   sections = {
     lualine_b = {},
     lualine_c = {
@@ -12,5 +17,4 @@ require('lualine').setup {
     lualine_x = {},
     lualine_y = { 'diagnostics' },
   },
-}
-
+})

@@ -1,4 +1,4 @@
-require('nvim-tree').setup {
+require('nvim-tree').setup({
   hijack_cursor = true,
   diagnostics = { enable = true },
   view = {
@@ -11,5 +11,4 @@ require('nvim-tree').setup {
       },
     },
   },
-}
-
+})

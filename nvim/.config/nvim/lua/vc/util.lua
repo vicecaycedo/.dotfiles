@@ -35,4 +35,3 @@ M.replace_termcodes = function(str)
 end
 
 return M
-

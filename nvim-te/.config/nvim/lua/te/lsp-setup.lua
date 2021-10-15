@@ -6,15 +6,10 @@
 
 -- TODO: Refactor now that LSP has been moved to core (vc).
 
--- Configure how diagnostics are displayed.
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
-
 local on_attach = function(client)
   -- Autoformat on save, if available.
   if client.resolved_capabilities.document_formatting then
-    vim.cmd(
-      [[
+    vim.cmd([[
       aug lsp_format
         au! * <buffer>
         au BufWritePre <buffer> lua require('vc.lsp.util').format_buffer()
@@ -25,8 +20,7 @@ local on_attach = function(client)
   -- Organize imports, if available.
   local code_actions = client.resolved_capabilities.code_action.codeActionKinds
   if _G.has(code_actions, 'source.organizeImports') then
-    vim.cmd(
-      [[
+    vim.cmd([[
       aug lsp_organize_imports
         au! * <buffer>
         au BufWritePre <buffer> lua require('vc.lsp.util').organize_imports()
@@ -36,8 +30,10 @@ local on_attach = function(client)
 end
 
 -- Manage Flutter LSP separately.
-require('flutter-tools').setup {
-  dev_tools = { auto_open_browser = true },
+require('flutter-tools').setup({
+  dev_tools = {
+    auto_open_browser = true,
+  },
   lsp = {
     on_attach = on_attach,
     settings = {
@@ -47,5 +43,4 @@ require('flutter-tools').setup {
       showTodos = false,
     },
   },
-}
-
+})

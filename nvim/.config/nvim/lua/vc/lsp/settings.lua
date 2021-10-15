@@ -2,7 +2,10 @@ local M = {}
 
 M.lua = {
   Lua = {
-    runtime = { path = vim.split(package.path, ';'), version = 'LuaJIT' },
+    runtime = {
+      path = vim.split(package.path, ';'),
+      version = 'LuaJIT',
+    },
     diagnostics = {
       globals = {
         'vim', -- Neovim
@@ -20,4 +23,3 @@ M.lua = {
 }
 
 return M
-

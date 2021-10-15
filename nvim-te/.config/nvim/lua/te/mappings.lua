@@ -9,13 +9,12 @@ local function smart_outline()
   end
 end
 
-keys.register {
+keys.register({
   ['<leader>'] = {
-    F = { [[<Cmd>Telescope flutter commands<CR>]], 'flutter' },
+    F = { '<Cmd>Telescope flutter commands<CR>', 'flutter' },
   },
   -- Override default SymbolsOutline mapping.
   ['<leader>f'] = {
     s = { smart_outline, 'explore symbols' },
   },
-}
-
+})

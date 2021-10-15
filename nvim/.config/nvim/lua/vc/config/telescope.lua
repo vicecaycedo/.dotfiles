@@ -1,8 +1,10 @@
 local telescope = require('telescope')
-telescope.setup {
+telescope.setup({
   defaults = {
     file_ignore_patterns = { 'packer_compiled.*' },
-    layout_config = { prompt_position = 'top' },
+    layout_config = {
+      prompt_position = 'top',
+    },
     mappings = {
       n = {
         v = 'file_vsplit',
@@ -15,6 +17,5 @@ telescope.setup {
     find_files = { theme = 'ivy' },
     oldfiles = { theme = 'ivy' },
   },
-}
+})
 telescope.load_extension('fzf')
-

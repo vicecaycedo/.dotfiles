@@ -15,4 +15,3 @@ end
 if config_exists('te') then
   require('te')
 end
-
