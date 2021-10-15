@@ -20,6 +20,7 @@ A collection of configuration files for my development environment.
 * [lazygit](https://github.com/jesseduffield/lazygit)
 * [neovim](https://neovim.io)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
+* [rust](https://www.rust-lang.org/)
 * [stow](https://www.gnu.org/software/stow/manual/stow.html)
 * [stylua](https://github.com/JohnnyMorganz/StyLua)
 * [tmux](https://github.com/tmux/tmux)
