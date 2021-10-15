@@ -6,7 +6,7 @@ A collection of configuration files for my development environment.
 
 **OS**: MacOS \
 **WM**: [Amethyst](https://github.com/ianyh/Amethyst) \
-**Terminal**: [kitty](https://sw.kovidgoyal.net/kitty) \
+**Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty) \
 **Shell**: [Zsh](https://www.zsh.org/) \
 **Editor**: [Neovim](https://neovim.io)
 
@@ -32,12 +32,12 @@ Zsh
 * [Zinit](https://github.com/zdharma/zinit)
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
-Tmux \
-Plugins managed through
+Tmux
+* Plugins managed through
 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
-Neovim \
-Plugins managed through [Packer](https://github.com/wbthomason/packer.nvim).
+Neovim
+* Plugins managed through [Packer](https://github.com/wbthomason/packer.nvim).
 
 ## FAQs
 
