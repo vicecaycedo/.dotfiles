@@ -4,11 +4,11 @@ A collection of configuration files for my development environment.
 
 ## Overview
 
-**OS**: MacOS and Linux  
-**WM**: [Amethyst](https://github.com/ianyh/Amethyst)  
-**Terminal**: [kitty](https://sw.kovidgoyal.net/kitty)  
-**Shell**: [Zsh](https://www.zsh.org/) with [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
-**Editor**: [Neovim](https://neovim.io)  
+**OS**: MacOS and Linux \
+**WM**: [Amethyst](https://github.com/ianyh/Amethyst) \
+**Terminal**: [kitty](https://sw.kovidgoyal.net/kitty) \
+**Shell**: [Zsh](https://www.zsh.org/) with [Powerlevel10k](https://github.com/romkatv/powerlevel10k) \
+**Editor**: [Neovim](https://neovim.io)
 
 ## Dependencies
 
