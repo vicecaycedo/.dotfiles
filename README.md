@@ -4,7 +4,7 @@ A collection of configuration files for my development environment.
 
 ## Overview
 
-**OS**: MacOS and Linux \
+**OS**: MacOS \
 **WM**: [Amethyst](https://github.com/ianyh/Amethyst) \
 **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty) \
 **Shell**: [Zsh](https://www.zsh.org/) with [Powerlevel10k](https://github.com/romkatv/powerlevel10k) \
