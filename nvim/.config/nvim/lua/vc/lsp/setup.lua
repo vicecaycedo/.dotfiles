@@ -20,8 +20,11 @@ local on_attach = function(client)
   end
 
   -- Organize imports, if available.
-  if capabilities.code_action and capabilities.code_action.codeActionKinds and
-    capabilities.code_action.codeActionKinds['source.organizeImports'] then
+  local organize_imports_available = capabilities.code_action
+    and type(capabilities.code_action) == 'table'
+    and capabilities.code_action.codeActionKinds
+    and capabilities.code_action.codeActionKinds['source.organizeImports']
+  if organize_imports_available then
     vim.cmd([[
       aug lsp_organize_imports
         au! * <buffer>
