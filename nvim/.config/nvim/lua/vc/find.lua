@@ -17,6 +17,13 @@ M.find_dotfiles = function()
   })
 end
 
+M.find_files = function()
+  telescope_builtin.find_files({
+    hidden = true,
+    prompt_title = 'Find',
+  })
+end
+
 M.find_history = function()
   telescope_builtin.oldfiles({
     initial_mode = 'normal',

@@ -1,7 +1,10 @@
 local telescope = require('telescope')
 telescope.setup({
   defaults = {
-    file_ignore_patterns = { 'packer_compiled.*' },
+    file_ignore_patterns = {
+      '.git/',
+      'packer_compiled.*',
+    },
     layout_config = {
       prompt_position = 'top',
     },
