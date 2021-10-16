@@ -50,33 +50,33 @@ require('packer').startup(function(use)
   -- Autocompletion.
   use({
     'hrsh7th/nvim-compe',
+    event = 'InsertEnter',
     config = function()
       require('vc.config.compe')
     end,
-    event = 'InsertEnter',
   })
 
   -- File explorer.
   use({
     'kyazdani42/nvim-tree.lua',
-    cmd = 'NvimTreeToggle',
-    config = function()
-      require('vc.config.nvim-tree')
-    end,
     requires = 'kyazdani42/nvim-web-devicons',
+    cmd = 'NvimTreeToggle',
     setup = function()
       require('vc.setup.nvim-tree')
+    end,
+    config = function()
+      require('vc.config.nvim-tree')
     end,
   })
 
   -- Treesitter.
   use({
     'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    event = 'BufRead',
     config = function()
       require('vc.config.treesitter')
     end,
-    event = 'BufRead',
-    run = ':TSUpdate',
   })
 
   -- Icons.
