@@ -13,7 +13,7 @@ end
 require('packer').startup(function(use)
   use('bkad/camelcasemotion') -- Camelcase and underscore objects.
   use('neovim/nvim-lspconfig') -- LSP.
-  use('kabouzeid/nvim-lspinstall') -- Language server installer.
+  use('williamboman/nvim-lsp-installer') -- Language server installer.
   use('wbthomason/packer.nvim') -- Package manager.
   use('tpope/vim-abolish') -- Support word variants.
   use('moll/vim-bbye') -- Keep layout when closing buffers.

@@ -34,23 +34,28 @@ local on_attach = function(client)
   end
 end
 
--- Set up language servers installed through nvim-lspinstall.
+-- Set up language servers installed through nvim-lsp-installer.
 --   `:LspInstall <server>`
--- My supported languages:
---   lua
-local lsp_install = require('lspinstall')
-local lsp_config = require('lspconfig')
-lsp_install.setup()
-local servers = lsp_install.installed_servers()
-for _, server in pairs(servers) do
-  local config = { on_attach = on_attach }
+-- My supported language servers:
+--   sumneko_lua (lua)
+local lsp_installer = require('nvim-lsp-installer')
+lsp_installer.on_server_ready(function(server)
+  local opts = {
+    on_attach = on_attach,
+  }
+
   if server == 'lua' then
-    config.settings = require('vc.lsp.settings').lua
+    opts.settings = require('vc.lsp.settings').lua
   end
-  lsp_config[server].setup(config)
-end
+
+  -- This setup() function is exactly the same as lspconfig's setup function
+  -- (:help lspconfig-quickstart)
+  server:setup(opts)
+  vim.cmd('do User LspAttachBuffers')
+end)
 
 -- Set up null-ls (general purpose language server).
+local lsp_config = require('lspconfig')
 local null_ls = require('null-ls')
 null_ls.config({
   sources = {
