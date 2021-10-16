@@ -1,5 +1,3 @@
-local keys = require('which-key')
-
 local function smart_outline()
   local ft = vim.api.nvim_buf_get_option(0, 'filetype')
   if ft == 'dart' then
@@ -9,6 +7,7 @@ local function smart_outline()
   end
 end
 
+local keys = require('which-key')
 keys.register({
   ['<leader>'] = {
     F = { '<Cmd>Telescope flutter commands<CR>', 'flutter' },
