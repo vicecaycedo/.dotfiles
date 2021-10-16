@@ -66,6 +66,7 @@ keys.register({
   ['<leader>'] = {
     name = 'leader',
     J = { 'J', 'join lines' },
+    S = { '<Cmd>Startify<CR>', 'open startify' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
     -- Window management.
