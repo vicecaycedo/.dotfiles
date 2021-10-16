@@ -18,6 +18,12 @@ end
 
 local M = {}
 
+-- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
+-- internal representation.
+M.replace_termcodes = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 M.toggle_quickfix = function()
   for _, win in pairs(vim.fn.getwininfo()) do
     if win.quickfix == 1 then
@@ -26,12 +32,6 @@ M.toggle_quickfix = function()
     end
   end
   vim.cmd('copen')
-end
-
--- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
--- internal representation.
-M.replace_termcodes = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 return M
