@@ -34,7 +34,10 @@ M.on_attach = function(client)
   local organize_imports_available = capabilities.code_action
     and type(capabilities.code_action) == 'table'
     and capabilities.code_action.codeActionKinds
-    and capabilities.code_action.codeActionKinds['source.organizeImports']
+    and require('vc.util').table_contains(
+      capabilities.code_action.codeActionKinds,
+      'source.organizeImports'
+    )
   if organize_imports_available then
     vim.cmd([[
       aug lsp_organize_imports
