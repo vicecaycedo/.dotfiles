@@ -6,34 +6,6 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   }
 )
 
-local on_attach = function(client)
-  local capabilities = client.resolved_capabilities
-
-  -- Autoformat on save, if available.
-  if capabilities.document_formatting then
-    vim.cmd([[
-      aug lsp_format
-        au! * <buffer>
-        au BufWritePre <buffer> lua require('vc.lsp.util').format_buffer()
-      aug END
-    ]])
-  end
-
-  -- Organize imports, if available.
-  local organize_imports_available = capabilities.code_action
-    and type(capabilities.code_action) == 'table'
-    and capabilities.code_action.codeActionKinds
-    and capabilities.code_action.codeActionKinds['source.organizeImports']
-  if organize_imports_available then
-    vim.cmd([[
-      aug lsp_organize_imports
-        au! * <buffer>
-        au BufWritePre <buffer> lua require('vc.lsp.util').organize_imports()
-      aug END
-    ]])
-  end
-end
-
 -- Set up language servers installed through nvim-lsp-installer.
 --   `:LspInstall <server>`
 -- My supported language servers:
@@ -41,7 +13,7 @@ end
 local lsp_installer = require('nvim-lsp-installer')
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    on_attach = on_attach,
+    on_attach = require('vc.lsp.util').on_attach,
   }
 
   if server == 'lua' then
@@ -68,5 +40,5 @@ null_ls.config({
   },
 })
 lsp_config['null-ls'].setup({
-  on_attach = on_attach,
+  on_attach = require('vc.lsp.util').on_attach,
 })

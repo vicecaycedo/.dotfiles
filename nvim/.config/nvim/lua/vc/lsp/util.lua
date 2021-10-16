@@ -17,4 +17,32 @@ M.organize_imports = function()
   )
 end
 
+M.on_attach = function(client)
+  local capabilities = client.resolved_capabilities
+
+  -- Autoformat on save, if available.
+  if capabilities.document_formatting then
+    vim.cmd([[
+      aug lsp_format
+        au! * <buffer>
+        au BufWritePre <buffer> lua require('vc.lsp.util').format_buffer()
+      aug END
+    ]])
+  end
+
+  -- Organize imports, if available.
+  local organize_imports_available = capabilities.code_action
+    and type(capabilities.code_action) == 'table'
+    and capabilities.code_action.codeActionKinds
+    and capabilities.code_action.codeActionKinds['source.organizeImports']
+  if organize_imports_available then
+    vim.cmd([[
+      aug lsp_organize_imports
+        au! * <buffer>
+        au BufWritePre <buffer> lua require('vc.lsp.util').organize_imports()
+      aug END
+    ]])
+  end
+end
+
 return M
