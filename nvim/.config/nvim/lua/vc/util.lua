@@ -1,11 +1,3 @@
--- Pretty-print objects.
--- Source: https://github.com/nanotee/nvim-lua-guide
-function _G.pprint(...)
-  local objects = vim.tbl_map(vim.inspect, { ... })
-  print(unpack(objects))
-  return ...
-end
-
 -- Returns true if value is in table.
 function _G.has(table, value)
   for _, v in ipairs(table) do
@@ -17,6 +9,14 @@ function _G.has(table, value)
 end
 
 local M = {}
+
+-- Pretty-print objects.
+-- Source: https://github.com/nanotee/nvim-lua-guide.
+M.pprint = function(...)
+  local objects = vim.tbl_map(vim.inspect, { ... })
+  print(unpack(objects))
+  return ...
+end
 
 -- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
 -- internal representation.
