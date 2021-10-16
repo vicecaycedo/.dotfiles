@@ -44,6 +44,8 @@ keys.setup({
 })
 
 keys.register({
+  ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
+  ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
   ['<CR>'] = { 'o<Esc>', 'new line' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
@@ -71,8 +73,6 @@ keys.register({
     q = { '<Cmd>q<CR>', 'close window' },
     -- Buffer management.
     x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
-    n = { '<Cmd>bnext<CR>', 'next buffer' },
-    N = { '<Cmd>bprevious<CR>', 'previous buffer' },
     -- Quickfix navigation.
     j = { '<Cmd>cnext<CR>', 'next quickfix' },
     k = { '<Cmd>cprev<CR>', 'previous quickfix' },
