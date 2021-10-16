@@ -65,13 +65,13 @@ keys.register({
   Y = { 'y$', 'yank until end of line' },
   ['<leader>'] = {
     name = 'leader',
-    B = { require('vc.find').find_buffers, 'open buffer' },
     J = { 'J', 'join lines' },
     s = { '<Cmd>update<CR>', 'save file' },
     r = { '<C-^>', 'return to previous file' },
     -- Window management.
     q = { '<Cmd>q<CR>', 'close window' },
     -- Buffer management.
+    B = { require('vc.find').find_buffers, 'open buffer' },
     x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
     -- Quickfix navigation.
     j = { '<Cmd>cnext<CR>', 'next quickfix' },
