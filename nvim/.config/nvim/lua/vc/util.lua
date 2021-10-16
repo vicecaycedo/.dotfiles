@@ -1,13 +1,3 @@
--- Returns true if value is in table.
-function _G.has(table, value)
-  for _, v in ipairs(table) do
-    if v == value then
-      return true
-    end
-  end
-  return false
-end
-
 local M = {}
 
 -- Pretty-print objects.
@@ -22,6 +12,16 @@ end
 -- internal representation.
 M.replace_termcodes = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+-- Returns true if value is in table.
+M.table_contains = function(table, value)
+  for _, v in ipairs(table) do
+    if v == value then
+      return true
+    end
+  end
+  return false
 end
 
 M.toggle_quickfix = function()
