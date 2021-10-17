@@ -18,14 +18,6 @@ function _G.smart_enter()
 end
 vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
 
-local function toggleStripTrailingWhitespace()
-  -- See plugin/strip_trailing_whitespace.vim.
-  vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
-  print(
-    'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace)
-  )
-end
-
 local keys = require('which-key')
 keys.setup({
   plugins = {
@@ -113,7 +105,10 @@ keys.register({
     c = { '<Cmd>Telescope commands<CR>', 'available commands' },
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
     h = { '<Cmd>Telescope command_history<CR>', 'command history' },
-    r = { toggleStripTrailingWhitespace, 'toggle StripTrailingWhitespace' },
+    r = {
+      require('vc.util').toggle_strip_trailing_whitespace,
+      'toggle StripTrailingWhitespace',
+    },
     s = { '<Cmd>Telescope search_history<CR>', 'search history' },
   },
   -- Labels for Abolish plugin.
