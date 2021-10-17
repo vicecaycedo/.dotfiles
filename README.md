@@ -15,6 +15,7 @@ A collection of configuration files for my development environment.
 * [amethyst](https://github.com/ianyh/Amethyst)
 * [flutter](https://flutter.dev/)
 * [fzf](https://github.com/junegunn/fzf)
+* [go](https://golang.org/)
 * [homebrew](https://brew.sh/)
 * [kitty](https://sw.kovidgoyal.net/kitty)
 * [lazygit](https://github.com/jesseduffield/lazygit)
