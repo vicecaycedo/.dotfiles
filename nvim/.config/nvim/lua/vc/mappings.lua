@@ -19,7 +19,6 @@ local remap = vim.api.nvim_set_keymap
 remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local keys = require('which-key')
-
 keys.setup({
   plugins = {
     presets = {
@@ -31,7 +30,6 @@ keys.setup({
   },
   show_help = false,
 })
-
 keys.register({
   ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
