@@ -8,6 +8,16 @@ function _G.terminal_esc()
 end
 vim.api.nvim_set_keymap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
+function _G.smart_enter()
+  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+  if buftype == 'nofile' then
+    return t('<CR>')
+  else
+    return t('o<Esc>')
+  end
+end
+vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
+
 local function toggleStripTrailingWhitespace()
   -- See plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
@@ -31,7 +41,6 @@ keys.setup({
 keys.register({
   ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
-  ['<CR>'] = { 'o<Esc>', 'new line' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   g = {
     a = { vim.lsp.buf.code_action, 'code actions' },
