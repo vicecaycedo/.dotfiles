@@ -5,8 +5,11 @@ require('nvim-treesitter.configs').setup({
     'dart',
     'go',
     'html',
+    'json',
     'lua',
     'python',
+    'vim',
+    'yaml',
   },
   highlight = { enable = true },
 })
