@@ -19,7 +19,7 @@ lsp_installer.on_server_ready(function(server)
     on_attach = require('vc.lsp.util').on_attach,
   }
 
-  if server == 'lua' then
+  if server.name == 'sumneko_lua' then
     opts.settings = require('vc.lsp.settings').lua
   end
 
