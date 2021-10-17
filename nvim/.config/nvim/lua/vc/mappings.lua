@@ -6,6 +6,7 @@ local t = require('vc.util').replace_termcodes
 function _G.terminal_esc()
   return t('<C-\\>') .. t('<C-n>')
 end
+vim.api.nvim_set_keymap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local function toggleStripTrailingWhitespace()
   -- See plugin/strip_trailing_whitespace.vim.
@@ -14,9 +15,6 @@ local function toggleStripTrailingWhitespace()
     'b:noStripTrailingWhitespace=' .. tostring(vim.b.noStripTrailingWhitespace)
   )
 end
-
-local remap = vim.api.nvim_set_keymap
-remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local keys = require('which-key')
 keys.setup({
