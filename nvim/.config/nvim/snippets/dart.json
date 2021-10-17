@@ -1,0 +1,39 @@
+{
+  "Flutter stateless widget": {
+    "prefix": "stless",
+    "description": "Insert a StatelessWidget",
+    "body": [
+      "class $1 extends StatelessWidget {",
+      "  const $1({ final Key? key }) : super(key: key);",
+      "",
+      "  @override",
+      "  Widget build(final BuildContext context) {",
+      "    return Container(",
+      "      $2",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+  "Flutter stateful widget": {
+    "prefix": "stful",
+    "description": "Insert a StatefulWidget",
+    "body": [
+      "class $1 extends StatefulWidget {",
+      "  const $1({ final Key? key }) : super(key: key);",
+      "",
+      "  @override",
+      "  _$1State createState() => _$1State();",
+      "}",
+      "",
+      "class _$1State extends State<$1> {",
+      "  @override",
+      "  Widget build(final BuildContext context) {",
+      "    return Container(",
+      "      $2",
+      "    );",
+      "  }",
+      "}"
+    ]
+  }
+}
