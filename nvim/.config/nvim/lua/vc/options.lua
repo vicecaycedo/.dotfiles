@@ -26,7 +26,7 @@ for key, val in pairs({
   tabstop = 2,
 
   -- Autocomplete.
-  completeopt = 'menuone,preview,noselect',
+  completeopt = 'menuone,noselect',
   shortmess = vim.o.shortmess .. 'c',
 }) do
   vim.o[key] = val

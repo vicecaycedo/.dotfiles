@@ -3,14 +3,6 @@ vim.g.camelcasemotion_key = '<leader>'
 
 local t = require('vc.util').replace_termcodes
 
-function _G.smart_tab()
-  return vim.fn.pumvisible() == 1 and t('<C-n>') or t('<Tab>')
-end
-
-function _G.smart_s_tab()
-  return vim.fn.pumvisible() == 1 and t('<C-p>') or t('<C-h>')
-end
-
 function _G.terminal_esc()
   return t('<C-\\>') .. t('<C-n>')
 end
@@ -24,9 +16,6 @@ local function toggleStripTrailingWhitespace()
 end
 
 local remap = vim.api.nvim_set_keymap
-remap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true })
-remap('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true })
-remap('i', '<CR>', [[compe#confirm('<CR>')]], { expr = true })
 remap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
 
 local keys = require('which-key')

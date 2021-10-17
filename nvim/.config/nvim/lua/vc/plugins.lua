@@ -47,12 +47,21 @@ require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
   })
 
-  -- Autocompletion.
+  -- Autocompletion and Snippets.
   use({
-    'hrsh7th/nvim-compe',
-    event = 'InsertEnter',
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+    },
+    setup = function()
+      require('vc.setup.vsnip')
+    end,
     config = function()
-      require('vc.config.compe')
+      require('vc.config.nvim-cmp')
     end,
   })
 

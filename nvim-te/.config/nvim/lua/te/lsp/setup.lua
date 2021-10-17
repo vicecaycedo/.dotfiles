@@ -3,6 +3,9 @@ require('flutter-tools').setup({
     auto_open_browser = true,
   },
   lsp = {
+    capabilities = require('cmp_nvim_lsp').update_capabilities(
+      vim.lsp.protocol.make_client_capabilities()
+    ),
     on_attach = require('vc.lsp.util').on_attach,
     settings = {
       allowAnalytics = false,

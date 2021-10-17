@@ -13,6 +13,9 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 local lsp_installer = require('nvim-lsp-installer')
 lsp_installer.on_server_ready(function(server)
   local opts = {
+    capabilities = require('cmp_nvim_lsp').update_capabilities(
+      vim.lsp.protocol.make_client_capabilities()
+    ),
     on_attach = require('vc.lsp.util').on_attach,
   }
 
@@ -40,5 +43,8 @@ null_ls.config({
   },
 })
 lsp_config['null-ls'].setup({
+  capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
   on_attach = require('vc.lsp.util').on_attach,
 })
