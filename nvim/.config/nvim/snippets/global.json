@@ -1,0 +1,9 @@
+{
+  "DO NOT SUBMIT": {
+    "prefix": "DNS",
+    "description": "Add DO_NOT_SUBMIT message",
+    "body": [
+      "DO_NOT_SUBMIT "
+    ]
+  }
+}
