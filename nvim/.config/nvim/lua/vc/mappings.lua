@@ -97,7 +97,6 @@ keys.register({
     name = 'open file',
     d = { require('vc.find').find_dotfiles, 'open dotfile' },
     h = { require('vc.find').find_history, 'open from history' },
-    l = { '<Cmd>lopen<CR>', 'open loclist' },
     p = { require('vc.find').find_files, 'open file' },
     q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
   },
