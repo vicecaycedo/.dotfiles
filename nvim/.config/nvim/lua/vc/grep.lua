@@ -1,9 +1,7 @@
 local M = {}
 
-local telescope_builtin = require('telescope.builtin')
-
 M.grep_dotfiles = function()
-  telescope_builtin.live_grep({
+  require('telescope.builtin').live_grep({
     cwd = vim.fn.stdpath('config'),
     prompt_title = 'Search Dotfiles',
     vimgrep_arguments = {

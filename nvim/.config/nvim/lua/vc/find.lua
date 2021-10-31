@@ -1,16 +1,14 @@
 local M = {}
 
-local telescope_builtin = require('telescope.builtin')
-
 M.find_buffers = function()
-  telescope_builtin.buffers({
+  require('telescope.builtin').buffers({
     initial_mode = 'normal',
     prompt_title = 'Find in Buffers',
   })
 end
 
 M.find_dotfiles = function()
-  telescope_builtin.find_files({
+  require('telescope.builtin').find_files({
     cwd = vim.fn.stdpath('config'),
     follow = true,
     prompt_title = 'Find in Dotfiles',
@@ -18,14 +16,14 @@ M.find_dotfiles = function()
 end
 
 M.find_files = function()
-  telescope_builtin.find_files({
+  require('telescope.builtin').find_files({
     hidden = true,
     prompt_title = 'Find',
   })
 end
 
 M.find_history = function()
-  telescope_builtin.oldfiles({
+  require('telescope.builtin').oldfiles({
     initial_mode = 'normal',
     prompt_title = 'History',
   })
