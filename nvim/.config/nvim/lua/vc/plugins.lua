@@ -14,6 +14,7 @@ use('folke/which-key.nvim') -- Keybindings.
 -- Toggle comments.
 use({
   'b3nj5m1n/kommentary',
+  keys = 'gc',
   config = function()
     require('vc.config.kommentary')
   end,
