@@ -131,6 +131,8 @@ use({
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
   },
+  cmd = 'Telescope',
+  module = 'telescope',
   config = function()
     require('vc.config.telescope')
   end,
