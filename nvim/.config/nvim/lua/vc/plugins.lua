@@ -1,7 +1,6 @@
 -- Initialize Packer.
 local packer = require('packer')
 packer.init()
-packer.reset()
 
 -- Load plugins.
 local use = packer.use
