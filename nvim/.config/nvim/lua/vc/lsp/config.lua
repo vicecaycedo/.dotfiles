@@ -26,6 +26,9 @@ local lsp_config = require('lspconfig')
 local null_ls = require('null-ls')
 null_ls.config({
   sources = {
+    -- Shell parser, formatter, and interpreter.
+    null_ls.builtins.formatting.shfmt,
+    -- Lua formatter.
     null_ls.builtins.formatting.stylua.with({
       extra_args = {
         '--config-path',

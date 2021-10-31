@@ -25,6 +25,7 @@ A collection of configuration files for my development environment.
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [rust](https://www.rust-lang.org/)
+* [shfmt](https://github.com/mvdan/sh)
 * [stow](https://www.gnu.org/software/stow/manual/stow.html)
 * [stylua](https://github.com/JohnnyMorganz/StyLua)
 * [tmux](https://github.com/tmux/tmux)
