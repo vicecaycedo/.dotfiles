@@ -4,11 +4,9 @@ packer.init()
 
 -- Load plugins.
 local use = packer.use
-use('bkad/camelcasemotion') -- Camelcase and underscore objects.
-use('wbthomason/packer.nvim') -- Package manager.
-use('michaeljsmith/vim-indent-object') -- Indent objects.
-use('tpope/vim-repeat') -- Repeat plugin commands.
-use('tpope/vim-surround') -- Surroundings.
+
+-- Camelcase and underscore objects.
+use('bkad/camelcasemotion')
 
 -- Toggle comments.
 use({
@@ -104,6 +102,9 @@ use({
   module = 'nvim-web-devicons',
 })
 
+-- Package manager.
+use('wbthomason/packer.nvim')
+
 -- Toggle True/False.
 use({
   'andrewradev/switch.vim',
@@ -147,6 +148,12 @@ use({
   cmd = { 'Bdelete', 'Bwipeout' },
 })
 
+-- Indent objects.
+use('michaeljsmith/vim-indent-object')
+
+-- Repeat plugin commands.
+use('tpope/vim-repeat')
+
 -- VCS sign column.
 use({
   'mhinz/vim-signify',
@@ -162,6 +169,9 @@ use({
     require('vc.setup.startify')
   end,
 })
+
+-- Surroundings.
+use('tpope/vim-surround')
 
 -- Theme.
 use({
