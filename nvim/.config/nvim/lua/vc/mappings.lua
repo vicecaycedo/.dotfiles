@@ -18,6 +18,10 @@ function _G.smart_enter()
 end
 vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
 
+local function show_line_diagnostics()
+  vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
+end
+
 require('which-key').register({
   ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
@@ -26,10 +30,7 @@ require('which-key').register({
   K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
   Y = { 'y$', 'yank until end of line' },
   g = {
-    H = {
-      '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})<CR>',
-      'show line diagnostics',
-    },
+    H = { show_line_diagnostics, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
     a = { vim.lsp.buf.code_action, 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
