@@ -10,4 +10,3 @@ nnoremap <buffer> <CR> <C-]>
 " Use <Esc> or q to close the help menu.
 nnoremap <buffer> <Esc> <Cmd>q<CR>
 nnoremap <buffer> q <Cmd>q<CR>
-

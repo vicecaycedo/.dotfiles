@@ -11,4 +11,3 @@ aug strip_trailing_whitespace
   au!
   au BufWritePre * call StripTrailingWhitespace()
 aug END
-
