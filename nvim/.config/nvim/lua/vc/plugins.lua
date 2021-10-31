@@ -6,7 +6,6 @@ packer.reset()
 -- Load plugins.
 local use = packer.use
 use('bkad/camelcasemotion') -- Camelcase and underscore objects.
-use('neovim/nvim-lspconfig') -- LSP client configurations.
 use('wbthomason/packer.nvim') -- Package manager.
 use('tpope/vim-abolish') -- Support word variants.
 use('moll/vim-bbye') -- Keep layout when closing buffers.
@@ -50,10 +49,21 @@ use({
   end,
 })
 
+-- LSP client configurations.
+use({
+  'neovim/nvim-lspconfig',
+  config = function()
+    require('vc.lsp.config')
+  end,
+})
+
 -- Language server installer.
 use({
   'williamboman/nvim-lsp-installer',
   requires = 'neovim/nvim-lspconfig',
+  config = function()
+    require('vc.lsp.config')
+  end,
 })
 
 -- General purpose language server.
@@ -63,6 +73,9 @@ use({
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim',
   },
+  config = function()
+    require('vc.lsp.config')
+  end,
 })
 
 -- File explorer.
