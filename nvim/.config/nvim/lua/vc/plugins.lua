@@ -81,7 +81,7 @@ use({
 use({
   'kyazdani42/nvim-tree.lua',
   requires = 'kyazdani42/nvim-web-devicons',
-  cmd = 'NvimTreeToggle',
+  cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' },
   setup = function()
     require('vc.setup.nvim-tree')
   end,
