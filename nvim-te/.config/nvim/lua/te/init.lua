@@ -1,2 +1,2 @@
-require('te.lsp.setup')
 require('te.mappings')
+require('te.plugins')

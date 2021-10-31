@@ -151,7 +151,3 @@ use({
     require('vc.config.telescope')
   end,
 })
-
--- TODO: Move to TE config.
--- Flutter.
-use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' })
