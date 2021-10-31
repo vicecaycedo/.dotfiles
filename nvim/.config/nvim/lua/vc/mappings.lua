@@ -61,8 +61,8 @@ keys.register({
     B = { require('vc.find').find_buffers, 'open buffer' },
     x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
     -- Quickfix navigation.
-    j = { '<Cmd>cnext<CR>', 'next quickfix' },
-    k = { '<Cmd>cprev<CR>', 'previous quickfix' },
+    j = { '<Cmd>cnext<CR>', 'next quickfix item' },
+    k = { '<Cmd>cprev<CR>', 'previous quickfix item' },
   },
   ['<leader>c'] = {
     name = 'clear',
