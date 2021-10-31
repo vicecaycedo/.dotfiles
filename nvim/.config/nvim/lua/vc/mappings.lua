@@ -32,7 +32,7 @@ require('which-key').register({
   g = {
     H = { show_line_diagnostics, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
-    a = { vim.lsp.buf.code_action, 'code actions' },
+    a = { '<Cmd>Telescope lsp_code_actions<CR>', 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
     h = { vim.lsp.buf.hover, 'show documentation' },
     r = { vim.lsp.buf.references, 'open references' },

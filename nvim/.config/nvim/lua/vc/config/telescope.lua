@@ -18,6 +18,7 @@ telescope.setup({
   pickers = {
     buffers = { theme = 'ivy' },
     find_files = { theme = 'ivy' },
+    lsp_code_actions = { theme = 'cursor' },
     oldfiles = { theme = 'ivy' },
   },
 })
