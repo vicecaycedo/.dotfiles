@@ -106,33 +106,6 @@ use({
   module = 'nvim-web-devicons',
 })
 
--- VCS sign column.
-use({
-  'mhinz/vim-signify',
-  setup = function()
-    require('vc.setup.signify')
-  end,
-})
-
--- Startify.
-use({
-  'mhinz/vim-startify',
-  setup = function()
-    require('vc.setup.startify')
-  end,
-})
-
--- Theme.
-use({
-  'mofiqul/vscode.nvim',
-  setup = function()
-    vim.g.vscode_style = 'dark'
-  end,
-  config = function()
-    vim.cmd('colorscheme vscode')
-  end,
-})
-
 -- Toggle True/False.
 use({
   'andrewradev/switch.vim',
@@ -161,5 +134,32 @@ use({
   },
   config = function()
     require('vc.config.telescope')
+  end,
+})
+
+-- VCS sign column.
+use({
+  'mhinz/vim-signify',
+  setup = function()
+    require('vc.setup.signify')
+  end,
+})
+
+-- Startify.
+use({
+  'mhinz/vim-startify',
+  setup = function()
+    require('vc.setup.startify')
+  end,
+})
+
+-- Theme.
+use({
+  'mofiqul/vscode.nvim',
+  setup = function()
+    vim.g.vscode_style = 'dark'
+  end,
+  config = function()
+    vim.cmd('colorscheme vscode')
   end,
 })
