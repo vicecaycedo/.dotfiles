@@ -1,11 +1,3 @@
--- Configure how diagnostics are displayed.
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    virtual_text = false,
-  }
-)
-
 -- Set up language servers installed through nvim-lsp-installer.
 --   `:LspInstall <server>`
 -- My supported language servers:
@@ -48,3 +40,11 @@ lsp_config['null-ls'].setup({
   ),
   on_attach = require('vc.lsp.util').on_attach,
 })
+
+-- Configure how diagnostics are displayed.
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = false,
+  }
+)
