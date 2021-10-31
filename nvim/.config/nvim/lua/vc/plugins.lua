@@ -6,7 +6,6 @@ packer.init()
 local use = packer.use
 use('bkad/camelcasemotion') -- Camelcase and underscore objects.
 use('wbthomason/packer.nvim') -- Package manager.
-use('tpope/vim-abolish') -- Support word variants.
 use('moll/vim-bbye') -- Keep layout when closing buffers.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('tpope/vim-repeat') -- Repeat plugin commands.
@@ -134,6 +133,13 @@ use({
   config = function()
     require('vc.config.telescope')
   end,
+})
+
+-- Word variants.
+use({
+  'tpope/vim-abolish',
+  cmd = { 'S', 'Subvert' },
+  keys = 'cr',
 })
 
 -- VCS sign column.
