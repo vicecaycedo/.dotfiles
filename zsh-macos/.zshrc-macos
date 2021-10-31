@@ -1,6 +1,7 @@
 # PATH.
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/Users/vc/.cargo/bin
+export PATH=$PATH:/Users/vc/go/bin
 
 # Aliases.
 alias s="ls -AGl"
