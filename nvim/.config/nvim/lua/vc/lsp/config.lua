@@ -35,6 +35,8 @@ null_ls.config({
         vim.fn.expand('~/.config/stylua/stylua.toml'),
       },
     }),
+    -- Vimscript linter.
+    null_ls.builtins.diagnostics.vint,
   },
 })
 lsp_config['null-ls'].setup({

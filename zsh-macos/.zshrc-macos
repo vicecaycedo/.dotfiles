@@ -2,6 +2,7 @@
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/Users/vc/.cargo/bin
 export PATH=$PATH:/Users/vc/go/bin
+export PATH=$PATH:/Users/vc/Library/Python/3.8/bin
 
 # Aliases.
 alias s="ls -AGl"
