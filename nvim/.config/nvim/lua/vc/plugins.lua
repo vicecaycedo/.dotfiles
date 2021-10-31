@@ -9,7 +9,6 @@ use('wbthomason/packer.nvim') -- Package manager.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('tpope/vim-repeat') -- Repeat plugin commands.
 use('tpope/vim-surround') -- Surroundings.
-use('folke/which-key.nvim') -- Keybindings.
 
 -- Toggle comments.
 use({
@@ -172,5 +171,13 @@ use({
   end,
   config = function()
     vim.cmd('colorscheme vscode')
+  end,
+})
+
+-- Keybindings.
+use({
+  'folke/which-key.nvim',
+  config = function()
+    require('vc.config.which-key')
   end,
 })

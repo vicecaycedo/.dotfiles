@@ -18,19 +18,7 @@ function _G.smart_enter()
 end
 vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
 
-local keys = require('which-key')
-keys.setup({
-  plugins = {
-    presets = {
-      g = false,
-      motions = false,
-      operators = false,
-      text_objects = false,
-    },
-  },
-  show_help = false,
-})
-keys.register({
+require('which-key').register({
   ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
@@ -110,29 +98,4 @@ keys.register({
     },
     s = { '<Cmd>Telescope search_history<CR>', 'search history' },
   },
-  -- Labels for Abolish plugin.
-  ['cr'] = {
-    name = 'coerce',
-    ['<Space>'] = { 'to space case' },
-    ['.'] = { 'to.dot.case' },
-    ['-'] = { 'to-dash-case' },
-    c = { 'toCamelCase' },
-    m = { 'ToMixedCase' },
-    s = { 'to_snake_case' },
-    u = { 'TO_UPPER_SNAKE_CASE' },
-  },
-  -- Ignore kommentary mappings.
-  ['gc'] = 'which_key_ignore',
-  -- Ignore vim-surround mappings.
-  ['cs'] = 'which_key_ignore',
-  ['cS'] = 'which_key_ignore',
-  ['ds'] = 'which_key_ignore',
-  ['dS'] = 'which_key_ignore',
-  ['ys'] = 'which_key_ignore',
-  ['yS'] = 'which_key_ignore',
-  -- Ignore camelcasemotion mappings.
-  ['<leader>b'] = 'which_key_ignore',
-  ['<leader>e'] = 'which_key_ignore',
-  ['<leader>ge'] = 'which_key_ignore',
-  ['<leader>w'] = 'which_key_ignore',
 })
