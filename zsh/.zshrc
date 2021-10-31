@@ -118,4 +118,3 @@ alias so="source $HOME/.zshrc"
 [ -f ~/.zshrc-google ] && source ~/.zshrc-google
 [ -f ~/.zshrc-macos ] && source ~/.zshrc-macos
 [ -f ~/.zshrc-te ] && source ~/.zshrc-te
-

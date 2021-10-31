@@ -9,4 +9,3 @@ alias s="ls -AGl"
 
 # FZF.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
