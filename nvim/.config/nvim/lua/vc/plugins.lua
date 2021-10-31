@@ -6,7 +6,6 @@ packer.init()
 local use = packer.use
 use('bkad/camelcasemotion') -- Camelcase and underscore objects.
 use('wbthomason/packer.nvim') -- Package manager.
-use('moll/vim-bbye') -- Keep layout when closing buffers.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('tpope/vim-repeat') -- Repeat plugin commands.
 use('tpope/vim-surround') -- Surroundings.
@@ -140,6 +139,12 @@ use({
   'tpope/vim-abolish',
   cmd = { 'S', 'Subvert' },
   keys = 'cr',
+})
+
+-- Keep layout when closing buffers.
+use({
+  'moll/vim-bbye',
+  cmd = { 'Bdelete', 'Bwipeout' },
 })
 
 -- VCS sign column.
