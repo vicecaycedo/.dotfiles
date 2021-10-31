@@ -25,7 +25,8 @@ use({
 
 -- Statusline.
 use({
-  'hoob3rt/lualine.nvim',
+  'nvim-lualine/lualine.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
   config = function()
     require('vc.config.lualine')
   end,
