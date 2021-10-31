@@ -43,7 +43,7 @@ use({
     'hrsh7th/vim-vsnip',
   },
   setup = function()
-    require('vc.setup.vsnip')
+    require('vc.setup.nvim-cmp')
   end,
   config = function()
     require('vc.config.nvim-cmp')
