@@ -37,7 +37,6 @@ keys.register({
   g = {
     a = { vim.lsp.buf.code_action, 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
-    F = { '<Cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<CR>', 'format' },
     h = { vim.lsp.buf.hover, 'show documentation' },
     H = {
       '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})<CR>',
