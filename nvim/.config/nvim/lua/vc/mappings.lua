@@ -49,7 +49,6 @@ require('which-key').register({
     x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
   },
   ['<leader>c'] = {
-    name = 'clear',
     s = { '<Cmd>let @/ = ""<CR>', 'clear search' },
   },
   ['<leader>d'] = {
