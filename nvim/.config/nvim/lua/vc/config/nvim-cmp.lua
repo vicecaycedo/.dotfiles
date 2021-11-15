@@ -49,7 +49,7 @@ cmp.setup({
     -- Source: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings.
     ['<Tab>'] = smart_tab,
     ['<S-Tab>'] = smart_s_tab,
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm(),
   },
   sources = {
     { name = 'vsnip' },
