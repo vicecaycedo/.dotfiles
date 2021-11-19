@@ -13,7 +13,6 @@ A collection of configuration files for my development environment.
 ## Dependencies
 
 * [amethyst](https://github.com/ianyh/Amethyst)
-* [flutter](https://flutter.dev/)
 * [fzf](https://github.com/junegunn/fzf)
 * [go](https://golang.org/)
 * [homebrew](https://brew.sh/)
