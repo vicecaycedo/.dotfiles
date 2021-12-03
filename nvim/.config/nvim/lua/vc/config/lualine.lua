@@ -2,6 +2,7 @@ require('lualine').setup({
   extensions = {
     'nvim-tree',
     'quickfix',
+    'symbols-outline',
   },
   options = {
     component_separators = { left = '|', right = '|' },
