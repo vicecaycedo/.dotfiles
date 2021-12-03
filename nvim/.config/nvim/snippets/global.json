@@ -3,7 +3,7 @@
     "prefix": "DNS",
     "description": "Add DO_NOT_SUBMIT message",
     "body": [
-      "DO_NOT_SUBMIT "
+      "DO_NOT_SUBMIT"
     ]
   }
 }
