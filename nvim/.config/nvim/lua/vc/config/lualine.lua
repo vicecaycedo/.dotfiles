@@ -10,14 +10,16 @@ require('lualine').setup({
     theme = 'vscode',
   },
   sections = {
-    lualine_b = {},
+    lualine_b = { 'diagnostics' },
     lualine_c = {
+      'location',
       {
         'filename',
         path = 1, -- Relative path.
       },
     },
     lualine_x = {},
-    lualine_y = { 'diagnostics' },
+    lualine_y = {},
+    lualine_z = {},
   },
 })
