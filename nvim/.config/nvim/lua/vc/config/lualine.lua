@@ -4,6 +4,8 @@ require('lualine').setup({
     'quickfix',
   },
   options = {
+    component_separators = { left = '|', right = '|' },
+    section_separators = { left = '', right = '' },
     theme = 'vscode',
   },
   sections = {
