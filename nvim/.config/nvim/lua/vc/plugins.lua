@@ -5,6 +5,15 @@ packer.init()
 -- Load plugins.
 local use = packer.use
 
+-- Bufferline.
+use({
+  'akinsho/bufferline.nvim',
+  requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
+  config = function()
+    require('vc.config.bufferline')
+  end,
+})
+
 -- Camelcase and underscore objects.
 use('bkad/camelcasemotion')
 

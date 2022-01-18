@@ -23,8 +23,8 @@ local function show_line_diagnostics()
 end
 
 require('which-key').register({
-  ['<Left>'] = { '<Cmd>bprevious<CR>', 'previous buffer' },
-  ['<Right>'] = { '<Cmd>bnext<CR>', 'next buffer' },
+  ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
+  ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   J = { '<Plug>(signify-next-hunk)', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
@@ -38,6 +38,8 @@ require('which-key').register({
   },
   ['<leader>'] = {
     name = 'leader',
+    ['<Left>'] = { '<Cmd>BufferLineMovePrev<CR>', 'move buffer left' },
+    ['<Right>'] = { '<Cmd>BufferLineMoveNext<CR>', 'move buffer right' },
     B = { require('vc.find').find_buffers, 'open buffer' },
     J = { 'J', 'join lines' },
     S = { '<Cmd>Startify<CR>', 'open startify' },
