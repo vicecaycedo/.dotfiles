@@ -5,5 +5,13 @@
     "body": [
       "# TODO(vicentecaycedo): "
     ]
+  },
+  "Debug": {
+    "prefix": "pdb",
+    "description": "Add python tracing",
+    "body": [
+      "# TODO(vicentecaycedo): Remove python tracing. DO NOT SUBMIT.",
+      "import pdb; pdb.set_trace()  # pylint: disable=g-import-not-at-top,multiple-statements,line-too-long"
+    ]
   }
 }
