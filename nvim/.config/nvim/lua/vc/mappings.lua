@@ -28,7 +28,6 @@ require('which-key').register({
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   J = { '<Plug>(signify-next-hunk)', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
-  Y = { 'y$', 'yank until end of line' },
   g = {
     H = { show_line_diagnostics, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
