@@ -22,9 +22,12 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 -- Set up null-ls (general purpose language server).
-local lsp_config = require('lspconfig')
 local null_ls = require('null-ls')
-null_ls.config({
+null_ls.setup({
+  capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
+  on_attach = require('vc.lsp.util').on_attach,
   sources = {
     -- Shell parser, formatter, and interpreter.
     null_ls.builtins.formatting.shfmt,
@@ -38,12 +41,6 @@ null_ls.config({
     -- Vimscript linter.
     null_ls.builtins.diagnostics.vint,
   },
-})
-lsp_config['null-ls'].setup({
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
-  on_attach = require('vc.lsp.util').on_attach,
 })
 
 -- Configure how diagnostics are displayed.
