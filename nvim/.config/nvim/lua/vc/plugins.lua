@@ -186,12 +186,23 @@ use('tpope/vim-surround')
 
 -- Theme.
 use({
-  'mofiqul/vscode.nvim',
+  'morhetz/gruvbox',
   setup = function()
-    vim.g.vscode_style = 'dark'
+    vim.g.gruvbox_contrast_dark = 'hard'
+    vim.g.gruvbox_invert_selection = false
+    vim.g.gruvbox_sign_column = 'bg0'
   end,
   config = function()
-    vim.cmd('colorscheme vscode')
+    vim.cmd('colorscheme gruvbox')
+  end,
+})
+use({
+  'mofiqul/vscode.nvim',
+  setup = function()
+    -- vim.g.vscode_style = 'dark'
+  end,
+  config = function()
+    -- vim.cmd('colorscheme vscode')
   end,
 })
 
