@@ -55,7 +55,7 @@ require('which-key').register({
   ['<leader>d'] = {
     name = 'open diagnostics',
     d = {
-      '<Cmd>Telescope lsp_document_diagnostics<CR>',
+      '<Cmd>Telescope diagnostics bufnr=0<CR>',
       'open document diagnostics',
     },
   },
