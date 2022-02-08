@@ -18,10 +18,6 @@ function _G.smart_enter()
 end
 vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
 
-local function show_line_diagnostics()
-  vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
-end
-
 require('which-key').register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
@@ -29,7 +25,7 @@ require('which-key').register({
   J = { '<Plug>(signify-next-hunk)', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
   g = {
-    H = { show_line_diagnostics, 'show line diagnostics' },
+    H = { vim.diagnostic.open_float, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
     a = { '<Cmd>Telescope lsp_code_actions<CR>', 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
