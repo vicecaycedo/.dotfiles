@@ -58,10 +58,6 @@ require('which-key').register({
       '<Cmd>Telescope lsp_document_diagnostics<CR>',
       'open document diagnostics',
     },
-    D = {
-      '<Cmd>Telescope lsp_workspace_diagnostics<CR>',
-      'open workspace diagnostics',
-    },
   },
   ['<leader>f'] = {
     name = 'grep file(s)',
