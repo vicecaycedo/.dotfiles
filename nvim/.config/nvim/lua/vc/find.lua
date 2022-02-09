@@ -1,12 +1,5 @@
 local M = {}
 
-M.find_buffers = function()
-  require('telescope.builtin').buffers({
-    initial_mode = 'normal',
-    prompt_title = 'Find in Buffers',
-  })
-end
-
 M.find_dotfiles = function()
   require('telescope.builtin').find_files({
     cwd = vim.fn.stdpath('config'),

@@ -36,7 +36,6 @@ require('which-key').register({
     name = 'leader',
     ['<Left>'] = { '<Cmd>BufferLineMovePrev<CR>', 'move buffer left' },
     ['<Right>'] = { '<Cmd>BufferLineMoveNext<CR>', 'move buffer right' },
-    B = { require('vc.find').find_buffers, 'open buffer' },
     J = { 'J', 'join lines' },
     S = { '<Cmd>Startify<CR>', 'open startify' },
     j = { '<Cmd>cnext<CR>', 'next quickfix item' },
