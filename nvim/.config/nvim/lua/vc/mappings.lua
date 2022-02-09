@@ -22,8 +22,8 @@ require('which-key').register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
   ['-'] = { '<Cmd>Switch<CR>', 'switch' },
-  J = { '<Plug>(signify-next-hunk)', 'next diff' },
-  K = { '<Plug>(signify-prev-hunk)', 'prev diff' },
+  J = { '<Plug>(signify-next-hunk)zz', 'next diff' },
+  K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
   g = {
     H = { vim.diagnostic.open_float, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
