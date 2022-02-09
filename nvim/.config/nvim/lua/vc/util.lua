@@ -1,5 +1,11 @@
 local M = {}
 
+-- Returns true if [name]/init.lua exists in the config.
+M.config_exists = function(name)
+  local config_path = vim.fn.stdpath('config')
+  return vim.fn.filereadable(config_path .. '/lua/' .. name .. '/init.lua') == 1
+end
+
 -- Pretty-prints objects.
 -- Source: https://github.com/nanotee/nvim-lua-guide.
 M.pprint = function(...)
