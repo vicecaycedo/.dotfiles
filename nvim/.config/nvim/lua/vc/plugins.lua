@@ -17,6 +17,19 @@ use({
 -- Camelcase and underscore objects.
 use('bkad/camelcasemotion')
 
+-- Gruvbox theme.
+use({
+  'morhetz/gruvbox',
+  setup = function()
+    vim.g.gruvbox_contrast_dark = 'hard'
+    vim.g.gruvbox_invert_selection = false
+    vim.g.gruvbox_sign_column = 'bg0'
+  end,
+  config = function()
+    vim.cmd('colorscheme gruvbox')
+  end,
+})
+
 -- Toggle comments.
 use({
   'b3nj5m1n/kommentary',
@@ -32,6 +45,18 @@ use({
   requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
   config = function()
     require('vc.config.lualine')
+  end,
+})
+
+-- General purpose language server.
+use({
+  'jose-elias-alvarez/null-ls.nvim',
+  requires = {
+    'neovim/nvim-lspconfig',
+    'nvim-lua/plenary.nvim',
+  },
+  config = function()
+    require('vc.lsp.config')
   end,
 })
 
@@ -66,18 +91,6 @@ use({
 use({
   'williamboman/nvim-lsp-installer',
   requires = 'neovim/nvim-lspconfig',
-  config = function()
-    require('vc.lsp.config')
-  end,
-})
-
--- General purpose language server.
-use({
-  'jose-elias-alvarez/null-ls.nvim',
-  requires = {
-    'neovim/nvim-lspconfig',
-    'nvim-lua/plenary.nvim',
-  },
   config = function()
     require('vc.lsp.config')
   end,
@@ -184,18 +197,7 @@ use({
 -- Surroundings.
 use('tpope/vim-surround')
 
--- Theme.
-use({
-  'morhetz/gruvbox',
-  setup = function()
-    vim.g.gruvbox_contrast_dark = 'hard'
-    vim.g.gruvbox_invert_selection = false
-    vim.g.gruvbox_sign_column = 'bg0'
-  end,
-  config = function()
-    vim.cmd('colorscheme gruvbox')
-  end,
-})
+-- VSCode theme.
 use({
   'mofiqul/vscode.nvim',
   setup = function()
