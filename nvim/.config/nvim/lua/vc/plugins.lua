@@ -50,6 +50,15 @@ use({
   end,
 })
 
+-- Better quickfix.
+use({
+  'kevinhwang91/nvim-bqf',
+  ft = 'qf',
+  config = function()
+    require('vc.config.bqf')
+  end,
+})
+
 -- Autocompletion and Snippets.
 use({
   'hrsh7th/nvim-cmp',
