@@ -18,17 +18,7 @@ use({
 use('bkad/camelcasemotion')
 
 -- Gruvbox theme.
-use({
-  'morhetz/gruvbox',
-  setup = function()
-    vim.g.gruvbox_contrast_dark = 'hard'
-    vim.g.gruvbox_invert_selection = false
-    vim.g.gruvbox_sign_column = 'bg0'
-  end,
-  config = function()
-    vim.cmd('colorscheme gruvbox')
-  end,
-})
+use('morhetz/gruvbox')
 
 -- Toggle comments.
 use({
@@ -198,15 +188,7 @@ use({
 use('tpope/vim-surround')
 
 -- VSCode theme.
-use({
-  'mofiqul/vscode.nvim',
-  setup = function()
-    -- vim.g.vscode_style = 'dark'
-  end,
-  config = function()
-    -- vim.cmd('colorscheme vscode')
-  end,
-})
+use('mofiqul/vscode.nvim')
 
 -- Keybindings.
 use({

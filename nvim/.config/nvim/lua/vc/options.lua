@@ -36,3 +36,11 @@ end
 -- Don't load builtin plugins.
 vim.g.loaded_matchit = true
 vim.g.loaded_netrwPlugin = true
+
+-- Theme.
+vim.g.gruvbox_contrast_dark = 'hard'
+vim.g.gruvbox_invert_selection = false
+vim.g.gruvbox_sign_column = 'bg0'
+vim.cmd('colorscheme gruvbox')
+-- vim.g.vscode_style = 'dark'
+-- vim.cmd('colorscheme vscode')
