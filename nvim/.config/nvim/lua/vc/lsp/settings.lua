@@ -7,6 +7,9 @@ M.lua = {
       version = 'LuaJIT',
     },
     diagnostics = {
+      disable = {
+        'different-requires',
+      },
       globals = {
         'vim', -- Neovim
         'use', -- Packer
