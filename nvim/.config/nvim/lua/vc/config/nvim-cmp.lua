@@ -58,3 +58,15 @@ cmp.setup({
     { name = 'nvim_lua' },
   },
 })
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' },
+  },
+})
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' },
+  },
+})
