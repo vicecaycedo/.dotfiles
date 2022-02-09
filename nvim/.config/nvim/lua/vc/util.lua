@@ -1,6 +1,6 @@
 local M = {}
 
--- Pretty-print objects.
+-- Pretty-prints objects.
 -- Source: https://github.com/nanotee/nvim-lua-guide.
 M.pprint = function(...)
   local objects = vim.tbl_map(vim.inspect, { ... })
@@ -8,13 +8,13 @@ M.pprint = function(...)
   return ...
 end
 
--- Replaces terminal codes and keycodes (<CR>, <Esc>, ...) in a string with the
+-- Replaces terminal codes and keycodes (<CR>, <Esc>, etc.) in [str] with the
 -- internal representation.
 M.replace_termcodes = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
--- Returns true if value is in table.
+-- Returns true if [value] is in [table].
 M.table_contains = function(table, value)
   for _, v in ipairs(table) do
     if v == value then
@@ -24,6 +24,7 @@ M.table_contains = function(table, value)
   return false
 end
 
+-- Toggles the quickfix menu open/closed.
 M.toggle_quickfix = function()
   for _, win in pairs(vim.fn.getwininfo()) do
     if win.quickfix == 1 then
@@ -34,6 +35,7 @@ M.toggle_quickfix = function()
   vim.cmd('copen')
 end
 
+-- Toggles the option to strip trailing whitespace on save.
 M.toggle_strip_trailing_whitespace = function()
   -- See plugin/strip_trailing_whitespace.vim.
   vim.b.noStripTrailingWhitespace = not vim.b.noStripTrailingWhitespace
