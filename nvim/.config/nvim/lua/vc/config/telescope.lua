@@ -16,10 +16,7 @@ telescope.setup({
     sorting_strategy = 'ascending',
   },
   pickers = {
-    buffers = { theme = 'ivy' },
-    find_files = { theme = 'ivy' },
     lsp_code_actions = { theme = 'cursor' },
-    oldfiles = { theme = 'ivy' },
   },
 })
 telescope.load_extension('fzf')
