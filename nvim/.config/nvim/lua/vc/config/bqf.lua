@@ -1,7 +1,9 @@
 require('bqf').setup({
   func_map = {
-    vsplit = 'v',
-    pscrollup = '<C-u>',
+    open = 'o',
+    openc = '<CR>',
     pscrolldown = '<C-d>',
+    pscrollup = '<C-u>',
+    vsplit = 'v',
   },
 })
