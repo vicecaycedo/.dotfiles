@@ -1,6 +1,5 @@
 for key, val in pairs({
   colorcolumn = '80', -- Line limit column.
-  hidden = true, -- Hide (don't unload) buffers when abandoned.
   signcolumn = 'yes', -- Always show sign column.
   showmode = false, -- Don't show MODE messages.
   termguicolors = true, -- True colors.
