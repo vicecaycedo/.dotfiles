@@ -10,7 +10,7 @@
     "prefix": "pdb",
     "description": "Add python tracing",
     "body": [
-      "# TODO(vicentecaycedo): Remove python tracing. DO NOT SUBMIT.",
+      "# TODO(vicentecaycedo): DO_NOT_SUBMIT - Remove debugging.",
       "import pdb; pdb.set_trace()  # pylint: disable=g-import-not-at-top,multiple-statements,line-too-long"
     ]
   }
