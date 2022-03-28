@@ -21,7 +21,6 @@ vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
 require('which-key').register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
-  ['-'] = { '<Cmd>Switch<CR>', 'switch' },
   J = { '<Plug>(signify-next-hunk)zz', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
   g = {

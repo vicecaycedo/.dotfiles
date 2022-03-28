@@ -135,15 +135,6 @@ use({
 -- Package manager.
 use('wbthomason/packer.nvim')
 
--- Toggle True/False.
-use({
-  'andrewradev/switch.vim',
-  cmd = 'Switch',
-  setup = function()
-    require('vc.setup.switch')
-  end,
-})
-
 -- Symbols outline.
 use({
   'simrat39/symbols-outline.nvim',
