@@ -61,12 +61,12 @@ cmp.setup({
 
 cmp.setup.cmdline(':', {
   sources = {
-    { name = 'cmdline' },
+    { name = 'cmdline', max_item_count = 20 },
   },
 })
 
 cmp.setup.cmdline('/', {
   sources = {
-    { name = 'buffer' },
+    { name = 'buffer', max_item_count = 20 },
   },
 })
