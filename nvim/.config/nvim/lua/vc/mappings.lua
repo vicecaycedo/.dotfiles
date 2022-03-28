@@ -23,6 +23,7 @@ require('which-key').register({
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
   J = { '<Plug>(signify-next-hunk)zz', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
+  Q = { '<Nop>', 'disable Ex mode' },
   g = {
     H = { vim.diagnostic.open_float, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
