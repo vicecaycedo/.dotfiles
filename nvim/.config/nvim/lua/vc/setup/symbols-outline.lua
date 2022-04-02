@@ -4,5 +4,5 @@ vim.g.symbols_outline = {
   show_numbers = true,
   show_relative_numbers = true,
   show_symbol_details = false,
-  width = 85,
+  width = 50,
 }
