@@ -157,12 +157,6 @@ use({
   keys = 'cr',
 })
 
--- Keep layout when closing buffers.
-use({
-  'moll/vim-bbye',
-  cmd = { 'Bdelete', 'Bwipeout' },
-})
-
 -- Indent objects.
 use('michaeljsmith/vim-indent-object')
 

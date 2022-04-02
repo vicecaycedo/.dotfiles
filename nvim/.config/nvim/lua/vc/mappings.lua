@@ -40,7 +40,7 @@ require('which-key').register({
     k = { '<Cmd>cprev<CR>', 'previous quickfix item' },
     q = { '<Cmd>q<CR>', 'close window' },
     s = { '<Cmd>update<CR>', 'save file' },
-    x = { '<Cmd>Bwipeout<CR>', 'close buffer' },
+    x = { '<Cmd>bdelete<CR>', 'close buffer' },
   },
   ['<leader>c'] = {
     s = { '<Cmd>let @/ = ""<CR>', 'clear search' },
