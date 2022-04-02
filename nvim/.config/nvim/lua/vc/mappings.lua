@@ -2,12 +2,6 @@ vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
 local t = require('vc.util').replace_termcodes
-
-function _G.terminal_esc()
-  return t('<C-\\>') .. t('<C-n>')
-end
-vim.api.nvim_set_keymap('t', '<Esc>', 'v:lua.terminal_esc()', { expr = true })
-
 function _G.smart_enter()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == 'nofile' or buftype == 'quickfix' then
