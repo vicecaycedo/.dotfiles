@@ -32,6 +32,10 @@ require('which-key').register({
     ['<Right>'] = { '<Cmd>BufferLineMoveNext<CR>', 'move buffer right' },
     J = { 'J', 'join lines' },
     S = { '<Cmd>Startify<CR>', 'open startify' },
+    d = {
+      '<Cmd>Telescope diagnostics bufnr=0<CR>',
+      'open buffer diagnostics',
+    },
     j = { '<Cmd>cnext<CR>', 'next quickfix item' },
     k = { '<Cmd>cprev<CR>', 'previous quickfix item' },
     q = { '<Cmd>q<CR>', 'close window' },
@@ -40,13 +44,6 @@ require('which-key').register({
   },
   ['<leader>c'] = {
     s = { '<Cmd>let @/ = ""<CR>', 'clear search' },
-  },
-  ['<leader>d'] = {
-    name = 'open diagnostics',
-    d = {
-      '<Cmd>Telescope diagnostics bufnr=0<CR>',
-      'open document diagnostics',
-    },
   },
   ['<leader>f'] = {
     name = 'grep file(s)',
