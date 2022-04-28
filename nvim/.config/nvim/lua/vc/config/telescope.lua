@@ -2,8 +2,11 @@ local telescope = require('telescope')
 telescope.setup({
   defaults = {
     file_ignore_patterns = {
-      '.git/',
-      'packer_compiled.*',
+      -- See: https://www.lua.org/manual/5.1/manual.html#5.4.1 for more
+      -- information about lua regex.
+      '%.git/',
+      'packer_compiled%.lua',
+      'packer_compiled%.vim',
     },
     layout_config = {
       prompt_position = 'top',
