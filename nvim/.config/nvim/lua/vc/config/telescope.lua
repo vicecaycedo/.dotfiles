@@ -5,6 +5,7 @@ telescope.setup({
       -- See: https://www.lua.org/manual/5.1/manual.html#5.4.1 for more
       -- information about lua regex.
       '%.git/',
+      '%.orig',
       'packer_compiled%.lua',
       'packer_compiled%.vim',
     },
