@@ -2,6 +2,7 @@ for key, val in pairs({
   colorcolumn = '80', -- Line limit column.
   signcolumn = 'yes', -- Always show sign column.
   showmode = false, -- Don't show MODE messages.
+  swapfile = false, -- Disable swap files.
   termguicolors = true, -- True colors.
   timeoutlen = 400, -- Shorter timeout for WhichKey.
   updatetime = 100, -- Decrease updatetime for a better experience.
