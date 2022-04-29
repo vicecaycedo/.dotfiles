@@ -19,6 +19,9 @@ require('which-key').register({
   K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
   Q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
   g = {
+    [':'] = { 'q:', "cmdline window ':'" },
+    ['/'] = { 'q/', "cmdline window '/'" },
+    ['?'] = { 'q?', "cmdline window '?'" },
     H = { vim.diagnostic.open_float, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
     a = { '<Cmd>Telescope lsp_code_actions<CR>', 'code actions' },
