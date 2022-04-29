@@ -17,7 +17,7 @@ require('which-key').register({
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
   J = { '<Plug>(signify-next-hunk)zz', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
-  Q = { '<Nop>', 'disable Ex mode' },
+  Q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
   g = {
     H = { vim.diagnostic.open_float, 'show line diagnostics' },
     R = { vim.lsp.buf.rename, 'rename' },
@@ -64,7 +64,6 @@ require('which-key').register({
     d = { require('vc.find').find_dotfiles, 'open dotfile' },
     h = { require('vc.find').find_history, 'open from history' },
     p = { require('vc.find').find_files, 'open file' },
-    q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },
   },
   ['<leader>t'] = {
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
