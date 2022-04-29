@@ -1,16 +1,16 @@
 vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
-local t = require('vc.util').replace_termcodes
-function _G.smart_enter()
+-- Smart <CR>.
+vim.keymap.set('n', '<CR>', function()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == 'nofile' or buftype == 'quickfix' then
-    return t('<CR>')
-  else
-    return t('o<Esc>')
+    return '<CR>'
   end
-end
-vim.api.nvim_set_keymap('n', '<CR>', 'v:lua.smart_enter()', { expr = true })
+  return 'o<Esc>'
+end, {
+  expr = true,
+})
 
 require('which-key').register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },

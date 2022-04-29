@@ -14,12 +14,6 @@ M.pprint = function(...)
   return ...
 end
 
--- Replaces terminal codes and keycodes (<CR>, <Esc>, etc.) in [str] with the
--- internal representation.
-M.replace_termcodes = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 -- Returns true if [value] is in [table].
 M.table_contains = function(table, value)
   for _, v in ipairs(table) do
