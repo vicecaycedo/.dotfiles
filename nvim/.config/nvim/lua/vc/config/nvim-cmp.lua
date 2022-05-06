@@ -30,12 +30,12 @@ cmp.setup({
       vim.fn['vsnip#anonymous'](args.body)
     end,
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
     -- Inspired by: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings.
     ['<Tab>'] = smart_tab,
     ['<S-Tab>'] = smart_s_tab,
     ['<CR>'] = cmp.mapping.confirm(),
-  },
+  }),
   sources = {
     { name = 'vsnip' },
     { name = 'nvim_lsp' },
@@ -45,12 +45,14 @@ cmp.setup({
 })
 
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'cmdline', max_item_count = 20 },
   },
 })
 
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer', max_item_count = 20 },
   },
