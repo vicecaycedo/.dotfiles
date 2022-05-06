@@ -29,8 +29,6 @@ null_ls.setup({
   ),
   on_attach = require('vc.lsp.util').on_attach,
   sources = {
-    -- Shell parser, formatter, and interpreter.
-    null_ls.builtins.formatting.shfmt,
     -- Lua formatter.
     null_ls.builtins.formatting.stylua.with({
       extra_args = {
@@ -38,8 +36,6 @@ null_ls.setup({
         vim.fn.expand('~/.config/stylua/stylua.toml'),
       },
     }),
-    -- Vimscript linter.
-    null_ls.builtins.diagnostics.vint,
   },
 })
 
