@@ -5,6 +5,13 @@ packer.init()
 -- Load plugins.
 local use = packer.use
 
+use('bkad/camelcasemotion') -- Camelcase and underscore objects.
+use('morhetz/gruvbox') -- Gruvbox theme.
+use('michaeljsmith/vim-indent-object') -- Indent objects.
+use('tpope/vim-repeat') -- Repeat plugin commands.
+use('tpope/vim-surround') -- Surroundings.
+use('mofiqul/vscode.nvim') -- VSCode theme.
+
 -- Bufferline.
 use({
   'akinsho/bufferline.nvim',
@@ -13,12 +20,6 @@ use({
     require('vc.config.bufferline')
   end,
 })
-
--- Camelcase and underscore objects.
-use('bkad/camelcasemotion')
-
--- Gruvbox theme.
-use('morhetz/gruvbox')
 
 -- Toggle comments.
 use({
@@ -157,12 +158,6 @@ use({
   keys = 'cr',
 })
 
--- Indent objects.
-use('michaeljsmith/vim-indent-object')
-
--- Repeat plugin commands.
-use('tpope/vim-repeat')
-
 -- VCS sign column.
 use({
   'mhinz/vim-signify',
@@ -178,12 +173,6 @@ use({
     require('vc.setup.startify')
   end,
 })
-
--- Surroundings.
-use('tpope/vim-surround')
-
--- VSCode theme.
-use('mofiqul/vscode.nvim')
 
 -- Keybindings.
 use({
