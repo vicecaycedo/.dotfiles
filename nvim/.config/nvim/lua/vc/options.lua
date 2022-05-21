@@ -42,5 +42,5 @@ vim.g.gruvbox_contrast_dark = 'hard'
 vim.g.gruvbox_invert_selection = false
 vim.g.gruvbox_sign_column = 'bg0'
 vim.g.vscode_style = 'dark'
-vim.cmd('colorscheme gruvbox')
--- vim.cmd('colorscheme vscode')
+-- vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme vscode')

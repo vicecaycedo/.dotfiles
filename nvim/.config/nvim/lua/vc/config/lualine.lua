@@ -7,8 +7,8 @@ require('lualine').setup({
   options = {
     component_separators = { left = '|', right = '|' },
     section_separators = { left = '', right = '' },
-    theme = 'gruvbox',
-    -- theme = 'vscode',
+    -- theme = 'gruvbox',
+    theme = 'vscode',
   },
   sections = {
     lualine_b = { 'diagnostics' },
