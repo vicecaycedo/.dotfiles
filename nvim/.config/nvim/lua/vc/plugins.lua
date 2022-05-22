@@ -69,13 +69,11 @@ use({
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lua',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
+    'saadparwaiz1/cmp_luasnip',
+    'l3mon4d3/luasnip',
   },
-  setup = function()
-    require('vc.setup.nvim-cmp')
-  end,
   config = function()
+    require('vc.config.luasnip')
     require('vc.config.nvim-cmp')
   end,
 })

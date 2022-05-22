@@ -6,14 +6,6 @@ M.config_exists = function(name)
   return vim.fn.filereadable(config_path .. '/lua/' .. name .. '/init.lua') == 1
 end
 
--- Pretty-prints objects.
--- Source: https://github.com/nanotee/nvim-lua-guide.
-M.pprint = function(...)
-  local objects = vim.tbl_map(vim.inspect, { ... })
-  print(unpack(objects))
-  return ...
-end
-
 -- Returns true if [value] is in [table].
 M.table_contains = function(table, value)
   for _, v in ipairs(table) do

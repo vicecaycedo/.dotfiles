@@ -1,9 +1,0 @@
-{
-  "Pretty print": {
-    "prefix": "pprint",
-    "description": "Pretty-print an object",
-    "body": [
-      "require('vc.util').pprint($1)"
-    ]
-  }
-}
