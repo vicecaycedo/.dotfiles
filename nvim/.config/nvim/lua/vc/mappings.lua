@@ -42,6 +42,7 @@ require('which-key').register({
     j = { '<Cmd>cnext<CR>', 'next quickfix item' },
     k = { '<Cmd>cprev<CR>', 'previous quickfix item' },
     q = { '<Cmd>q<CR>', 'close window' },
+    r = { '<Cmd>w<CR><Cmd>source %<CR>', 'source file' },
     s = { '<Cmd>update<CR>', 'save file' },
     x = { '<Cmd>bdelete<CR>', 'close buffer' },
   },
