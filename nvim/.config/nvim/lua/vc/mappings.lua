@@ -72,7 +72,8 @@ require('which-key').register({
   ['<leader>t'] = {
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
     f = { '<Cmd>NvimTreeFindFile<CR>', 'find file in file explorer' },
-    r = {
+    r = { '<Cmd>Telescope resume<CR>', 'resume Telescope picker' },
+    t = {
       require('vc.util').toggle_strip_trailing_whitespace,
       'toggle StripTrailingWhitespace',
     },
