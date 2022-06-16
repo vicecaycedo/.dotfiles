@@ -19,6 +19,7 @@ return {
   ),
   s('td', fmt('-- TODO: {}', { i(0, '...') })),
   s('p', fmt('vim.pretty_print({})', { i(0) })),
+  s('l', fmt('local {} = {}', { i(1), i(0) })),
   s('req', fmt("require('{}')", { i(0) })),
   s(
     { trig = 'lreq', dscr = 'Smart require' },
