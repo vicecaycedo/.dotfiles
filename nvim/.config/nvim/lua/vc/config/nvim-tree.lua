@@ -1,12 +1,14 @@
 require('nvim-tree').setup({
   diagnostics = { enable = true },
   hijack_cursor = true,
-  icons = {
-    show = {
-      file = false,
-      folder = true,
-      folder_arrow = false,
-      git = false,
+  renderer = {
+    icons = {
+      show = {
+        file = false,
+        folder = true,
+        folder_arrow = false,
+        git = false,
+      },
     },
   },
   view = {
