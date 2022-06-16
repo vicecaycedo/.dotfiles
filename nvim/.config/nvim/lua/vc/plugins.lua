@@ -21,6 +21,14 @@ use({
   end,
 })
 
+-- Better vim.ui interfaces.
+use({
+  'stevearc/dressing.nvim',
+  config = function()
+    require('vc.config.dressing')
+  end,
+})
+
 -- Toggle comments.
 use({
   'b3nj5m1n/kommentary',
