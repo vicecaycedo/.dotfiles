@@ -11,4 +11,15 @@ return {
       {}
     )
   ),
+  s(
+    { trig = 'log', dscr = 'Add logging' },
+    fmt(
+      [[
+        # TODO(vicentecaycedo): DO_NOT_SUBMIT - Remove logging.
+        from absl import logging  # pylint: disable=g-import-not-at-top
+        logging.info({})
+      ]],
+      { i(0) }
+    )
+  ),
 }
