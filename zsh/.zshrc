@@ -91,6 +91,7 @@ zle -N accept-line expand-alias-and-accept-line
 # General.
 alias c="clear"
 alias n="nvim"
+alias tl="tldr"
 
 # Git.
 alias lg="lazygit"
