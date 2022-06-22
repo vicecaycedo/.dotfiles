@@ -10,6 +10,15 @@ vim.keymap.set({ 'i', 'n', 's' }, '<C-j>', function()
     ls.expand_or_jump()
   end
 end)
+vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+  if ls.choice_active() then
+    return '<Plug>luasnip-next-choice'
+  else
+    return '<Tab>'
+  end
+end, {
+  expr = true,
+})
 
 ls.config.set_config({
   history = true,
