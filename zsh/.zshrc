@@ -45,6 +45,9 @@ fi
 # General
 #===============================================================================
 
+# Editor.
+export EDITOR=nvim
+
 # History.
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=5000
