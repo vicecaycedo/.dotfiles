@@ -1,25 +1,43 @@
--- Set up language servers installed through nvim-lsp-installer.
---   `:LspInstall <server>`
--- My supported language servers:
---   sumneko_lua (lua)
-local lsp_installer = require('nvim-lsp-installer')
-lsp_installer.on_server_ready(function(server)
-  local opts = {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(
-      vim.lsp.protocol.make_client_capabilities()
-    ),
-    on_attach = require('vc.lsp.util').on_attach,
-  }
+local lspconfig = require('lspconfig')
 
-  if server.name == 'sumneko_lua' then
-    opts.settings = require('vc.lsp.settings').lua
-  end
+-- Set up nvim-lsp-installer.
+require('nvim-lsp-installer').setup({
+  ensure_installed = {
+    'sumneko_lua',
+  },
+})
 
-  -- This setup() function is exactly the same as lspconfig's setup function
-  -- (:help lspconfig-quickstart)
-  server:setup(opts)
-  vim.cmd('do User LspAttachBuffers')
-end)
+-- Set up Lua language server.
+lspconfig.sumneko_lua.setup({
+  capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
+  on_attach = require('vc.lsp.util').on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        path = vim.split(package.path, ';'),
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        disable = {
+          'different-requires',
+        },
+        globals = {
+          'vim', -- Neovim
+          'use', -- Packer
+        },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files.
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
+      },
+    },
+  },
+})
 
 -- Set up null-ls (general purpose language server).
 local null_ls = require('null-ls')
