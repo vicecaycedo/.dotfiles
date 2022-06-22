@@ -1,3 +1,7 @@
+local normal_guibg = { attribute = 'bg', highlight = 'Normal' }
+local normal_guifg = { attribute = 'fg', highlight = 'Normal' }
+local normal_highlight = { guibg = normal_guibg, guifg = normal_guifg }
+
 require('bufferline').setup({
   options = {
     diagnostics = 'nvim_lsp',
@@ -20,32 +24,29 @@ require('bufferline').setup({
   -- Match VSCode theme.
   highlights = {
     fill = {
-      guifg = { attribute = 'fg', highlight = 'Normal' },
       guibg = { attribute = 'bg', highlight = 'StatusLineNC' },
+      guifg = normal_guifg,
     },
     background = {
-      guifg = { attribute = 'fg', highlight = 'Normal' },
       guibg = { attribute = 'bg', highlight = 'StatusLine' },
+      guifg = normal_guifg,
     },
-    buffer_visible = {
-      guifg = { attribute = 'fg', highlight = 'Normal' },
-      guibg = { attribute = 'bg', highlight = 'Normal' },
-    },
-    buffer_selected = {
-      guifg = { attribute = 'fg', highlight = 'Normal' },
-      guibg = { attribute = 'bg', highlight = 'Normal' },
-    },
+    buffer_visible = normal_highlight,
+    buffer_selected = normal_highlight,
     separator = {
-      guifg = { attribute = 'bg', highlight = 'Normal' },
       guibg = { attribute = 'bg', highlight = 'StatusLine' },
+      guifg = normal_guifg,
     },
     separator_selected = {
+      guibg = normal_guibg,
       guifg = { attribute = 'fg', highlight = 'Special' },
-      guibg = { attribute = 'bg', highlight = 'Normal' },
     },
     separator_visible = {
-      guifg = { attribute = 'fg', highlight = 'Normal' },
       guibg = { attribute = 'bg', highlight = 'StatusLineNC' },
+      guifg = normal_guifg,
     },
+    duplicate = normal_highlight,
+    duplicate_selected = normal_highlight,
+    duplicate_visible = normal_highlight,
   },
 })
