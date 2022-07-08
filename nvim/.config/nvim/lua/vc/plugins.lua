@@ -49,6 +49,14 @@ use({
   end,
 })
 
+-- Collection of mini plugins.
+use({
+  'echasnovski/mini.nvim',
+  config = function()
+    require('vc.config.mini')
+  end,
+})
+
 -- General purpose language server.
 use({
   'jose-elias-alvarez/null-ls.nvim',
