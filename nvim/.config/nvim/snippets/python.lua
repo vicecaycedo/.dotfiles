@@ -12,6 +12,16 @@ return {
     )
   ),
   s(
+    { trig = 'pudb', dscr = 'Add pudb' },
+    fmt(
+      [[
+        # TODO(vicentecaycedo): DO_NOT_SUBMIT - Remove debugging.
+        import pudb; pudb.set_trace()  # pylint: disable=g-import-not-at-top, multiple-statements, line-too-long
+      ]],
+      {}
+    )
+  ),
+  s(
     { trig = 'log', dscr = 'Add logging' },
     fmt(
       [[
