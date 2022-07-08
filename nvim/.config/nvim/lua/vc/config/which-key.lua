@@ -31,6 +31,8 @@ keys.register({
 keys.register({
   -- Kommentary.
   ['gc'] = 'comment',
+  -- Vim-sort-motion.
+  ['gs'] = 'sort',
   -- Vim-abolish.
   ['cr'] = {
     name = 'coerce',

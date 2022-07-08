@@ -9,6 +9,7 @@ use('bkad/camelcasemotion') -- Camelcase and underscore objects.
 use('morhetz/gruvbox') -- Gruvbox theme.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('tpope/vim-repeat') -- Repeat plugin commands.
+use('christoomey/vim-sort-motion') -- Sort operator.
 use('tpope/vim-surround') -- Surroundings.
 use('mofiqul/vscode.nvim') -- VSCode theme.
 
