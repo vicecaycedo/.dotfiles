@@ -57,10 +57,17 @@ null_ls.setup({
   },
 })
 
--- Configure how diagnostics are displayed.
+-- Don't show diagnostics as inline virtual text.
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
   {
     virtual_text = false,
   }
 )
+
+-- Configure LSP signs.
+local diagnostic_types = { 'Error', 'Warn', 'Hint', 'Info' }
+for _, type in pairs(diagnostic_types) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = '•', texthl = hl, numhl = '' })
+end
