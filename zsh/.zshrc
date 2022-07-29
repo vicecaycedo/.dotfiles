@@ -67,6 +67,11 @@ export KEYTIMEOUT=1
 # Handle backspace in Vi mode.
 bindkey -v '^?' backward-delete-char
 
+# Shortcut to edit command line in editor.
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 #===============================================================================
 # Aliases
 #===============================================================================
