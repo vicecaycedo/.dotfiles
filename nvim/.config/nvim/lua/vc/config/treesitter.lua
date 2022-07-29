@@ -6,6 +6,7 @@ require('nvim-treesitter.configs').setup({
     'go',
     'html',
     'json',
+    'kotlin',
     'lua',
     'python',
     'vim',
