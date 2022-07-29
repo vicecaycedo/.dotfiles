@@ -22,11 +22,11 @@ require('which-key').register({
     [':'] = { 'q:', "cmdline window ':'" },
     ['/'] = { 'q/', "cmdline window '/'" },
     ['?'] = { 'q?', "cmdline window '?'" },
-    H = { vim.diagnostic.open_float, 'show line diagnostics' },
+    H = { vim.lsp.buf.hover, 'show documentation' },
     R = { vim.lsp.buf.rename, 'rename' },
     a = { '<Cmd>Telescope lsp_code_actions<CR>', 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
-    h = { vim.lsp.buf.hover, 'show documentation' },
+    h = { vim.diagnostic.open_float, 'show line diagnostics' },
     r = { vim.lsp.buf.references, 'open references' },
   },
   ['<leader>'] = {
