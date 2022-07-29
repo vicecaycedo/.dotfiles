@@ -6,8 +6,8 @@ vim.keymap.set({ 'i', 'n', 's' }, '<C-k>', function()
   end
 end)
 vim.keymap.set({ 'i', 'n', 's' }, '<C-j>', function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
+  if ls.jumpable(1) then
+    ls.jump(1)
   end
 end)
 vim.keymap.set({ 'i', 's' }, '<Tab>', function()
