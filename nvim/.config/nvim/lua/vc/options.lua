@@ -6,6 +6,7 @@ for key, val in pairs({
   termguicolors = true, -- True colors.
   timeoutlen = 400, -- Shorter timeout for WhichKey.
   updatetime = 100, -- Decrease updatetime for a better experience.
+  scrolloff = 15, -- Minimum number of lines to keep above and below the cursor.
 
   -- Search case sensitivity.
   ignorecase = true,
