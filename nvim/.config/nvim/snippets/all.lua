@@ -1,7 +1,6 @@
 ---@diagnostic disable:undefined-global
 return {
   s('dns', t('DO_NOT_SUBMIT')),
-  s('md', t('MARKDOWN=true')),
   s('vc', t('vicentecaycedo')),
   s(
     'date',
@@ -9,4 +8,7 @@ return {
       return os.date('%Y-%m-%d')
     end)
   ),
+  -- Google CL tags (go/single-line-tags).
+  s('md', t('MARKDOWN=true')),
+  s('au', t('AUTOSUBMIT_BEHAVIOR=SYNC_SUBMIT_CLEANUP')),
 }
