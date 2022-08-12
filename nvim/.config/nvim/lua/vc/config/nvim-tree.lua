@@ -1,5 +1,4 @@
 require('nvim-tree').setup({
-  diagnostics = { enable = true },
   hijack_cursor = true,
   renderer = {
     icons = {
@@ -22,5 +21,6 @@ require('nvim-tree').setup({
     },
     number = true,
     relativenumber = true,
+    signcolumn = 'no',
   },
 })
