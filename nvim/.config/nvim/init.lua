@@ -1,3 +1,5 @@
+require('impatient')
+
 require('vc.mappings')
 require('vc.options')
 require('vc.plugins')

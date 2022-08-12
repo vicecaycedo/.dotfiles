@@ -7,6 +7,7 @@ local use = packer.use
 
 use('bkad/camelcasemotion') -- Camelcase and underscore objects.
 use('morhetz/gruvbox') -- Gruvbox theme.
+use('lewis6991/impatient.nvim') -- Improve startup time with caches.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('ojroques/vim-oscyank') -- OSC52 yank.
 use('tpope/vim-repeat') -- Repeat plugin commands.
