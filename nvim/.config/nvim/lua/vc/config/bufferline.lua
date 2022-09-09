@@ -1,7 +1,3 @@
-local normal_guibg = { attribute = 'bg', highlight = 'Normal' }
-local normal_guifg = { attribute = 'fg', highlight = 'Normal' }
-local normal_highlight = { guibg = normal_guibg, guifg = normal_guifg }
-
 require('bufferline').setup({
   options = {
     diagnostics = 'nvim_lsp',
@@ -15,38 +11,32 @@ require('bufferline').setup({
     show_buffer_close_icons = false,
     show_close_icon = false,
   },
-  -- Match Gruvbox theme.
-  -- highlights = {
-  --   fill = {
-  --     guibg = '#1d2021',
-  --   },
-  -- },
-  -- Match VSCode theme.
-  highlights = {
-    fill = {
-      guibg = { attribute = 'bg', highlight = 'StatusLineNC' },
-      guifg = normal_guifg,
-    },
-    background = {
-      guibg = { attribute = 'bg', highlight = 'StatusLine' },
-      guifg = normal_guifg,
-    },
-    buffer_visible = normal_highlight,
-    buffer_selected = normal_highlight,
-    separator = {
-      guibg = { attribute = 'bg', highlight = 'StatusLine' },
-      guifg = normal_guifg,
-    },
-    separator_selected = {
-      guibg = normal_guibg,
-      guifg = { attribute = 'fg', highlight = 'Special' },
-    },
-    separator_visible = {
-      guibg = { attribute = 'bg', highlight = 'StatusLineNC' },
-      guifg = normal_guifg,
-    },
-    duplicate = normal_highlight,
-    duplicate_selected = normal_highlight,
-    duplicate_visible = normal_highlight,
-  },
 })
+
+vim.api.nvim_set_hl(0, 'BufferLineFill', { bg = '#161616' })
+vim.api.nvim_set_hl(0, 'BufferLineIndicatorSelected', { fg = '#1e1e1e' })
+vim.api.nvim_set_hl(
+  0,
+  'BufferLineBufferSelected',
+  { bg = '#1e1e1e', fg = '#d4d4d4', bold = true }
+)
+vim.api.nvim_set_hl(
+  0,
+  'BufferLineInfoSelected',
+  { bg = '#1e1e1e', fg = '#569cd6', bold = true }
+)
+vim.api.nvim_set_hl(
+  0,
+  'BufferLineHintSelected',
+  { bg = '#1e1e1e', fg = '#4075a0', bold = true }
+)
+vim.api.nvim_set_hl(
+  0,
+  'BufferLineWarningSelected',
+  { bg = '#1e1e1e', fg = '#dcdcaa', bold = true }
+)
+vim.api.nvim_set_hl(
+  0,
+  'BufferLineErrorSelected',
+  { bg = '#1e1e1e', fg = '#f44747', bold = true }
+)
