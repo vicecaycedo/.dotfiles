@@ -7,11 +7,13 @@ require('nvim-lsp-installer').setup({
   },
 })
 
+local lsp_capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
 -- Set up Lua language server.
 lspconfig.sumneko_lua.setup({
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = lsp_capabilities,
   on_attach = require('vc.lsp.util').on_attach,
   settings = {
     Lua = {
@@ -42,9 +44,7 @@ lspconfig.sumneko_lua.setup({
 -- Set up null-ls (general purpose language server).
 local null_ls = require('null-ls')
 null_ls.setup({
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = lsp_capabilities,
   on_attach = require('vc.lsp.util').on_attach,
   sources = {
     -- Lua formatter.
