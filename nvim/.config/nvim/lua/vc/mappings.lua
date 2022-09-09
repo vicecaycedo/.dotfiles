@@ -68,6 +68,7 @@ require('which-key').register({
     d = { require('vc.find').find_dotfiles, 'open dotfile' },
     h = { require('vc.find').find_history, 'open from history' },
     p = { require('vc.find').find_files, 'open file' },
+    r = { require('vc.find').find_related, 'open related file' },
   },
   ['<leader>t'] = {
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
