@@ -36,10 +36,9 @@ use({
 
 -- Toggle comments.
 use({
-  'b3nj5m1n/kommentary',
-  keys = 'gc',
+  'numToStr/Comment.nvim',
   config = function()
-    require('vc.config.kommentary')
+    require('vc.config.comment')
   end,
 })
 
