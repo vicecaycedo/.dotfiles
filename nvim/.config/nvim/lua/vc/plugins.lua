@@ -136,8 +136,8 @@ use({
 use({
   'simrat39/symbols-outline.nvim',
   cmd = 'SymbolsOutline',
-  setup = function()
-    require('vc.setup.symbols-outline')
+  config = function()
+    require('vc.config.symbols-outline')
   end,
 })
 
