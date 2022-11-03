@@ -5,6 +5,8 @@ cmp.setup({
     format = function(entry, vim_item)
       vim_item.menu = ({
         buffer = '[Buf]',
+        -- buganizer = '[b/]',
+        -- nvim_ciderlsp = '[ML]',
         luasnip = '[Snip]',
         nvim_lsp = '[LSP]',
         nvim_lua = '[Lua]',
@@ -28,6 +30,8 @@ cmp.setup({
   },
   sources = {
     { name = 'luasnip' },
+    -- { name = 'buganizer' },
+    -- { name = 'nvim_ciderlsp' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'buffer', max_item_count = 5 },
