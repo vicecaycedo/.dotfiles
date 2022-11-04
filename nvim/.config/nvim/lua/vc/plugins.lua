@@ -177,14 +177,6 @@ use({
   end,
 })
 
--- Startify.
-use({
-  'mhinz/vim-startify',
-  setup = function()
-    require('vc.setup.startify')
-  end,
-})
-
 -- Keybindings.
 use({
   'folke/which-key.nvim',
