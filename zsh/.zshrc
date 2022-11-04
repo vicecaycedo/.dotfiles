@@ -1,5 +1,6 @@
 # $PATH
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Editor
 export EDITOR=nvim
