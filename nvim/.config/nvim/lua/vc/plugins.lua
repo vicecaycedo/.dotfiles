@@ -14,7 +14,6 @@ use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('ojroques/vim-oscyank') -- OSC52 yank.
 use('tpope/vim-repeat') -- Repeat plugin commands.
 use('christoomey/vim-sort-motion') -- Sort operator.
-use('tpope/vim-surround') -- Surroundings.
 use('mofiqul/vscode.nvim') -- VSCode theme.
 
 -- Bufferline.
@@ -113,6 +112,14 @@ use({
   requires = { { 'kyazdani42/nvim-web-devicons', opt = true } },
   config = function()
     require('vc.config.nvim-tree')
+  end,
+})
+
+-- Surroundings.
+use({
+  'kylechui/nvim-surround',
+  config = function()
+    require('vc.config.nvim-surround')
   end,
 })
 

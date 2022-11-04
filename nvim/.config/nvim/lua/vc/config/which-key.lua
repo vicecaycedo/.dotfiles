@@ -13,7 +13,7 @@ keys.setup({
 
 -- Ignore plugin mappings.
 keys.register({
-  -- Vim-surround.
+  -- nvim-surround
   ['cs'] = 'which_key_ignore',
   ['cS'] = 'which_key_ignore',
   ['ds'] = 'which_key_ignore',
