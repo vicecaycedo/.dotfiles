@@ -72,7 +72,6 @@ alias so="exec zsh"
 
 # Additional Configs
 [ -f $HOME/.zshrc-glinux ] && source $HOME/.zshrc-glinux
-[ -f $HOME/.zshrc-google ] && source $HOME/.zshrc-google
 [ -f $HOME/.zshrc-macos ] && source $HOME/.zshrc-macos
 
 # Download plugins, if necessary.
