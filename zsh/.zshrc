@@ -1,3 +1,6 @@
+# $PATH
+export PATH=$PATH:$HOME/go/bin
+
 # Editor
 export EDITOR=nvim
 

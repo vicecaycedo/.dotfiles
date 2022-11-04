@@ -1,6 +1,5 @@
 # $PATH
 export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:$HOME/go/bin
 
 # Aliases
 alias s="ls -AGl"
