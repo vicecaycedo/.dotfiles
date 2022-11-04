@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
--- Smart <CR>.
+-- Smart <CR>
 vim.keymap.set('n', '<CR>', function()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == 'nofile' or buftype == 'quickfix' then

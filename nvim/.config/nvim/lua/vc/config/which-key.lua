@@ -20,7 +20,7 @@ keys.register({
   ['dS'] = 'which_key_ignore',
   ['ys'] = 'which_key_ignore',
   ['yS'] = 'which_key_ignore',
-  -- Camelcasemotion.
+  -- camelcasemotion
   ['<leader>b'] = 'which_key_ignore',
   ['<leader>e'] = 'which_key_ignore',
   ['<leader>ge'] = 'which_key_ignore',
@@ -31,9 +31,9 @@ keys.register({
 keys.register({
   -- Comment.nvim
   ['gc'] = 'comment',
-  -- Vim-sort-motion.
+  -- vim-sort-motion
   ['gs'] = 'sort',
-  -- Vim-abolish.
+  -- vim-abolish
   ['cr'] = {
     name = 'coerce',
     ['<Space>'] = { 'to space case' },
