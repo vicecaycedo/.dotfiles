@@ -28,7 +28,6 @@ A collection of configuration files for my development environment.
 * [stylua](https://github.com/JohnnyMorganz/StyLua)
 * [tmux](https://github.com/tmux/tmux)
 * [tpm](https://github.com/tmux-plugins/tpm)
-* [vint](https://github.com/Vimjas/vint)
 * [zinit](https://github.com/zdharma/zinit)
 * [zsh](https://www.zsh.org/)
 
