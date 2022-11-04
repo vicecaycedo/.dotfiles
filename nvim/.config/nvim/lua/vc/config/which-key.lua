@@ -29,7 +29,7 @@ keys.register({
 
 -- Label plugin mappings.
 keys.register({
-  -- Kommentary.
+  -- Comment.nvim
   ['gc'] = 'comment',
   -- Vim-sort-motion.
   ['gs'] = 'sort',
