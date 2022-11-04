@@ -1,6 +1,17 @@
 local cmp = require('cmp')
 
 cmp.setup({
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        buffer = '[Buf]',
+        luasnip = '[Snip]',
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[Lua]',
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item({
       behavior = cmp.SelectBehavior.Insert,
