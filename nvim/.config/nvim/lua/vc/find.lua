@@ -95,7 +95,9 @@ M.find_related = function()
       action_set.select:enhance({
         post = function()
           local selection = action_state.get_selected_entry()
-          vim.api.nvim_win_set_cursor(0, { selection.lnum, 0 })
+          if selection.lnum ~= 0 then
+            vim.api.nvim_win_set_cursor(0, { selection.lnum, 0 })
+          end
         end,
       })
       return true
