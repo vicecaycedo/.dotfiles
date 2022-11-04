@@ -27,14 +27,14 @@ bindkey -M vicmd v edit-command-line
 
 # Auto expand aliases.
 autoload -Uz compinit && compinit
-function expand-alias(){
-  zle _expand_alias
-  zle self-insert
+function expand-alias() {
+	zle _expand_alias
+	zle self-insert
 }
 zle -N expand-alias
 function expand-alias-and-accept-line() {
-  zle _expand_alias
-  zle .accept-line
+	zle _expand_alias
+	zle .accept-line
 }
 zle -N accept-line expand-alias-and-accept-line
 bindkey -M viins ' ' expand-alias
@@ -73,16 +73,16 @@ alias so="exec zsh"
 
 # Download plugins, if necessary.
 if [[ ! -e $HOME/.zsh/zsh-autosuggestions ]]; then
-  echo "Installing zsh-autosuggestions plugin..."
-  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosuggestions
+	echo "Installing zsh-autosuggestions plugin..."
+	git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosuggestions
 fi
 if [[ ! -e $HOME/.zsh/fast-syntax-highlighting ]]; then
-  echo "Installing fast-syntax-highlighting plugin..."
-  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.zsh/fast-syntax-highlighting
+	echo "Installing fast-syntax-highlighting plugin..."
+	git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.zsh/fast-syntax-highlighting
 fi
 if [[ ! -e $HOME/.zsh/powerlevel10k ]]; then
-  echo "Installing powerlevel10k..."
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/powerlevel10k
+	echo "Installing powerlevel10k..."
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/powerlevel10k
 fi
 
 # Load plugins.
