@@ -1,7 +1,4 @@
-#===============================================================================
 # Zinit
-#===============================================================================
-
 # Added by Zinit's installer.
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -30,25 +27,17 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-#===============================================================================
 # Powerlevel10k Prompt
-#===============================================================================
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#===============================================================================
-# General
-#===============================================================================
-
-# Editor.
+# Editor
 export EDITOR=nvim
 
-# History.
+# History
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=5000
 export SAVEHIST=5000
@@ -58,10 +47,10 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
-# Directory navigation.
+# Directory Navigation
 setopt autocd autopushd pushdignoredups
 
-# Shorter timeout for Vi mode.
+# Shorten timeout for Vi mode.
 export KEYTIMEOUT=1
 
 # Handle backspace in Vi mode.
@@ -71,10 +60,6 @@ bindkey -v '^?' backward-delete-char
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-#===============================================================================
-# Aliases
-#===============================================================================
 
 # Auto expand aliases.
 autoload -Uz compinit && compinit
@@ -93,12 +78,12 @@ function expand-alias-and-accept-line() {
 }
 zle -N accept-line expand-alias-and-accept-line
 
-# General.
+# General Aliases
 alias c="clear"
 alias n="nvim"
 alias tl="tldr"
 
-# Git.
+# Git Aliases
 alias lg="lazygit"
 alias gs="git status"
 alias ga="git add"
@@ -110,18 +95,15 @@ alias gpush="git push"
 alias gpull="git pull"
 alias gl="git log"
 
-# Tmux.
+# Tmux Aliases
 alias t="tmux"
 alias ta="tmux a"
 alias td="tmux detach"
 
-# Zsh Config.
+# Zsh Config Aliases
 alias ec="$EDITOR $HOME/.zshrc"
 alias so="source $HOME/.zshrc"
 
-#===============================================================================
-# Additional configs.
-#===============================================================================
-
+# Additional Configs
 [ -f ~/.zshrc-glinux ] && source ~/.zshrc-glinux
 [ -f ~/.zshrc-google ] && source ~/.zshrc-google
