@@ -107,3 +107,4 @@ alias so="source $HOME/.zshrc"
 # Additional Configs
 [ -f ~/.zshrc-glinux ] && source ~/.zshrc-glinux
 [ -f ~/.zshrc-google ] && source ~/.zshrc-google
+[ -f ~/.zshrc-macos ] && source ~/.zshrc-macos

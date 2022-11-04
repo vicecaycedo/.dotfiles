@@ -1,0 +1,5 @@
+# $PATH
+export PATH=$PATH:/opt/homebrew/bin
+
+# Aliases
+alias s="ls -AGl"
