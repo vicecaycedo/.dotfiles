@@ -100,7 +100,7 @@ alias td="tmux detach"
 
 # Zsh Config Aliases
 alias ec="$EDITOR $HOME/.zshrc"
-alias so="source $HOME/.zshrc"
+alias so="exec zsh"
 
 # Additional Configs
 [ -f ~/.zshrc-glinux ] && source ~/.zshrc-glinux
