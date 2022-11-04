@@ -103,6 +103,6 @@ alias ec="$EDITOR $HOME/.zshrc"
 alias so="exec zsh"
 
 # Additional Configs
-[ -f ~/.zshrc-glinux ] && source ~/.zshrc-glinux
-[ -f ~/.zshrc-google ] && source ~/.zshrc-google
-[ -f ~/.zshrc-macos ] && source ~/.zshrc-macos
+[ -f $HOME/.zshrc-glinux ] && source $HOME/.zshrc-glinux
+[ -f $HOME/.zshrc-google ] && source $HOME/.zshrc-google
+[ -f $HOME/.zshrc-macos ] && source $HOME/.zshrc-macos
