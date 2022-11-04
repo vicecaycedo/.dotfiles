@@ -68,15 +68,14 @@ function expand-alias(){
   zle self-insert
 }
 zle -N expand-alias
-bindkey -M viins ' ' expand-alias
-bindkey -M viins '^[ ' magic-space
-bindkey -M isearch ' ' magic-space
-
 function expand-alias-and-accept-line() {
   zle _expand_alias
   zle .accept-line
 }
 zle -N accept-line expand-alias-and-accept-line
+bindkey -M viins ' ' expand-alias
+bindkey -M viins '^[ ' magic-space
+bindkey -M isearch ' ' magic-space
 
 # General Aliases
 alias c="clear"
