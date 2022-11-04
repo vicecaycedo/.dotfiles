@@ -80,7 +80,6 @@ bindkey -M isearch ' ' magic-space
 # General Aliases
 alias c="clear"
 alias n="nvim"
-alias tl="tldr"
 
 # Git Aliases
 alias lg="lazygit"
