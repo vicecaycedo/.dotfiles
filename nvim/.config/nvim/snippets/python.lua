@@ -2,21 +2,14 @@
 return {
   s('td', fmt('# TODO({}): {}', { i(1, 'vicentecaycedo'), i(0, '...') })),
   s(
-    { trig = 'bp', dscr = 'Add breakpoint' },
+    { trig = 'bp', dscr = 'Add debugging' },
     fmt(
       [[
         # TODO(vicentecaycedo): DO_NOT_SUBMIT - Remove debugging.
+        import debugpy  # pylint: disable=g-import-not-at-top, g-bad-import-order
+        debugpy.listen(('localhost', 5678))
+        debugpy.wait_for_client()
         breakpoint()
-      ]],
-      {}
-    )
-  ),
-  s(
-    { trig = 'pudb', dscr = 'Add pudb' },
-    fmt(
-      [[
-        # TODO(vicentecaycedo): DO_NOT_SUBMIT - Remove debugging.
-        import pudb; pudb.set_trace()  # pylint: disable=g-import-not-at-top, multiple-statements, line-too-long
       ]],
       {}
     )

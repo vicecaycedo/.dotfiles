@@ -15,6 +15,10 @@ end, {
 require('which-key').register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
+  ['<F6>'] = { require('dap').toggle_breakpoint, 'dap: toggle breakpoint' },
+  ['<F7>'] = { require('dap').step_into, 'dap: step into' },
+  ['<F8>'] = { require('dap').step_over, 'dap: step over' },
+  ['<F9>'] = { require('dap').continue, 'dap: continue' },
   J = { '<Plug>(signify-next-hunk)zz', 'next diff' },
   K = { '<Plug>(signify-prev-hunk)zz', 'prev diff' },
   Q = { require('vc.util').toggle_quickfix, 'toggle quickfix' },

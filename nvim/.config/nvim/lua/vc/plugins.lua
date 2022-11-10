@@ -89,6 +89,17 @@ use({
   end,
 })
 
+-- Debugging.
+use({
+  'rcarriga/nvim-dap-ui',
+  requires = {
+    'mfussenegger/nvim-dap',
+  },
+  config = function()
+    require('vc.config.dap')
+  end,
+})
+
 -- LSP client configurations.
 use({
   'neovim/nvim-lspconfig',
