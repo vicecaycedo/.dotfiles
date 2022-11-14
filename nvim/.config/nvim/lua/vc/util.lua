@@ -1,6 +1,7 @@
 local M = {}
 
--- Returns true if [value] is in [table].
+-- TODO: Replace with |vim.tbl_contains|.
+-- Returns true if |value| is in |table|.
 M.table_contains = function(table, value)
   for _, v in ipairs(table) do
     if v == value then
