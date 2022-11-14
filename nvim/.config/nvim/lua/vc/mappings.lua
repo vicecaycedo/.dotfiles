@@ -49,6 +49,11 @@ require('which-key').register({
     s = { '<Cmd>update<CR>', 'save file' },
     x = { '<Cmd>bdelete<CR>', 'close buffer' },
   },
+  ['<leader>b'] = {
+    name = 'blaze',
+    b = { require('vc.blaze').test_file, 'test file' },
+    f = { require('vc.blaze').test_function, 'test function' },
+  },
   ['<leader>c'] = {
     s = { '<Cmd>let @/ = ""<CR>', 'clear search' },
   },

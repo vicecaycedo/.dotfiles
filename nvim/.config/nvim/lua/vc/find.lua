@@ -33,6 +33,7 @@ local find_current_filename_in_file = function(filename)
   return 0
 end
 
+-- TODO: Refactor related files functionality to reuse in blaze.lua.
 -- Returns a table of files related to the current file (e.g. BUILD, tests,
 -- etc.). Each entry in the table is a table containing the name of the related
 -- file and the relevant line number.
