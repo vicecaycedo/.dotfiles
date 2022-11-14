@@ -48,6 +48,7 @@ bindkey -M isearch ' ' magic-space
 # General Aliases
 alias c="clear"
 alias n="nvim"
+alias r="ranger"
 
 # Git Aliases
 alias lg="lazygit"

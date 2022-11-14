@@ -22,6 +22,7 @@ A collection of configuration files for my development environment.
 *   [neovim](https://neovim.io)
 *   [packer](https://github.com/wbthomason/packer.nvim)
 *   [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+*   [ranger](https://github.com/ranger/ranger)
 *   [ripgrep](https://github.com/BurntSushi/ripgrep)
 *   [rust](https://www.rust-lang.org/)
 *   [stow](https://www.gnu.org/software/stow/manual/stow.html)
