@@ -1,3 +1,5 @@
+local keys = require('which-key')
+
 vim.g.mapleader = ' '
 vim.g.camelcasemotion_key = '<leader>'
 
@@ -12,7 +14,41 @@ end, {
   expr = true,
 })
 
-require('which-key').register({
+-- Ignore plugin mappings.
+keys.register({
+  -- camelcasemotion
+  ['<leader>b'] = 'which_key_ignore',
+  ['<leader>e'] = 'which_key_ignore',
+  ['<leader>ge'] = 'which_key_ignore',
+  ['<leader>w'] = 'which_key_ignore',
+  -- nvim-surround
+  ['cs'] = 'which_key_ignore',
+  ['cS'] = 'which_key_ignore',
+  ['ds'] = 'which_key_ignore',
+  ['dS'] = 'which_key_ignore',
+  ['ys'] = 'which_key_ignore',
+  ['yS'] = 'which_key_ignore',
+})
+
+-- Label plugin mappings.
+keys.register({
+  -- vim-abolish
+  ['cr'] = {
+    name = 'coerce',
+    ['<Space>'] = 'to space case',
+    ['.'] = 'to.dot.case',
+    ['-'] = 'to-dash-case',
+    c = 'toCamelCase',
+    m = 'ToMixedCase',
+    s = 'to_snake_case',
+    u = 'TO_UPPER_SNAKE_CASE',
+  },
+  -- vim-sort-motion
+  ['gs'] = 'sort',
+})
+
+-- Register custom mappings.
+keys.register({
   ['<Left>'] = { '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer' },
   ['<Right>'] = { '<Cmd>BufferLineCycleNext<CR>', 'next buffer' },
   ['<F6>'] = { require('dap').toggle_breakpoint, 'dap: toggle breakpoint' },
