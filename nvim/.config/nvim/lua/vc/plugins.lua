@@ -91,9 +91,9 @@ use({
 
 -- Debugging.
 use({
-  'rcarriga/nvim-dap-ui',
+  'mfussenegger/nvim-dap',
   requires = {
-    'mfussenegger/nvim-dap',
+    'rcarriga/nvim-dap-ui',
   },
   config = function()
     require('vc.config.dap')
