@@ -137,6 +137,9 @@ use({
 -- Treesitter.
 use({
   'nvim-treesitter/nvim-treesitter',
+  requires = {
+    'nvim-treesitter/playground',
+  },
   run = ':TSUpdate',
   event = 'BufRead',
   config = function()
