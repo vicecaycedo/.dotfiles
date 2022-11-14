@@ -85,7 +85,9 @@ keys.register({
     s = { '<Cmd>update<CR>', 'save file' },
     x = { '<Cmd>bdelete<CR>', 'close buffer' },
   },
-  ['<leader>b'] = {
+  -- TODO: Unmap <leader>b (created by camelcasemotion) and put the blaze
+  -- mappings under <leader>b for easier usage.
+  ['<leader>B'] = {
     name = 'blaze',
     b = { require('vc.blaze').test_file, 'test file' },
     f = { require('vc.blaze').test_function, 'test function' },
