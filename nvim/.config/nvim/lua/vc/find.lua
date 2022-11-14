@@ -77,33 +77,35 @@ M.find_related = function()
   local finders = require('telescope.finders')
   local pickers = require('telescope.pickers')
   local opts = {}
-  pickers.new(opts, {
-    prompt_title = 'Find in Related Files',
-    previewer = config.grep_previewer(opts),
-    sorter = config.generic_sorter(opts),
-    finder = finders.new_table({
-      results = get_related_files(),
-      entry_maker = function(entry)
-        return {
-          value = entry.filename,
-          ordinal = entry.filename,
-          display = entry.filename,
-          lnum = entry.lnum,
-        }
-      end,
-    }),
-    attach_mappings = function()
-      action_set.select:enhance({
-        post = function()
-          local selection = action_state.get_selected_entry()
-          if selection.lnum ~= 0 then
-            vim.api.nvim_win_set_cursor(0, { selection.lnum, 0 })
-          end
+  pickers
+    .new(opts, {
+      prompt_title = 'Find in Related Files',
+      previewer = config.grep_previewer(opts),
+      sorter = config.generic_sorter(opts),
+      finder = finders.new_table({
+        results = get_related_files(),
+        entry_maker = function(entry)
+          return {
+            value = entry.filename,
+            ordinal = entry.filename,
+            display = entry.filename,
+            lnum = entry.lnum,
+          }
         end,
-      })
-      return true
-    end,
-  }):find()
+      }),
+      attach_mappings = function()
+        action_set.select:enhance({
+          post = function()
+            local selection = action_state.get_selected_entry()
+            if selection.lnum ~= 0 then
+              vim.api.nvim_win_set_cursor(0, { selection.lnum, 0 })
+            end
+          end,
+        })
+        return true
+      end,
+    })
+    :find()
 end
 
 return M
