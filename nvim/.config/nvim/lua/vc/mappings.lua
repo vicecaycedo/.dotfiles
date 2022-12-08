@@ -64,7 +64,7 @@ keys.register({
     ['?'] = { 'q?', "cmdline window '?'" },
     H = { vim.lsp.buf.hover, 'show documentation' },
     R = { vim.lsp.buf.rename, 'rename' },
-    a = { '<Cmd>Telescope lsp_code_actions<CR>', 'code actions' },
+    a = { vim.lsp.buf.code_action, 'code actions' },
     d = { vim.lsp.buf.definition, 'go to definition' },
     h = { vim.diagnostic.open_float, 'show line diagnostics' },
     r = { vim.lsp.buf.references, 'open references' },
