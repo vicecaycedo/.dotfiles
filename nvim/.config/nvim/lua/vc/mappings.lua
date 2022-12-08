@@ -74,10 +74,7 @@ keys.register({
     ['<Left>'] = { '<Cmd>BufferLineMovePrev<CR>', 'move buffer left' },
     ['<Right>'] = { '<Cmd>BufferLineMoveNext<CR>', 'move buffer right' },
     J = { 'J', 'join lines' },
-    d = {
-      '<Cmd>Telescope diagnostics bufnr=0<CR>',
-      'open buffer diagnostics',
-    },
+    d = { require('telescope.builtin').diagnostics, 'open buffer diagnostics' },
     j = { '<Cmd>cnext<CR>', 'next quickfix item' },
     k = { '<Cmd>cprev<CR>', 'previous quickfix item' },
     q = { '<Cmd>q<CR>', 'close window' },
@@ -98,11 +95,11 @@ keys.register({
   ['<leader>f'] = {
     name = 'grep file(s)',
     d = { require('vc.grep').grep_dotfiles, 'grep dotfiles' },
-    f = { '<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'grep file' },
-    h = { '<Cmd>Telescope help_tags<CR>', 'grep help tags' },
-    p = { '<Cmd>Telescope live_grep<CR>', 'grep project' },
+    f = { require('telescope.builtin').current_buffer_fuzzy_find, 'grep file' },
+    h = { require('telescope.builtin').help_tags, 'grep help tags' },
+    p = { require('telescope.builtin').live_grep, 'grep project' },
     s = { '<Cmd>SymbolsOutline<CR>', 'explore symbols' },
-    t = { '<Cmd>Telescope treesitter<CR>', 'grep treesitter' },
+    t = { require('telescope.builtin').treesitter, 'grep treesitter' },
   },
   ['<leader>m'] = {
     name = 'version control',
@@ -119,7 +116,7 @@ keys.register({
   ['<leader>t'] = {
     e = { '<Cmd>NvimTreeToggle<CR>', 'file explorer' },
     f = { '<Cmd>NvimTreeFindFile<CR>', 'find file in file explorer' },
-    r = { '<Cmd>Telescope resume<CR>', 'resume Telescope picker' },
+    r = { require('telescope.builtin').resume, 'resume Telescope picker' },
     t = {
       require('vc.util').toggle_strip_trailing_whitespace,
       'toggle StripTrailingWhitespace',
