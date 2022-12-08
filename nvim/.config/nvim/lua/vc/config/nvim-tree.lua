@@ -17,6 +17,10 @@ require('nvim-tree').setup({
           key = '<Esc>',
           cb = '<Cmd>NvimTreeToggle<CR>',
         },
+        {
+          key = 'O',
+          action = 'expand_all',
+        },
       },
     },
     number = true,
