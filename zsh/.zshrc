@@ -15,6 +15,9 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
+# FZF
+export FZF_DEFAULT_OPTS='--layout=reverse --cycle --border'
+
 # Directory Navigation
 setopt autocd autopushd pushdignoredups
 
