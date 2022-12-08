@@ -9,6 +9,7 @@ use('bkad/camelcasemotion') -- Camelcase and underscore objects.
 use('morhetz/gruvbox') -- Gruvbox theme.
 use('lewis6991/impatient.nvim') -- Improve startup time with caches.
 use('sam4llis/nvim-lua-gf') -- Lua file support for 'gf'.
+use('windwp/nvim-ts-autotag') -- Autoclose and autorename HTML tags.
 use('wbthomason/packer.nvim') -- Package manager.
 use('michaeljsmith/vim-indent-object') -- Indent objects.
 use('ojroques/vim-oscyank') -- OSC52 yank.
