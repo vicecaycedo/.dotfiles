@@ -29,5 +29,6 @@ require('nvim-tree').setup({
     number = true,
     relativenumber = true,
     signcolumn = 'no',
+    width = 50,
   },
 })
