@@ -154,6 +154,14 @@ use({
   module = 'nvim-web-devicons',
 })
 
+-- Custom highlights.
+use({
+  'folke/paint.nvim',
+  config = function()
+    require('vc.config.paint')
+  end,
+})
+
 -- Symbols outline.
 use({
   'simrat39/symbols-outline.nvim',
