@@ -13,7 +13,7 @@ require('bufferline').setup({
   },
 })
 
-vim.api.nvim_set_hl(0, 'BufferLineFill', { bg = '#161616' })
+vim.api.nvim_set_hl(0, 'BufferLineFill', { bg = '#1e1e1e' })
 vim.api.nvim_set_hl(0, 'BufferLineIndicatorSelected', { fg = '#1e1e1e' })
 vim.api.nvim_set_hl(
   0,
