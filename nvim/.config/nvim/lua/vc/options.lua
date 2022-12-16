@@ -1,5 +1,4 @@
 for key, val in pairs({
-  colorcolumn = '80', -- Line limit column.
   mouse = '', -- Disable mouse.
   signcolumn = 'yes', -- Always show sign column.
   showmode = false, -- Don't show MODE messages.
