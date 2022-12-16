@@ -1,4 +1,7 @@
 require('nvim-tree').setup({
+  git = {
+    enable = false,
+  },
   hijack_cursor = true,
   renderer = {
     icons = {
