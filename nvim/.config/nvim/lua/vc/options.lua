@@ -1,46 +1,29 @@
-for key, val in pairs({
-  signcolumn = 'yes', -- Always show sign column.
-  showmode = false, -- Don't show MODE messages.
-  swapfile = false, -- Disable swap files.
-  termguicolors = true, -- True colors.
-  timeoutlen = 400, -- Shorter timeout for WhichKey.
-  updatetime = 100, -- Decrease updatetime for a better experience.
-  scrolloff = 15, -- Minimum number of lines to keep above and below the cursor.
+vim.o.scrolloff = 15 -- Minimum number of lines to keep above and below the cursor.
+vim.o.showmode = false -- Don't show MODE messages.
+vim.o.signcolumn = 'yes' -- Always show sign column.
+vim.o.swapfile = false -- Disable swap files.
+vim.o.termguicolors = true -- True colors.
+vim.o.updatetime = 100 -- Decrease updatetime for a better experience.
 
-  -- Search case sensitivity.
-  ignorecase = true,
-  smartcase = true,
+-- Search case sensitivity.
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-  -- Split window direction.
-  splitbelow = true,
-  splitright = true,
+-- Split window direction.
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-  -- Line numbers
-  number = true,
-  relativenumber = true,
+-- Line numbers
+vim.o.number = true
+vim.o.relativenumber = true
 
-  -- Tabs/indents.
-  expandtab = true,
-  shiftwidth = 2,
-  smartindent = true,
-  softtabstop = 2,
-  tabstop = 2,
+-- Tabs/indents.
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.smartindent = true
+vim.o.softtabstop = 2
+vim.o.tabstop = 2
 
-  -- Autocomplete.
-  completeopt = 'menuone,noselect',
-  shortmess = vim.o.shortmess .. 'c',
-}) do
-  vim.o[key] = val
-end
-
--- Don't load builtin plugins.
+-- Don't load built-in plugins.
 vim.g.loaded_matchit = true
 vim.g.loaded_netrwPlugin = true
-
--- Theme.
-vim.g.gruvbox_contrast_dark = 'hard'
-vim.g.gruvbox_invert_selection = false
-vim.g.gruvbox_sign_column = 'bg0'
-vim.g.vscode_style = 'dark'
--- vim.cmd('colorscheme gruvbox')
-vim.cmd('colorscheme vscode')

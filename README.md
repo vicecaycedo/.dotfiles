@@ -20,7 +20,6 @@ A collection of configuration files for my development environment.
 *   [kitty](https://sw.kovidgoyal.net/kitty)
 *   [lazygit](https://github.com/jesseduffield/lazygit)
 *   [neovim](https://neovim.io)
-*   [packer](https://github.com/wbthomason/packer.nvim)
 *   [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 *   [ranger](https://github.com/ranger/ranger)
 *   [ripgrep](https://github.com/BurntSushi/ripgrep)

@@ -1,16 +1,5 @@
 local M = {}
 
--- TODO: Replace with |vim.tbl_contains|.
--- Returns true if |value| is in |table|.
-M.table_contains = function(table, value)
-  for _, v in ipairs(table) do
-    if v == value then
-      return true
-    end
-  end
-  return false
-end
-
 -- Toggles the quickfix menu open/closed.
 M.toggle_quickfix = function()
   for _, win in pairs(vim.fn.getwininfo()) do
