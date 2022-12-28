@@ -1,22 +1,5 @@
 ---@diagnostic disable:undefined-global
 return {
-  s(
-    { trig = 'sn', dscr = 'Snippet boilerplate' },
-    fmt(
-      [=[
-        s(
-          {{ trig = '{}', dscr = '{}' }},
-          fmt(
-            [[
-              {}
-            ]],
-            {{{}}}
-          )
-        ),
-      ]=],
-      { i(1, '<trig>'), i(2, '<description>'), i(3), i(0) }
-    )
-  ),
   s('td', fmt('-- TODO: {}', { i(0, '...') })),
   s('p', fmt('vim.pretty_print({})', { i(0) })),
   s('l', fmt('local {} = {}', { i(1), i(0) })),
