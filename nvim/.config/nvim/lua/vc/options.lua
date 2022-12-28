@@ -1,5 +1,4 @@
 for key, val in pairs({
-  mouse = '', -- Disable mouse.
   signcolumn = 'yes', -- Always show sign column.
   showmode = false, -- Don't show MODE messages.
   swapfile = false, -- Disable swap files.
