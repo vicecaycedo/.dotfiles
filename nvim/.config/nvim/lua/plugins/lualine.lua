@@ -15,13 +15,12 @@ return {
     sections = {
       lualine_b = { 'diagnostics' },
       lualine_c = {
-        'location',
         {
           'filename',
           path = 1, -- Relative path.
         },
       },
-      lualine_x = {},
+      lualine_x = { 'location' },
       lualine_y = {},
       lualine_z = { 'progress' },
     },
