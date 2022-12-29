@@ -90,14 +90,14 @@ return {
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'cmdline', max_item_count = 20 },
+        { name = 'cmdline', max_item_count = 10 },
       },
     })
 
     cmp.setup.cmdline('/', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer', max_item_count = 20 },
+        { name = 'buffer', max_item_count = 10 },
       },
     })
   end,
