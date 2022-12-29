@@ -4,7 +4,6 @@ return {
     'mofiqul/vscode.nvim',
     priority = 1000, -- Load before other start plugins.
     config = function()
-      vim.g.vscode_style = 'dark'
       vim.cmd.colorscheme('vscode')
     end,
   },
