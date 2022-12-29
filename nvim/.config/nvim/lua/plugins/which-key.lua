@@ -9,7 +9,6 @@ return {
     wk.setup({
       plugins = {
         presets = {
-          g = false,
           motions = false,
           operators = false,
           text_objects = false,
