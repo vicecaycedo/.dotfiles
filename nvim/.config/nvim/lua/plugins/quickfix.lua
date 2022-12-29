@@ -8,7 +8,6 @@ return {
       openc = '<CR>',
       pscrolldown = '<C-d>',
       pscrollup = '<C-u>',
-      vsplit = 'v',
     },
   },
 }
