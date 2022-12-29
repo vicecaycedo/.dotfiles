@@ -5,6 +5,10 @@ return {
     -- Set up Bufferline.
     require('bufferline').setup({
       options = {
+        custom_filter = function(buf_number)
+          return vim.api.nvim_buf_get_option(buf_number, 'buftype')
+            ~= 'quickfix'
+        end,
         diagnostics = 'nvim_lsp',
         offsets = {
           {
