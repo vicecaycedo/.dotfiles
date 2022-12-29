@@ -8,6 +8,7 @@ return {
       openc = '<CR>',
       pscrolldown = '<C-d>',
       pscrollup = '<C-u>',
+      fzffilter = '', -- Disable fzf filter.
     },
   },
 }
