@@ -25,5 +25,11 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 2
 
 -- Don't load built-in plugins.
+vim.g.loaded_gzip = true
 vim.g.loaded_matchit = true
+vim.g.loaded_matchparen = true
 vim.g.loaded_netrwPlugin = true
+vim.g.loaded_tarPlugin = true
+vim.g.loaded_tohtml = true
+vim.g.loaded_tutor = true
+vim.g.loaded_zipPlugin = true
