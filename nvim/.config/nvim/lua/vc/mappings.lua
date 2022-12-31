@@ -14,11 +14,6 @@ nmap('<Leader>j', '<Cmd>cnext<CR>', 'next quickfix item')
 nmap('<Leader>k', '<Cmd>cprev<CR>', 'previous quickfix item')
 nmap('<Leader>q', '<Cmd>q<CR>', 'close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
-nmap(
-  '<Leader>tt',
-  require('vc.util').toggle_strip_trailing_whitespace,
-  'toggle StripTrailingWhitespace'
-)
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
 
 -- TODO: Add check to make sure the file is a Lua or VimL file before sourcing.
