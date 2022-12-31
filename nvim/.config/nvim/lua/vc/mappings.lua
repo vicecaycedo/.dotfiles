@@ -1,5 +1,7 @@
-function _G.nmap(lhs, rhs, desc)
-  vim.keymap.set('n', lhs, rhs, { desc = desc })
+function _G.nmap(lhs, rhs, desc, opts)
+  opts = opts or {}
+  opts.desc = desc
+  vim.keymap.set('n', lhs, rhs, opts)
 end
 
 nmap('Q', require('vc.util').toggle_quickfix, 'toggle quickfix')
@@ -16,8 +18,14 @@ nmap('<Leader>q', '<Cmd>q<CR>', 'close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
 
--- TODO: Add check to make sure the file is a Lua or VimL file before sourcing.
-nmap('<Leader>r', '<Cmd>w<CR><Cmd>source %<CR>', 'source file')
+nmap('<Leader>r', function()
+  local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+  if filetype == 'lua' or filetype == 'vim' then
+    return '<Cmd>w<CR><Cmd>source %<CR>'
+  else
+    error('Can not source filetype: ' .. filetype)
+  end
+end, 'source lua/vim file', { expr = true })
 
 -- Smart <CR>
 vim.keymap.set('n', '<CR>', function()
