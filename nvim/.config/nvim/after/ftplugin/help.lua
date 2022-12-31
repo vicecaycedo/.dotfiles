@@ -1,8 +1,5 @@
-vim.o.number = true
-vim.o.relativenumber = true
-
-vim.b.undo_ftplugin = vim.b.undo_ftplugin .. ' | setlocal number<'
-vim.b.undo_ftplugin = vim.b.undo_ftplugin .. ' | setlocal relativenumber<'
+vim.opt_local.number = true
+vim.opt_local.relativenumber = true
 
 vim.keymap.set(
   'n',
