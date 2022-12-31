@@ -4,7 +4,6 @@ function _G.nmap(lhs, rhs, desc, opts)
   vim.keymap.set('n', lhs, rhs, opts)
 end
 
-nmap('Q', require('vc.util').toggle_quickfix, 'toggle quickfix')
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
@@ -17,6 +16,16 @@ nmap('<Leader>k', '<Cmd>cprev<CR>', 'previous quickfix item')
 nmap('<Leader>q', '<Cmd>q<CR>', 'close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
+
+nmap('Q', function()
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd.cclose()
+      return
+    end
+  end
+  vim.cmd.copen()
+end, 'toggle quickfix')
 
 nmap('<Leader>r', function()
   local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
