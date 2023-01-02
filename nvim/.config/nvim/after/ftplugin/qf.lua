@@ -2,5 +2,5 @@ vim.keymap.set(
   'n',
   '<Esc>',
   '<Cmd>cclose<CR>',
-  { buffer = true, desc = 'close quickfix' }
+  { buffer = true, desc = 'Close quickfix' }
 )

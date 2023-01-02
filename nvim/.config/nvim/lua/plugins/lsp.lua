@@ -63,13 +63,13 @@ return {
       end
 
       -- Set keymaps.
-      nmap('gH', vim.lsp.buf.hover, 'show documentation')
-      nmap('gR', vim.lsp.buf.rename, 'rename')
-      nmap('ga', vim.lsp.buf.code_action, 'code actions')
-      nmap('gd', vim.lsp.buf.definition, 'go to definition')
-      nmap('gh', vim.diagnostic.open_float, 'show line diagnostics')
-      nmap('gr', vim.lsp.buf.references, 'open references')
-      nmap('<Leader>F', vim.lsp.buf.format, 'format file')
+      nmap('gH', vim.lsp.buf.hover, 'Show documentation')
+      nmap('gR', vim.lsp.buf.rename, 'Rename')
+      nmap('ga', vim.lsp.buf.code_action, 'Code actions')
+      nmap('gd', vim.lsp.buf.definition, 'Go to definition')
+      nmap('gh', vim.diagnostic.open_float, 'Show line diagnostics')
+      nmap('gr', vim.lsp.buf.references, 'Open references')
+      nmap('<Leader>F', vim.lsp.buf.format, 'Format file')
     end,
   },
   {

@@ -1,10 +1,10 @@
 return {
   'folke/which-key.nvim',
   config = function()
-    -- Shorten timeoutlen to display which-key faster.
+    -- Shorten timeoutlen to display WhichKey faster.
     vim.o.timeoutlen = 400
 
-    -- Set up which-key.
+    -- Set up WhichKey.
     local wk = require('which-key')
     wk.setup({
       plugins = {

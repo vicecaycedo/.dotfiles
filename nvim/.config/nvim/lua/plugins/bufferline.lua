@@ -42,9 +42,9 @@ return {
     })
 
     -- Set keymaps.
-    nmap('<Left>', '<Cmd>BufferLineCyclePrev<CR>', 'previous buffer')
-    nmap('<Right>', '<Cmd>BufferLineCycleNext<CR>', 'next buffer')
-    nmap('<Leader><Left>', '<Cmd>BufferLineMovePrev<CR>', 'move buffer left')
-    nmap('<Leader><Right>', '<Cmd>BufferLineMoveNext<CR>', 'move buffer right')
+    nmap('<Left>', '<Cmd>BufferLineCyclePrev<CR>', 'Previous buffer')
+    nmap('<Right>', '<Cmd>BufferLineCycleNext<CR>', 'Next buffer')
+    nmap('<Leader><Left>', '<Cmd>BufferLineMovePrev<CR>', 'Move buffer left')
+    nmap('<Leader><Right>', '<Cmd>BufferLineMoveNext<CR>', 'Move buffer right')
   end,
 }

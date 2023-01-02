@@ -6,7 +6,7 @@ return {
     vim.g.sort_motion_flags = 'u'
   end,
   config = function()
-    -- Register mapping with which-key.
+    -- Register mapping with WhichKey.
     local loaded, wk = pcall(require, 'which-key')
     if loaded then
       wk.register({

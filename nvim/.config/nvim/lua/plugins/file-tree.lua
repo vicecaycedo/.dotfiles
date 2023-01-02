@@ -2,11 +2,11 @@ return {
   'kyazdani42/nvim-tree.lua',
   dependencies = { 'kyazdani42/nvim-web-devicons' },
   keys = {
-    { '<Leader>te', '<Cmd>NvimTreeToggle<CR>', desc = 'toggle file explorer' },
+    { '<Leader>te', '<Cmd>NvimTreeToggle<CR>', desc = 'Toggle file explorer' },
     {
       '<Leader>tf',
       '<Cmd>NvimTreeFindFile<CR>',
-      desc = 'find file in file explorer',
+      desc = 'Find file in file explorer',
     },
   },
   config = {

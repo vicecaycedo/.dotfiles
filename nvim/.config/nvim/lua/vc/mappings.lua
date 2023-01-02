@@ -7,15 +7,15 @@ end
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
-nmap('<Leader>Bb', require('vc.blaze').test_file, 'test file')
-nmap('<Leader>Bf', require('vc.blaze').test_function, 'test function')
-nmap('<Leader>J', 'J', 'join lines')
-nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'clear search')
-nmap('<Leader>j', '<Cmd>cnext<CR>', 'next quickfix item')
-nmap('<Leader>k', '<Cmd>cprev<CR>', 'previous quickfix item')
-nmap('<Leader>q', '<Cmd>q<CR>', 'close window')
-nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
-nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
+nmap('<Leader>Bb', require('vc.blaze').test_file, 'Test file')
+nmap('<Leader>Bf', require('vc.blaze').test_function, 'Test function')
+nmap('<Leader>J', 'J', 'Join lines')
+nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'Clear search')
+nmap('<Leader>j', '<Cmd>cnext<CR>', 'Next quickfix item')
+nmap('<Leader>k', '<Cmd>cprev<CR>', 'Previous quickfix item')
+nmap('<Leader>q', '<Cmd>q<CR>', 'Close window')
+nmap('<Leader>s', '<Cmd>update<CR>', 'Save buffer')
+nmap('<Leader>x', '<Cmd>bdelete<CR>', 'Close buffer')
 
 nmap('Q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
@@ -25,7 +25,7 @@ nmap('Q', function()
     end
   end
   vim.cmd.copen()
-end, 'toggle quickfix')
+end, 'Toggle quickfix')
 
 nmap('<Leader>r', function()
   local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -34,7 +34,7 @@ nmap('<Leader>r', function()
   else
     error('Can not source filetype: ' .. filetype)
   end
-end, 'source lua/vim file', { expr = true })
+end, 'Source lua/vim file', { expr = true })
 
 -- Smart <CR>
 vim.keymap.set('n', '<CR>', function()

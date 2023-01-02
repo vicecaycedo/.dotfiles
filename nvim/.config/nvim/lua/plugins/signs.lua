@@ -6,9 +6,9 @@ return {
   end,
   config = function()
     -- Set keymaps.
-    nmap('J', '<Plug>(signify-next-hunk)zz', 'next diff')
-    nmap('K', '<Plug>(signify-prev-hunk)zz', 'prev diff')
-    nmap('<Leader>md', '<Cmd>SignifyHunkDiff<CR>', 'hunk diff')
-    nmap('<Leader>mu', '<Cmd>SignifyHunkUndo<CR>', 'hunk undo')
+    nmap('J', '<Plug>(signify-next-hunk)zz', 'Next diff')
+    nmap('K', '<Plug>(signify-prev-hunk)zz', 'Previous diff')
+    nmap('<Leader>md', '<Cmd>SignifyHunkDiff<CR>', 'Hunk diff')
+    nmap('<Leader>mu', '<Cmd>SignifyHunkUndo<CR>', 'Hunk undo')
   end,
 }

@@ -17,7 +17,7 @@ return {
     local cmp = require('cmp')
     local luasnip = require('luasnip')
 
-    -- Set up luasnip.
+    -- Set up Luasnip.
     luasnip.config.set_config({
       history = true,
       updateevents = 'TextChanged,TextChangedI',
@@ -27,7 +27,7 @@ return {
       paths = vim.fn.stdpath('config') .. '/snippets',
     })
 
-    -- Set keymaps for luasnip.
+    -- Set keymaps for Luasnip.
     vim.keymap.set({ 'i', 'n', 's' }, '<C-k>', function()
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)

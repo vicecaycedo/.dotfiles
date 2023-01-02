@@ -6,7 +6,7 @@ return {
     local dap = require('dap')
     local dapui = require('dapui')
 
-    -- Set up DAP.
+    -- Set up nvim-dap and nvim-dap-ui.
     dap.adapters.python = {
       type = 'server',
       port = 5678,

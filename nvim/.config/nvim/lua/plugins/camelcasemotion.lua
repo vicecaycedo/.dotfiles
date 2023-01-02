@@ -5,7 +5,7 @@ return {
     vim.g.camelcasemotion_key = '<leader>'
   end,
   config = function()
-    -- Ignore mappings in which-key.
+    -- Ignore mappings in WhichKey.
     local loaded, wk = pcall(require, 'which-key')
     if loaded then
       local ignore = 'which_key_ignore'

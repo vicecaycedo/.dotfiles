@@ -3,7 +3,7 @@ return {
   cmd = { 'S', 'Subvert' },
   keys = 'cr',
   config = function()
-    -- Register mappings in which-key.
+    -- Register mappings with WhichKey.
     local loaded, wk = pcall(require, 'which-key')
     if loaded then
       wk.register({
