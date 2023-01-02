@@ -10,38 +10,57 @@ return {
       -- Autoinstall language servers.
       require('mason').setup()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'sumneko_lua' },
-      })
-
-      -- Set up Lua language server.
-      local lspconfig = require('lspconfig')
-      lspconfig.sumneko_lua.setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        on_attach = require('vc.lsp-util').on_attach,
-        settings = {
-          Lua = {
-            runtime = {
-              path = vim.split(package.path, ';'),
-              version = 'LuaJIT',
-            },
-            diagnostics = {
-              disable = {
-                'different-requires',
-              },
-              globals = {
-                'vim', -- Neovim
-                'use', -- Packer
-              },
-            },
-            workspace = {
-              -- Make the server aware of Neovim runtime files.
-              library = {
-                [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-              },
-            },
-          },
+        ensure_installed = {
+          -- 'awk_ls',
+          'bashls',
+          'cssls',
+          -- 'dotls',
+          'emmet_ls',
+          'html',
+          -- 'jsonls',
+          'sumneko_lua',
+          -- 'yamlls',
         },
+      })
+      require('mason-lspconfig').setup_handlers({
+        -- Default setup for servers installed with Mason.
+        function(server_name)
+          require('lspconfig')[server_name].setup({
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            on_attach = require('vc.lsp-util').on_attach,
+          })
+        end,
+        -- Custom setups for servers installed with Mason.
+        ['sumneko_lua'] = function()
+          require('lspconfig').sumneko_lua.setup({
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            on_attach = require('vc.lsp-util').on_attach,
+            settings = {
+              Lua = {
+                runtime = {
+                  path = vim.split(package.path, ';'),
+                  version = 'LuaJIT',
+                },
+                diagnostics = {
+                  disable = {
+                    'different-requires',
+                  },
+                  globals = {
+                    'vim', -- Neovim
+                    'use', -- Packer
+                  },
+                },
+                workspace = {
+                  -- Make the server aware of Neovim runtime files.
+                  library = {
+                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                  },
+                },
+              },
+            },
+          })
+        end,
       })
 
       -- Configure Google LSP, if available.
