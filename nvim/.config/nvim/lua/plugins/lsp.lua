@@ -45,9 +45,7 @@ return {
       })
 
       -- Configure Google LSP, if available.
-      if vim.fn.isdirectory(vim.fn.stdpath('config') .. '/lua/google') then
-        require('google.lsp')
-      end
+      pcall(require, 'google.lsp')
 
       -- Don't show diagnostics as inline virtual text.
       vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
