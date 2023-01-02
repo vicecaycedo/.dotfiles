@@ -14,6 +14,11 @@ nmap('<Leader>j', '<Cmd>cnext<CR>', 'Next quickfix item')
 nmap('<Leader>k', '<Cmd>cprevious<CR>', 'Previous quickfix item')
 nmap('<Leader>q', '<Cmd>quit<CR>', 'Close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'Save buffer')
+nmap(
+  '<Leader>S',
+  '<Cmd>noautocommand update<CR>',
+  'Save buffer without autocommands'
+)
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'Close buffer')
 
 nmap('Q', function()
