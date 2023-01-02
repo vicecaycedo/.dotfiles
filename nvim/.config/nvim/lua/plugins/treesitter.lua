@@ -10,6 +10,7 @@ return {
           'css',
           'dart',
           'go',
+          'help',
           'html',
           'json',
           'kotlin',
