@@ -1,7 +1,7 @@
 return {
   'simrat39/symbols-outline.nvim',
   keys = {
-    { '<leader>fs', '<Cmd>SymbolsOutline<CR>', desc = 'Explore symbols' },
+    { '<Leader>fs', '<Cmd>SymbolsOutline<CR>', desc = 'Explore symbols' },
   },
   config = {
     show_guides = false,

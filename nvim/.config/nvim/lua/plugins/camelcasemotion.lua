@@ -2,7 +2,7 @@ return {
   'bkad/camelcasemotion',
   event = 'VeryLazy',
   init = function()
-    vim.g.camelcasemotion_key = '<leader>'
+    vim.g.camelcasemotion_key = '<Leader>'
   end,
   config = function()
     -- Ignore mappings in WhichKey.
@@ -10,10 +10,10 @@ return {
     if loaded then
       local ignore = 'which_key_ignore'
       wk.register({
-        ['<leader>b'] = ignore,
-        ['<leader>e'] = ignore,
-        ['<leader>ge'] = ignore,
-        ['<leader>w'] = ignore,
+        ['<Leader>b'] = ignore,
+        ['<Leader>e'] = ignore,
+        ['<Leader>ge'] = ignore,
+        ['<Leader>w'] = ignore,
       })
     end
   end,
