@@ -60,6 +60,11 @@ return {
           prompt_position = 'top',
           horizontal = { height = 0.95, width = 0.95 },
         },
+        mappings = {
+          n = {
+            p = require('telescope.actions.layout').toggle_preview,
+          },
+        },
         sorting_strategy = 'ascending',
       },
       pickers = {
