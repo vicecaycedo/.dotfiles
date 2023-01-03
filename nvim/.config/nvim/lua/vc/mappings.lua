@@ -22,7 +22,7 @@ nmap('<Leader>q', '<Cmd>quit<CR>', 'Close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'Save buffer')
 nmap(
   '<Leader>S',
-  '<Cmd>noautocommand update<CR>',
+  '<Cmd>noautocmd update<CR>',
   'Save buffer without autocommands'
 )
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'Close buffer')
