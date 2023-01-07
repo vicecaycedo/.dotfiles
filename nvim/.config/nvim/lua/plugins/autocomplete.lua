@@ -1,3 +1,11 @@
+-- Global cmp source to menu name map so that external configs can update it.
+vim.g.cmp_source_to_menu = {
+  buffer = '[Buf]',
+  luasnip = '[Snip]',
+  nvim_lsp = '[LSP]',
+  nvim_lua = '[Lua]',
+}
+
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
@@ -52,14 +60,7 @@ return {
     cmp.setup({
       formatting = {
         format = function(entry, vim_item)
-          vim_item.menu = ({
-            buffer = '[Buf]',
-            -- buganizer = '[b/]',
-            -- nvim_ciderlsp = '[ML]',
-            luasnip = '[Snip]',
-            nvim_lsp = '[LSP]',
-            nvim_lua = '[Lua]',
-          })[entry.source.name]
+          vim_item.menu = vim.g.cmp_source_to_menu[entry.source.name]
           return vim_item
         end,
       },
@@ -79,8 +80,6 @@ return {
       },
       sources = {
         { name = 'luasnip' },
-        -- { name = 'buganizer' },
-        -- { name = 'nvim_ciderlsp' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'buffer', max_item_count = 5 },
