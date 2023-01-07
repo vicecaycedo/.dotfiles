@@ -31,15 +31,6 @@ return {
           })
         end,
         -- Custom setups for servers installed with Mason.
-        html = function()
-          require('lspconfig').html.setup({
-            capabilities = require('cmp_nvim_lsp').default_capabilities(),
-            on_attach = require('vc.lsp-util').on_attach,
-            init_options = {
-              provideFormatter = false,
-            },
-          })
-        end,
         sumneko_lua = function()
           require('lspconfig').sumneko_lua.setup({
             capabilities = require('cmp_nvim_lsp').default_capabilities(),

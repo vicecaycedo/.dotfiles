@@ -7,7 +7,12 @@ M.on_attach = function(client)
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = vim.api.nvim_create_augroup('lsp_format', {}),
       callback = function()
-        vim.lsp.buf.format()
+        vim.lsp.buf.format({
+          filter = function(formatting_client)
+            -- Do not autoformat with html language server.
+            return formatting_client.name ~= 'html'
+          end,
+        })
       end,
     })
   end
