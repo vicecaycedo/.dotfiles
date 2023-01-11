@@ -35,4 +35,11 @@ M.grep_help = function()
   })
 end
 
+M.grep_zettels = function()
+  require('telescope.builtin').live_grep({
+    prompt_title = 'grep Zettels',
+    cwd = vim.fn.expand('~/zettels'),
+  })
+end
+
 return M
