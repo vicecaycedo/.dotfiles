@@ -9,7 +9,7 @@ return {
       desc = 'Find file in file explorer',
     },
   },
-  config = {
+  opts = {
     git = {
       enable = false,
     },

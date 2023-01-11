@@ -1,7 +1,7 @@
 return {
   'numtostr/comment.nvim',
   event = 'VeryLazy',
-  config = {
+  opts = {
     ignore = '^$', -- Ignore empty lines.
   },
 }

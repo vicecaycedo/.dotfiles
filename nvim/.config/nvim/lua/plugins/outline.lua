@@ -3,7 +3,7 @@ return {
   keys = {
     { '<Leader>fs', '<Cmd>SymbolsOutline<CR>', desc = 'Explore symbols' },
   },
-  config = {
+  opts = {
     show_guides = false,
     show_numbers = true,
     show_relative_numbers = true,

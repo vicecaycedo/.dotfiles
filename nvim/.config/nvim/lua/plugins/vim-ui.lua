@@ -1,7 +1,7 @@
 return {
   'stevearc/dressing.nvim',
   event = 'VeryLazy',
-  config = {
+  opts = {
     input = {
       insert_only = false,
     },

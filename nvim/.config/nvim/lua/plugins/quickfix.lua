@@ -2,7 +2,7 @@ return {
   'kevinhwang91/nvim-bqf',
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   ft = 'qf',
-  config = {
+  opts = {
     func_map = {
       open = 'o',
       openc = '<CR>',

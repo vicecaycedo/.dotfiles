@@ -52,31 +52,32 @@ return {
       desc = 'Resume Telescope picker',
     },
   },
-  config = function()
+  opts = {
+    defaults = {
+      file_ignore_patterns = {
+        -- See: https://www.lua.org/manual/5.1/manual.html#5.4.1 for more
+        -- information about lua regex.
+        '%.git/',
+        '%.orig',
+      },
+      layout_config = {
+        prompt_position = 'top',
+        horizontal = { height = 0.95, width = 0.95 },
+      },
+      mappings = {
+        n = {
+          p = require('telescope.actions.layout').toggle_preview,
+        },
+      },
+      sorting_strategy = 'ascending',
+    },
+    pickers = {
+      lsp_code_actions = { theme = 'cursor' },
+    },
+  },
+  config = function(_, opts)
     local telescope = require('telescope')
-    telescope.setup({
-      defaults = {
-        file_ignore_patterns = {
-          -- See: https://www.lua.org/manual/5.1/manual.html#5.4.1 for more
-          -- information about lua regex.
-          '%.git/',
-          '%.orig',
-        },
-        layout_config = {
-          prompt_position = 'top',
-          horizontal = { height = 0.95, width = 0.95 },
-        },
-        mappings = {
-          n = {
-            p = require('telescope.actions.layout').toggle_preview,
-          },
-        },
-        sorting_strategy = 'ascending',
-      },
-      pickers = {
-        lsp_code_actions = { theme = 'cursor' },
-      },
-    })
+    telescope.setup(opts)
     telescope.load_extension('fzf')
   end,
 }

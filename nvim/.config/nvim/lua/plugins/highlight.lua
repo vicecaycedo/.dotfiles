@@ -1,7 +1,7 @@
 return {
   'folke/paint.nvim',
   event = 'BufReadPre',
-  config = {
+  opts = {
     highlights = {
       {
         filter = {},
