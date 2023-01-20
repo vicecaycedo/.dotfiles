@@ -37,7 +37,7 @@ end
 -- Returns a table of files related to the current file (e.g. BUILD, tests,
 -- etc.). Each entry in the table is a table containing the name of the related
 -- file and the relevant line number.
-local get_related_files = function()
+local find_related_files = function()
   local related_files = {}
   local current_dir = vim.fn.expand('%:h')
   local current_filename = vim.fn.expand('%')
@@ -83,7 +83,7 @@ M.find_related = function()
       previewer = config.grep_previewer(opts),
       sorter = config.generic_sorter(opts),
       finder = finders.new_table({
-        results = get_related_files(),
+        results = find_related_files(),
         entry_maker = function(entry)
           return {
             value = entry.filename,
