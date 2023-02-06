@@ -51,6 +51,7 @@ bindkey -M isearch ' ' magic-space
 # General Aliases
 alias c="clear"
 alias n="nvim"
+alias l="less -F"
 alias r="ranger"
 
 # Git Aliases
