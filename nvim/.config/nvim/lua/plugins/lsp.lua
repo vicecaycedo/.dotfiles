@@ -5,7 +5,6 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
     },
-    event = 'VeryLazy',
     config = function()
       -- Autoinstall language servers.
       require('mason').setup()
