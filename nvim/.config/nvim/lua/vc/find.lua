@@ -108,11 +108,4 @@ M.find_related = function()
     :find()
 end
 
-M.find_zettels = function()
-  require('telescope.builtin').find_files({
-    prompt_title = 'Find in Zettels',
-    cwd = vim.fn.expand('~/zettels'),
-  })
-end
-
 return M

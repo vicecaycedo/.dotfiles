@@ -16,7 +16,6 @@ return {
     { '<Leader>fd', require('vc.grep').grep_dotfiles, desc = 'grep dotfiles' },
     { '<Leader>ff', require('vc.grep').grep_buffer, desc = 'grep buffer' },
     { '<Leader>fh', require('vc.grep').grep_help, desc = 'grep help tags' },
-    { '<Leader>fn', require('vc.grep').grep_zettels, desc = 'grep zettels' },
     { '<Leader>fp', require('vc.grep').grep_dir, desc = 'grep directory' },
     { '<Leader>ft', '<Cmd>Telescope treesitter<CR>', desc = 'grep treesitter' },
 
@@ -29,11 +28,6 @@ return {
       '<Leader>ph',
       require('vc.find').find_history,
       desc = 'Open from history',
-    },
-    {
-      '<Leader>pn',
-      require('vc.find').find_zettels,
-      desc = 'Open from zettels',
     },
     {
       '<Leader>pp',
