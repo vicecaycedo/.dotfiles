@@ -37,13 +37,9 @@ return {
             settings = {
               Lua = {
                 runtime = {
-                  path = vim.split(package.path, ';'),
                   version = 'LuaJIT',
                 },
                 diagnostics = {
-                  disable = {
-                    'different-requires',
-                  },
                   globals = {
                     'vim', -- Neovim
                     'use', -- Packer
@@ -52,10 +48,8 @@ return {
                 },
                 workspace = {
                   -- Make the server aware of Neovim runtime files.
-                  library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                  },
+                  library = vim.api.nvim_get_runtime_file('', true),
+                  checkThirdParty = false,
                 },
                 telemetry = {
                   enable = false,
