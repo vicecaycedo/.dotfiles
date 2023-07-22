@@ -89,7 +89,6 @@ return {
       nmap('gd', vim.lsp.buf.definition, 'Go to definition')
       nmap('gh', vim.diagnostic.open_float, 'Show line diagnostics')
       nmap('gr', vim.lsp.buf.references, 'Open references')
-      nmap('<Leader>F', vim.lsp.buf.format, 'Format file')
     end,
   },
   {
