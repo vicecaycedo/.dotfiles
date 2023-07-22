@@ -9,8 +9,8 @@ M.on_attach = function(client)
       callback = function()
         vim.lsp.buf.format({
           filter = function(formatting_client)
-            -- Do not autoformat with html language server.
             return formatting_client.name ~= 'html'
+                and formatting_client.name ~= 'lua_ls'
           end,
         })
       end,
