@@ -91,7 +91,6 @@ return {
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
-    ft = { 'lua' },
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
@@ -108,6 +107,8 @@ return {
               vim.fn.expand('~/.config/stylua/stylua.toml'),
             },
           }),
+          -- PostgreSQL formatter.
+          null_ls.builtins.formatting.pg_format,
         },
       })
     end,
