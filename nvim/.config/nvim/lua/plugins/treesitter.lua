@@ -30,6 +30,7 @@ return {
         'python',
         'query',
         'scss',
+        'sql',
         'typescript',
         'vim',
         'yaml',
