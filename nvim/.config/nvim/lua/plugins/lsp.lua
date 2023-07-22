@@ -10,10 +10,8 @@ return {
       require('mason').setup()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          -- 'awk_ls',
           'bashls',
           'cssls',
-          -- 'dotls',
           'emmet_ls',
           'html',
           -- 'jsonls',
