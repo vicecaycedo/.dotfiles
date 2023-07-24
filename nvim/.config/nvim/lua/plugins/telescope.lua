@@ -13,8 +13,8 @@ return {
       desc = 'Open buffer diagnostics',
     },
 
+    { '<Leader>fb', require('vc.grep').grep_buffer, desc = 'grep buffer' },
     { '<Leader>fd', require('vc.grep').grep_dotfiles, desc = 'grep dotfiles' },
-    { '<Leader>ff', require('vc.grep').grep_buffer, desc = 'grep buffer' },
     { '<Leader>fh', require('vc.grep').grep_help, desc = 'grep help tags' },
     { '<Leader>fp', require('vc.grep').grep_dir, desc = 'grep directory' },
     { '<Leader>ft', '<Cmd>Telescope treesitter<CR>', desc = 'grep treesitter' },
