@@ -41,13 +41,12 @@ nmap('<Leader>r', function()
   end
 end, 'Source lua/vim file', { expr = true })
 
--- Smart <CR>
-vim.keymap.set('n', '<CR>', function()
+-- <S-CR> and context-aware <CR>.
+nmap('<S-CR>', 'O<Esc>', 'Add newline above')
+nmap('<CR>', function()
   local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   if buftype == 'nofile' or buftype == 'quickfix' then
     return '<CR>'
   end
   return 'o<Esc>'
-end, {
-  expr = true,
-})
+end, 'Context-aware <CR>', { expr = true })
