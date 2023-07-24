@@ -24,8 +24,13 @@ return {
           },
         },
       },
-      lualine_x = { 'location' },
-      lualine_y = {},
+      lualine_x = {
+        {
+          require('grapple').key,
+          cond = require('grapple').exists,
+        },
+      },
+      lualine_y = { 'location' },
       lualine_z = { 'progress' },
     },
   },
