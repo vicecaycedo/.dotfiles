@@ -9,7 +9,7 @@ return {
       'symbols-outline',
     },
     options = {
-      component_separators = { left = '|', right = '|' },
+      component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       globalstatus = true,
     },
@@ -18,8 +18,10 @@ return {
       lualine_b = { 'diagnostics' },
       lualine_c = {
         {
-          'filename',
-          path = 1, -- Relative path.
+          'buffers',
+          symbols = {
+            alternate_file = '',
+          },
         },
       },
       lualine_x = { 'location' },
