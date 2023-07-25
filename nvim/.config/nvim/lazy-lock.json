@@ -8,7 +8,6 @@
   "comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
   "dressing.nvim": { "branch": "master", "commit": "39611852fd7bbac117e939a26759bb37361f0c90" },
   "grapple.nvim": { "branch": "main", "commit": "ab274a3bfb674442d57fca05df866b71895853bc" },
-  "gruvbox": { "branch": "master", "commit": "bf2885a95efdad7bd5e4794dd0213917770d79b7" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
   "luasnip": { "branch": "master", "commit": "0b4950a237ce441a6a3a947d501622453f6860ea" },
