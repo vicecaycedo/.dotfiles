@@ -44,10 +44,10 @@ local get_python_files = function()
   local results = {}
   local filename = vim.fn.expand('%')
   local files_to_find = {
-    -- Source files.
+    -- Source files (if the current file is a test file).
     string.gsub(filename, '_test%.(.+)', '.%1'),
     string.gsub(filename, '_tests%.(.+)', '.%1'),
-    -- Test files.
+    -- Test files (if the current file is a source file).
     string.gsub(filename, '%.(.+)', '_test.%1'),
     string.gsub(filename, '%.(.+)', '_tests.%1'),
   }
