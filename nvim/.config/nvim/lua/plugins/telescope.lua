@@ -36,7 +36,7 @@ return {
     },
     {
       '<Leader>pr',
-      require('vc.find').find_related,
+      require('vc.find_related').find_related,
       desc = 'Open from related files',
     },
 
