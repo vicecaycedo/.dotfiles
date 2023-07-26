@@ -30,8 +30,10 @@ local get_build_files = function()
   local filename_tail = vim.fn.expand('%:t')
   local build_files = vim.fs.find('BUILD', { path = filename, upward = true })
   for _, build_file in ipairs(build_files) do
-    local lnum = find_lnum_for_text_in_file(filename_tail, build_file)
-    table.insert(results, { name = build_file, lnum = lnum })
+    if build_file ~= filename then
+      local lnum = find_lnum_for_text_in_file(filename_tail, build_file)
+      table.insert(results, { name = build_file, lnum = lnum })
+    end
   end
   return results
 end
