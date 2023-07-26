@@ -98,6 +98,21 @@ local get_acx_files = function()
   return filter_for_only_real_files(files_to_check)
 end
 
+local get_java_files = function()
+  local filename = vim.fn.expand('%')
+  local filename_with_java_prefix = string.gsub(filename, 'javatests/', 'java/')
+  local filename_with_javatests_prefix =
+    string.gsub(filename, 'java/', 'javatests/')
+  local files_to_check = {
+    -- Source files (if the current file is a test file).
+    string.gsub(filename_with_java_prefix, 'Test%.(.+)', '.%1'),
+    -- Test files (if the current file is a source file).
+    string.gsub(filename_with_javatests_prefix, '%.(.+)', 'Test.%1'),
+  }
+  vim.print(files_to_check)
+  return filter_for_only_real_files(files_to_check)
+end
+
 local get_filename_relative_to_cwd = function(file)
   local cwd = vim.fn.getcwd() .. '/'
   return string.gsub(file, cwd, '')
@@ -119,6 +134,9 @@ M.find_related = function()
   end
   if filetype == 'dart' or filetype == 'html' or filetype == 'scss' then
     related_files = concatenate_tables(related_files, get_acx_files())
+  end
+  if filetype == 'java' then
+    related_files = concatenate_tables(related_files, get_java_files())
   end
 
   pickers
