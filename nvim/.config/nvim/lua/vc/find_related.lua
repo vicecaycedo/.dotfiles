@@ -12,10 +12,6 @@ local concatenate_tables = function(table_one, table_two)
   return result
 end
 
-local file_exists = function(file)
-  return vim.fn.filereadable(file) == 1
-end
-
 --- Searches for |text| in |file| and returns the first line number where
 --- it is found, or nil if it is not found.
 local find_lnum_for_text_in_file = function(text, file)
@@ -40,10 +36,22 @@ local get_build_files = function()
   return results
 end
 
-local get_python_files = function()
+local filter_for_only_real_files = function(files_to_check)
   local results = {}
   local filename = vim.fn.expand('%')
-  local files_to_find = {
+  for _, file_to_check in ipairs(files_to_check) do
+    if
+      file_to_check ~= filename and vim.fn.filereadable(file_to_check) == 1
+    then
+      table.insert(results, { name = file_to_check })
+    end
+  end
+  return results
+end
+
+local get_python_files = function()
+  local filename = vim.fn.expand('%')
+  local files_to_check = {
     -- Source files (if the current file is a test file).
     string.gsub(filename, '_test%.(.+)', '.%1'),
     string.gsub(filename, '_tests%.(.+)', '.%1'),
@@ -51,12 +59,7 @@ local get_python_files = function()
     string.gsub(filename, '%.(.+)', '_test.%1'),
     string.gsub(filename, '%.(.+)', '_tests.%1'),
   }
-  for _, file_to_find in ipairs(files_to_find) do
-    if file_to_find ~= filename and file_exists(file_to_find) then
-      table.insert(results, { name = file_to_find })
-    end
-  end
-  return results
+  return filter_for_only_real_files(files_to_check)
 end
 
 local get_filename_relative_to_cwd = function(file)
