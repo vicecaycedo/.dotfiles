@@ -62,6 +62,40 @@ local get_python_files = function()
   return filter_for_only_real_files(files_to_check)
 end
 
+local get_acx_files = function()
+  local filename = vim.fn.expand('%')
+  local parent_dir = vim.fs.dirname(filename)
+  local grandparent_dir = vim.fs.dirname(parent_dir)
+  local greatgrandparent_dir = vim.fs.dirname(grandparent_dir)
+
+  -- Only interested in the filename tail with extension(s) removed. Removing
+  -- two extensions to support `.acx.html` files.
+  local root_name = vim.fn.expand('%:t:r:r')
+  -- Remove `_test` suffix.
+  root_name = string.gsub(root_name, '_test', '')
+  -- Remove `_po` suffix.
+  root_name = string.gsub(root_name, '_po', '')
+
+  -- stylua: ignore start
+  local files_to_check = {
+    -- Source files.
+    grandparent_dir .. '/lib/' .. root_name .. '.dart',
+    greatgrandparent_dir .. '/lib/' .. root_name .. '.dart',
+    grandparent_dir .. '/lib/' .. root_name .. '.acx.html',
+    greatgrandparent_dir .. '/lib/' .. root_name .. '.acx.html',
+    grandparent_dir .. '/lib/' .. root_name .. '.scss',
+    greatgrandparent_dir .. '/lib/' .. root_name .. '.scss',
+    -- Test files.
+    grandparent_dir .. '/test/' .. root_name .. '_test.dart',
+    greatgrandparent_dir .. '/test/' .. root_name .. '_test.dart',
+    -- Testing files.
+    grandparent_dir .. '/testing/lib/' .. root_name .. '_po.dart',
+    greatgrandparent_dir .. '/testing/lib/' .. root_name .. '_po.dart',
+  }
+  -- stylua: ignore end
+  return filter_for_only_real_files(files_to_check)
+end
+
 local get_filename_relative_to_cwd = function(file)
   local cwd = vim.fn.getcwd() .. '/'
   return string.gsub(file, cwd, '')
@@ -80,6 +114,9 @@ M.find_related = function()
   related_files = concatenate_tables(related_files, get_build_files())
   if filetype == 'python' then
     related_files = concatenate_tables(related_files, get_python_files())
+  end
+  if filetype == 'dart' or filetype == 'html' or filetype == 'scss' then
+    related_files = concatenate_tables(related_files, get_acx_files())
   end
 
   pickers
