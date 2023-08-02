@@ -51,7 +51,7 @@ local filter_for_only_real_files = function(files_to_check)
   return results
 end
 
-local get_python_files = function()
+local get_files_for_python = function()
   local filename = vim.fn.expand('%')
   local files_to_check = {
     -- Source files (if the current file is a test file).
@@ -64,7 +64,7 @@ local get_python_files = function()
   return filter_for_only_real_files(files_to_check)
 end
 
-local get_acx_files = function()
+local get_files_for_acx = function()
   local filename = vim.fn.expand('%')
   local parent_dir = vim.fs.dirname(filename)
   local grandparent_dir = vim.fs.dirname(parent_dir)
@@ -98,7 +98,7 @@ local get_acx_files = function()
   return filter_for_only_real_files(files_to_check)
 end
 
-local get_java_files = function()
+local get_files_for_java = function()
   local filename = vim.fn.expand('%')
   local filename_with_java_prefix = string.gsub(filename, 'javatests/', 'java/')
   local filename_with_javatests_prefix =
@@ -130,13 +130,13 @@ M.find_related = function()
   local related_files = {}
   related_files = concatenate_tables(related_files, get_build_files())
   if filetype == 'python' then
-    related_files = concatenate_tables(related_files, get_python_files())
+    related_files = concatenate_tables(related_files, get_files_for_python())
   end
   if filetype == 'dart' or filetype == 'html' or filetype == 'scss' then
-    related_files = concatenate_tables(related_files, get_acx_files())
+    related_files = concatenate_tables(related_files, get_files_for_acx())
   end
   if filetype == 'java' then
-    related_files = concatenate_tables(related_files, get_java_files())
+    related_files = concatenate_tables(related_files, get_files_for_java())
   end
 
   pickers
