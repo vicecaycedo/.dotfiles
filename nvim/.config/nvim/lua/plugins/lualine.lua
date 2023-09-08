@@ -18,16 +18,20 @@ return {
       lualine_b = { 'diagnostics' },
       lualine_c = {
         {
-          'buffers',
-          symbols = {
-            alternate_file = '',
-          },
+          'filename',
+          path = 1, -- Relative path.
         },
       },
       lualine_x = {
         {
           require('grapple').key,
           cond = require('grapple').exists,
+        },
+        {
+          'buffers',
+          symbols = {
+            alternate_file = '',
+          },
         },
       },
       lualine_y = { 'location' },
