@@ -51,7 +51,7 @@ local filter_for_only_real_files = function(files_to_check)
   return results
 end
 
-local get_files_for_python = function()
+local get_files_for_go_or_python = function()
   local filename = vim.fn.expand('%')
   local files_to_check = {
     -- Source files (if the current file is a test file).
@@ -129,8 +129,9 @@ M.find_related = function()
 
   local related_files = {}
   related_files = concatenate_tables(related_files, get_build_files())
-  if filetype == 'python' then
-    related_files = concatenate_tables(related_files, get_files_for_python())
+  if filetype == 'python' or filetype == 'go' then
+    related_files =
+      concatenate_tables(related_files, get_files_for_go_or_python())
   end
   if filetype == 'dart' or filetype == 'html' or filetype == 'scss' then
     related_files = concatenate_tables(related_files, get_files_for_acx())
