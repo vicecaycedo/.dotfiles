@@ -25,22 +25,18 @@ return {
       },
     },
     view = {
-      mappings = {
-        list = {
-          {
-            key = '<Esc>',
-            cb = '<Cmd>NvimTreeToggle<CR>',
-          },
-          {
-            key = 'O',
-            action = 'expand_all',
-          },
-        },
-      },
       number = true,
       relativenumber = true,
       signcolumn = 'no',
       width = 50,
     },
+    on_attach = function(bufnr)
+      local api = require('nvim-tree.api')
+      -- Use all default mappings.
+      api.config.mappings.default_on_attach(bufnr)
+      -- Add/override mappings.
+      vim.keymap.set('n', '<Esc>', api.tree.close, { buffer = bufnr })
+      vim.keymap.set('n', 'O', api.tree.expand_all, { buffer = bufnr })
+    end,
   },
 }
