@@ -7,12 +7,16 @@ M.on_attach = function(client)
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = vim.api.nvim_create_augroup('lsp_format', {}),
       callback = function()
-        vim.lsp.buf.format({
-          filter = function(formatting_client)
-            return formatting_client.name ~= 'html'
+        local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+        -- Do not autoformat Python files since the formatter is very slow.
+        if filetype ~= 'python' then
+          vim.lsp.buf.format({
+            filter = function(formatting_client)
+              return formatting_client.name ~= 'html'
                 and formatting_client.name ~= 'lua_ls'
-          end,
-        })
+            end,
+          })
+        end
       end,
     })
   end
