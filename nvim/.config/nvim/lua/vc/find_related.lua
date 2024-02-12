@@ -51,6 +51,27 @@ local filter_for_only_real_files = function(files_to_check)
   return results
 end
 
+local get_files_for_cpp = function()
+  local filename = vim.fn.expand('%')
+  local parent_dir = vim.fs.dirname(filename)
+
+  -- Only interested in the filename tail with extension(s) removed.
+  local root_name = vim.fn.expand('%:t:r')
+  -- Remove `_test` suffix.
+  root_name = string.gsub(root_name, '_test', '')
+
+  -- stylua: ignore start
+  local files_to_check = {
+    -- Source files.
+    parent_dir .. '/' .. root_name .. '.h',
+    parent_dir .. '/' .. root_name .. '.cc',
+    -- Test files.
+    parent_dir .. '/' .. root_name .. '_test.cc',
+  }
+  -- stylua: ignore end
+  return filter_for_only_real_files(files_to_check)
+end
+
 local get_files_for_go_or_python = function()
   local filename = vim.fn.expand('%')
   local files_to_check = {
@@ -129,6 +150,9 @@ M.find_related = function()
 
   local related_files = {}
   related_files = concatenate_tables(related_files, get_build_files())
+  if filetype == 'cpp' then
+    related_files = concatenate_tables(related_files, get_files_for_cpp())
+  end
   if filetype == 'python' or filetype == 'go' then
     related_files =
       concatenate_tables(related_files, get_files_for_go_or_python())
