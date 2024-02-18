@@ -24,6 +24,8 @@ return {
         'jsonc',
         'kotlin',
         'lua',
+        'markdown',
+        'markdown_inline',
         'proto',
         'python',
         'query',
