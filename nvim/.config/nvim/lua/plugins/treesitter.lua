@@ -16,7 +16,7 @@ return {
         'gitattributes',
         'gitcommit',
         'go',
-        'help',
+        'vimdoc',
         'html',
         'java',
         'javascript',
