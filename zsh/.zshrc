@@ -2,6 +2,9 @@
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
+# Prompt
+PROMPT='%(?..%F{red}%?%f )%F{blue}%~ %# '
+
 # Editor
 export EDITOR=nvim
 
@@ -78,13 +81,7 @@ if [[ ! -e $HOME/.zsh/fast-syntax-highlighting ]]; then
 	echo "Installing fast-syntax-highlighting plugin..."
 	git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.zsh/fast-syntax-highlighting
 fi
-if [[ ! -e $HOME/.zsh/powerlevel10k ]]; then
-	echo "Installing powerlevel10k..."
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/powerlevel10k
-fi
 
 # Load plugins.
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.p10k.zsh
