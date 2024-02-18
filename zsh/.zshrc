@@ -54,18 +54,7 @@ alias c="clear"
 alias n="nvim"
 alias l="less -F"
 alias r="ranger"
-
-# Git Aliases
 alias lg="lazygit"
-alias gs="git status"
-alias ga="git add"
-alias gap="git add -p"
-alias gcm="git commit --message"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gpush="git push"
-alias gpull="git pull"
-alias gl="git log"
 
 # Tmux Aliases
 alias t="tmux"
