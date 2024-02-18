@@ -4,12 +4,6 @@ function _G.nmap(lhs, rhs, desc, opts)
   vim.keymap.set('n', lhs, rhs, opts)
 end
 
-function _G.vmap(lhs, rhs, desc, opts)
-  opts = opts or {}
-  opts.desc = desc
-  vim.keymap.set('v', lhs, rhs, opts)
-end
-
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
