@@ -5,16 +5,6 @@ return {
   s('l', fmt('local {} = {}', { i(1), i(0) })),
   s('req', fmt("require('{}'){}", { i(1), i(0) })),
   s(
-    { trig = 'lreq', dscr = 'Smart require' },
-    fmt("local {} = require('{}')", {
-      f(function(import_name)
-        local parts = vim.split(import_name[1][1], '.', true)
-        return parts[#parts] or ''
-      end, 1),
-      i(1, '<modName>'),
-    })
-  ),
-  s(
     { trig = 'M', dscr = 'Module boilerplate' },
     fmt(
       [[
