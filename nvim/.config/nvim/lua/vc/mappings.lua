@@ -13,8 +13,6 @@ end
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
-nmap('<Leader>bb', require('vc.blaze').test_file, 'Test file')
-nmap('<Leader>bf', require('vc.blaze').test_function, 'Test function')
 nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'Clear search')
 nmap('<Leader>j', '<Cmd>cnext<CR>', 'Next quickfix item')
 nmap('<Leader>k', '<Cmd>cprevious<CR>', 'Previous quickfix item')
