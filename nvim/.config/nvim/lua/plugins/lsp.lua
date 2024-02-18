@@ -17,7 +17,7 @@ return {
           'emmet_ls',
           'html',
           -- 'jsonls',
-          'sumneko_lua',
+          'lua_ls',
           -- 'yamlls',
         },
       })
@@ -30,8 +30,8 @@ return {
           })
         end,
         -- Custom setups for servers installed with Mason.
-        sumneko_lua = function()
-          require('lspconfig').sumneko_lua.setup({
+        lua_ls = function()
+          require('lspconfig').lua_ls.setup({
             capabilities = require('cmp_nvim_lsp').default_capabilities(),
             on_attach = require('vc.lsp-util').on_attach,
             settings = {
