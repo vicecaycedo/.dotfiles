@@ -20,6 +20,7 @@ nmap('<Leader>j', '<Cmd>cnext<CR>', 'Next quickfix item')
 nmap('<Leader>k', '<Cmd>cprevious<CR>', 'Previous quickfix item')
 nmap('<Leader>q', '<Cmd>quit<CR>', 'Close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'Save buffer')
+nmap('<Leader>L', '<Cmd>Lazy<CR>', 'open Lazy UI')
 nmap(
   '<Leader>S',
   '<Cmd>noautocmd update<CR>',

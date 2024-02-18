@@ -21,5 +21,3 @@ require('lazy').setup('plugins', {
     size = { height = 0.85, width = 0.85 },
   },
 })
-
-nmap('<Leader>L', '<Cmd>Lazy<CR>', 'open Lazy UI')
