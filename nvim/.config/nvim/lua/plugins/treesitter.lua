@@ -30,6 +30,7 @@ return {
         'query',
         'scss',
         'sql',
+        'starlark',
         'typescript',
         'vim',
         'vimdoc',
