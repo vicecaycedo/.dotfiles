@@ -13,7 +13,6 @@ M.on_attach = function(client)
           vim.lsp.buf.format({
             filter = function(formatting_client)
               return formatting_client.name ~= 'html'
-                and formatting_client.name ~= 'lua_ls'
             end,
           })
         end
