@@ -31,6 +31,7 @@ return {
         'scss',
         'sql',
         'starlark',
+        'swift',
         'typescript',
         'vim',
         'vimdoc',
