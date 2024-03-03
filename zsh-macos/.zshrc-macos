@@ -1,5 +1,6 @@
-# $PATH
+# Environment variables
 export PATH=$PATH:/opt/homebrew/bin
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias s="ls -AGl"
