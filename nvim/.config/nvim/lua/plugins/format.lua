@@ -8,6 +8,7 @@ return {
       lua = { 'stylua' },
       pgsql = { 'pg_format' },
       sql = { 'pg_format' },
+      swift = { 'swiftformat' },
     },
   },
 }
