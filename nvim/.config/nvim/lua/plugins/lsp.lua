@@ -13,9 +13,7 @@ return {
         'cssls',
         'emmet_ls',
         'html',
-        -- 'jsonls',
         'lua_ls',
-        -- 'yamlls',
       },
     })
     require('mason-lspconfig').setup_handlers({
