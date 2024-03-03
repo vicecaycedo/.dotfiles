@@ -20,9 +20,6 @@ M.on_attach = function(client)
       end,
     })
   end
-
-  -- Reset |formatexpr| to preserve |gq| behavior.
-  vim.o.formatexpr = ''
 end
 
 return M
