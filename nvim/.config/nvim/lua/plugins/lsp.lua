@@ -36,7 +36,6 @@ return {
               },
               diagnostics = {
                 globals = {
-                  'vim', -- Neovim
                   'nmap', -- Custom vim.keymap.set wrapper
                 },
               },
