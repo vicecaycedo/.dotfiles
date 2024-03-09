@@ -5,6 +5,7 @@ return {
     event = 'BufReadPost',
     opts = {
       ensure_installed = {
+        'astro',
         'bash',
         'c',
         'cpp',
@@ -32,6 +33,7 @@ return {
         'sql',
         'starlark',
         'swift',
+        'tsx',
         'typescript',
         'vim',
         'vimdoc',
