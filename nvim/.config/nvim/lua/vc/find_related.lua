@@ -130,7 +130,6 @@ local get_files_for_java = function()
     -- Test files (if the current file is a source file).
     string.gsub(filename_with_javatests_prefix, '%.(.+)', 'Test.%1'),
   }
-  vim.print(files_to_check)
   return filter_for_only_real_files(files_to_check)
 end
 
