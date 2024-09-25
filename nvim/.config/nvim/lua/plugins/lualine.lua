@@ -24,7 +24,9 @@ return {
       },
       lualine_x = {
         {
-          require('grapple').key,
+          function()
+            return require('grapple').name_or_index()
+          end,
           cond = require('grapple').exists,
         },
         {

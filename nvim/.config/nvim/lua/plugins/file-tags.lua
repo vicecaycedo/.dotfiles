@@ -1,10 +1,9 @@
 return {
   'cbochs/grapple.nvim',
   event = 'VeryLazy',
-  dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     require('grapple').setup({
-      popup_options = {
+      win_opts = {
         width = 100,
       },
     })
@@ -12,9 +11,9 @@ return {
     nmap('_', require('grapple').toggle, 'toggle grapple tag')
     nmap('-', function()
       if vim.v.count > 0 then
-        require('grapple').select({ key = vim.v.count })
+        require('grapple').select({ index = vim.v.count })
       else
-        require('grapple').popup_tags()
+        require('grapple').open_tags()
       end
     end, 'open grapple tags or go directly to tag')
   end,

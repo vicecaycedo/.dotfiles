@@ -9,8 +9,8 @@ return {
     -- Register mapping with WhichKey.
     local loaded, wk = pcall(require, 'which-key')
     if loaded then
-      wk.register({
-        ['gs'] = 'sort',
+      wk.add({
+        { 'gs', group = 'sort' },
       })
     end
   end,

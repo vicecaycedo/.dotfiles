@@ -11,11 +11,10 @@ return {
     -- Ignore mappings in WhichKey.
     local loaded, wk = pcall(require, 'which-key')
     if loaded then
-      local ignore = 'which_key_ignore'
-      wk.register({
-        ['<Leader>e'] = ignore,
-        ['<Leader>ge'] = ignore,
-        ['<Leader>w'] = ignore,
+      wk.add({
+        { '<Leader>e', hidden = true },
+        { '<Leader>ge', hidden = true },
+        { '<Leader>w', hidden = true },
       })
     end
   end,
