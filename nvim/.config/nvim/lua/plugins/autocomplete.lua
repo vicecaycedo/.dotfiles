@@ -1,9 +1,9 @@
 -- Global cmp source to menu name map so that external configs can update it.
 vim.g.cmp_source_to_menu = {
-  buffer = '[Buf]',
-  luasnip = '[Snip]',
-  nvim_lsp = '[LSP]',
-  nvim_lua = '[Lua]',
+  buffer = 'Buf',
+  luasnip = 'Snip',
+  nvim_lsp = 'LSP',
+  nvim_lua = 'Lua',
 }
 
 return {
