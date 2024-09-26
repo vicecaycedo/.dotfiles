@@ -2,7 +2,7 @@ local M = {}
 
 M.find_dotfiles = function()
   require('telescope.builtin').find_files({
-    prompt_title = 'Find in Dotfiles',
+    prompt_title = 'find in dotfiles',
     cwd = vim.fn.stdpath('config'),
     follow = true,
   })
@@ -10,14 +10,14 @@ end
 
 M.find_files = function()
   require('telescope.builtin').find_files({
-    prompt_title = 'Find in Directory',
+    prompt_title = 'find in directory',
     hidden = true,
   })
 end
 
 M.find_history = function()
   require('telescope.builtin').oldfiles({
-    prompt_title = 'Find in History',
+    prompt_title = 'find in history',
   })
 end
 

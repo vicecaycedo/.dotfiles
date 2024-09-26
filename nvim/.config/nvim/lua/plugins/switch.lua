@@ -1,7 +1,7 @@
 return {
   'andrewradev/switch.vim',
   keys = {
-    { '<Leader>-', '<Cmd>Switch<CR>', desc = 'Switch word under cursor' },
+    { '<Leader>-', '<Cmd>Switch<CR>', desc = 'switch word under cursor' },
   },
   init = function()
     -- Disable default mapping.

@@ -5,11 +5,11 @@ vim.keymap.set(
   'n',
   '<CR>',
   '<C-]>',
-  { buffer = true, desc = 'Jump to tag under cursor' }
+  { buffer = true, desc = 'jump to tag under cursor' }
 )
 vim.keymap.set(
   'n',
   '<Esc>',
   '<Cmd>bdelete<CR>',
-  { buffer = true, desc = 'Close help' }
+  { buffer = true, desc = 'close' }
 )

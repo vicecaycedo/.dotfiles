@@ -7,20 +7,20 @@ end
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
-nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'Clear search')
-nmap('<Leader>j', '<Cmd>cnext<CR>', 'Next quickfix item')
-nmap('<Leader>k', '<Cmd>cprevious<CR>', 'Previous quickfix item')
-nmap('<Leader>q', '<Cmd>quit<CR>', 'Close window')
-nmap('<Leader>s', '<Cmd>update<CR>', 'Save buffer')
+nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'clear search')
+nmap('<Leader>j', '<Cmd>cnext<CR>', 'next quickfix item')
+nmap('<Leader>k', '<Cmd>cprevious<CR>', 'previous quickfix item')
+nmap('<Leader>q', '<Cmd>quit<CR>', 'close window')
+nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
 nmap('<Leader>L', '<Cmd>Lazy<CR>', 'open Lazy UI')
 nmap(
   '<Leader>S',
   '<Cmd>noautocmd update<CR>',
-  'Save buffer without autocommands'
+  'save buffer without autocommands'
 )
-nmap('<Leader>x', '<Cmd>bdelete<CR>', 'Close buffer')
-nmap('<Left>', '<Cmd>bprev<CR>', 'Previous buffer')
-nmap('<Right>', '<Cmd>bnext<CR>', 'Next buffer')
+nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
+nmap('<Left>', '<Cmd>bprev<CR>', 'previous buffer')
+nmap('<Right>', '<Cmd>bnext<CR>', 'next buffer')
 
 nmap('Q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
@@ -30,7 +30,7 @@ nmap('Q', function()
     end
   end
   vim.cmd.copen()
-end, 'Toggle quickfix')
+end, 'toggle quickfix')
 
 nmap('<Leader>r', function()
   local filetype = vim.bo.filetype
@@ -39,14 +39,14 @@ nmap('<Leader>r', function()
   else
     error('Can not source filetype: ' .. filetype)
   end
-end, 'Source lua/vim file', { expr = true })
+end, 'source lua/vim file', { expr = true })
 
 -- <S-CR> and context-aware <CR>.
-nmap('<S-CR>', 'O<Esc>', 'Add newline above')
+nmap('<S-CR>', 'O<Esc>', 'add newline above')
 nmap('<CR>', function()
   local buftype = vim.bo.buftype
   if buftype == 'nofile' or buftype == 'quickfix' then
     return '<CR>'
   end
   return 'o<Esc>'
-end, 'Context-aware <CR>', { expr = true })
+end, 'context-aware <CR>', { expr = true })

@@ -29,9 +29,9 @@ return {
     })
 
     -- Set keymaps.
-    nmap('L', '<Plug>(signify-next-hunk)zz', 'Next diff')
-    nmap('H', '<Plug>(signify-prev-hunk)zz', 'Previous diff')
-    nmap('<Leader>md', '<Cmd>SignifyHunkDiff<CR>', 'Hunk diff')
-    nmap('<Leader>mu', '<Cmd>SignifyHunkUndo<CR>', 'Hunk undo')
+    nmap('L', '<Plug>(signify-next-hunk)zz', 'next diff')
+    nmap('H', '<Plug>(signify-prev-hunk)zz', 'previous diff')
+    nmap('<Leader>md', '<Cmd>SignifyHunkDiff<CR>', 'hunk diff')
+    nmap('<Leader>mu', '<Cmd>SignifyHunkUndo<CR>', 'hunk undo')
   end,
 }

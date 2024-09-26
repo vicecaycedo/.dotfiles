@@ -10,7 +10,7 @@ return {
     {
       '<Leader>d',
       '<Cmd>Telescope diagnostics<CR>',
-      desc = 'Open buffer diagnostics',
+      desc = 'open buffer diagnostics',
     },
 
     { '<Leader>fb', require('vc.grep').grep_buffer, desc = 'grep buffer' },
@@ -22,28 +22,28 @@ return {
     {
       '<Leader>pd',
       require('vc.find').find_dotfiles,
-      desc = 'Open from dotfiles',
+      desc = 'open from dotfiles',
     },
     {
       '<Leader>ph',
       require('vc.find').find_history,
-      desc = 'Open from history',
+      desc = 'open from history',
     },
     {
       '<Leader>pp',
       require('vc.find').find_files,
-      desc = 'Open from directory',
+      desc = 'open from directory',
     },
     {
       '<Leader>pr',
       require('vc.find_related').find_related,
-      desc = 'Open from related files',
+      desc = 'open from related files',
     },
 
     {
       '<Leader>tr',
       '<Cmd>Telescope resume<CR>',
-      desc = 'Resume Telescope picker',
+      desc = 'resume telescope picker',
     },
   },
   config = function()

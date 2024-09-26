@@ -165,7 +165,7 @@ M.find_related = function()
 
   pickers
     .new(opts, {
-      prompt_title = 'Find in Related Files',
+      prompt_title = 'find in related files',
       previewer = config.grep_previewer(opts),
       sorter = config.generic_sorter(opts),
       finder = finders.new_table({

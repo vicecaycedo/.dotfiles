@@ -2,19 +2,19 @@ local M = {}
 
 M.grep_buffer = function()
   require('telescope.builtin').current_buffer_fuzzy_find({
-    prompt_title = 'grep Buffer',
+    prompt_title = 'grep buffer',
   })
 end
 
 M.grep_dir = function()
   require('telescope.builtin').live_grep({
-    prompt_title = 'grep Directory',
+    prompt_title = 'grep directory',
   })
 end
 
 M.grep_dotfiles = function()
   require('telescope.builtin').live_grep({
-    prompt_title = 'grep Dotfiles',
+    prompt_title = 'grep dotfiles',
     cwd = vim.fn.stdpath('config'),
     vimgrep_arguments = {
       'rg',
@@ -31,7 +31,7 @@ end
 
 M.grep_help = function()
   require('telescope.builtin').help_tags({
-    prompt_title = 'grep Help Tags',
+    prompt_title = 'grep help tags',
   })
 end
 
