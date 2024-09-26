@@ -31,9 +31,9 @@ return {
       updateevents = 'TextChanged,TextChangedI',
       delete_check_events = 'TextChanged',
     })
-    require('luasnip.loaders.from_lua').lazy_load({
-      paths = vim.fn.stdpath('config') .. '/snippets',
-    })
+    require('vc.snippets')
+    pcall(require, 'tsk.snippets')
+    pcall(require, 'google.snippets')
 
     -- Set keymaps for Luasnip.
     vim.keymap.set({ 'i', 'n', 's' }, '<C-k>', function()
