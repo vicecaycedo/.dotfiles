@@ -21,7 +21,6 @@ return {
       function(server_name)
         require('lspconfig')[server_name].setup({
           capabilities = require('cmp_nvim_lsp').default_capabilities(),
-          on_attach = require('vc.lsp-util').on_attach,
         })
       end,
       -- Custom setups for servers installed with Mason.
