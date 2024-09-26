@@ -61,6 +61,10 @@ return {
       formatting = {
         format = function(entry, vim_item)
           vim_item.menu = vim.g.cmp_source_to_menu[entry.source.name]
+          local length_limit = 60
+          if string.len(vim_item.abbr) > length_limit then
+            vim_item.abbr = string.sub(vim_item.abbr, 1, length_limit) .. '...'
+          end
           return vim_item
         end,
       },
