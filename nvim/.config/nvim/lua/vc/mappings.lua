@@ -33,7 +33,7 @@ nmap('Q', function()
 end, 'Toggle quickfix')
 
 nmap('<Leader>r', function()
-  local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+  local filetype = vim.bo.filetype
   if filetype == 'lua' or filetype == 'vim' then
     return '<Cmd>w<CR><Cmd>source %<CR>'
   else
@@ -44,7 +44,7 @@ end, 'Source lua/vim file', { expr = true })
 -- <S-CR> and context-aware <CR>.
 nmap('<S-CR>', 'O<Esc>', 'Add newline above')
 nmap('<CR>', function()
-  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+  local buftype = vim.bo.buftype
   if buftype == 'nofile' or buftype == 'quickfix' then
     return '<CR>'
   end
