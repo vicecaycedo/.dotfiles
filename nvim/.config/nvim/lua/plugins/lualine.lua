@@ -4,7 +4,7 @@ return {
   opts = {
     extensions = {
       'nvim-dap-ui',
-      'nvim-tree',
+      'oil',
       'quickfix',
       'symbols-outline',
     },
