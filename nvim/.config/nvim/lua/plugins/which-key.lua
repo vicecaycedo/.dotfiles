@@ -10,5 +10,8 @@ return {
       },
     },
     show_help = false,
+    icons = {
+      mappings = false,
+    },
   },
 }
