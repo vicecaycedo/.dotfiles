@@ -4,7 +4,7 @@ return {
   config = function()
     require('grapple').setup({
       win_opts = {
-        width = 100,
+        width = 200,
       },
     })
 
