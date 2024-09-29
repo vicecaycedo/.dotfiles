@@ -11,6 +11,9 @@ M.find_flutter_files = function()
       'lib/',
       'test/',
     },
+    file_ignore_patterns = {
+      '%.g.dart',
+    },
   })
 end
 
