@@ -7,6 +7,7 @@ return {
     },
     opts = {
       keymaps = {
+        ['<BS>'] = 'actions.parent',
         ['<Esc>'] = 'actions.close',
       },
     },
