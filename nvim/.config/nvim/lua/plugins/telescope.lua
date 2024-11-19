@@ -56,9 +56,13 @@ return {
           '%.git/',
           '%.orig',
         },
+        layout_strategy = 'vertical',
         layout_config = {
-          prompt_position = 'top',
-          horizontal = { height = 0.95, width = 200 },
+          vertical = {
+            prompt_position = 'top',
+            mirror = true,
+            width = 200,
+          },
         },
         mappings = {
           n = {
