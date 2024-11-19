@@ -145,7 +145,7 @@ M.find_related = function()
   local finders = require('telescope.finders')
   local pickers = require('telescope.pickers')
   local opts = {}
-  local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+  local filetype = vim.bo.filetype
 
   local related_files = {}
   related_files = concatenate_tables(related_files, get_build_files())
