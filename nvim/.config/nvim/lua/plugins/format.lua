@@ -6,6 +6,7 @@ return {
       timeout_ms = 500,
     },
     formatters_by_ft = {
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
       lua = { 'stylua' },
       pgsql = { 'pg_format' },
       sql = { 'pg_format' },
