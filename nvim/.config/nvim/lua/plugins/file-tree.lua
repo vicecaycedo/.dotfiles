@@ -10,6 +10,9 @@ return {
         ['<BS>'] = 'actions.parent',
         ['<Esc>'] = 'actions.close',
       },
+      view_options = {
+        show_hidden = true,
+      },
     },
   },
 }
