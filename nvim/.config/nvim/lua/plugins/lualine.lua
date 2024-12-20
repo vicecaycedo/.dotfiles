@@ -3,7 +3,6 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     extensions = {
-      'nvim-dap-ui',
       'oil',
       'quickfix',
       'symbols-outline',
