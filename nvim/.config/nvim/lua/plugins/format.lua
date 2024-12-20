@@ -10,6 +10,7 @@ return {
       lua = { 'stylua' },
       markdown = { 'prettierd', 'prettier', stop_after_first = true },
       pgsql = { 'pg_format' },
+      python = { 'black' },
       sql = { 'pg_format' },
       swift = { 'swiftformat' },
     },
