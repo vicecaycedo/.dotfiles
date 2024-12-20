@@ -28,12 +28,6 @@ return {
           end,
           cond = require('grapple').exists,
         },
-        {
-          'buffers',
-          symbols = {
-            alternate_file = '',
-          },
-        },
       },
       lualine_y = { 'location' },
       lualine_z = { 'progress' },

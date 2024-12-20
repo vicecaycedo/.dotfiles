@@ -19,8 +19,6 @@ nmap(
   'save buffer without autocommands'
 )
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
-nmap('<Left>', '<Cmd>bprev<CR>', 'previous buffer')
-nmap('<Right>', '<Cmd>bnext<CR>', 'next buffer')
 
 nmap('Q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
