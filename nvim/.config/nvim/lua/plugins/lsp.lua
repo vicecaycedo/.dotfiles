@@ -11,7 +11,6 @@ return {
       ensure_installed = {
         'bashls',
         'cssls',
-        'emmet_ls',
         'html',
         'lua_ls',
       },
