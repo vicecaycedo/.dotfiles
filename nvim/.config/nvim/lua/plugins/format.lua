@@ -8,6 +8,7 @@ return {
     formatters_by_ft = {
       javascript = { 'prettierd', 'prettier', stop_after_first = true },
       lua = { 'stylua' },
+      markdown = { 'prettierd', 'prettier', stop_after_first = true },
       pgsql = { 'pg_format' },
       sql = { 'pg_format' },
       swift = { 'swiftformat' },
