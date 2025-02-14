@@ -1,3 +1,5 @@
+local prettier = { 'prettierd', 'prettier', stop_after_first = true }
+
 return {
   'stevearc/conform.nvim',
   opts = {
@@ -6,9 +8,9 @@ return {
       timeout_ms = 500,
     },
     formatters_by_ft = {
-      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      javascript = prettier,
       lua = { 'stylua' },
-      markdown = { 'prettierd', 'prettier', stop_after_first = true },
+      markdown = prettier,
       pgsql = { 'pg_format' },
       python = { 'black' },
       sql = { 'pg_format' },
