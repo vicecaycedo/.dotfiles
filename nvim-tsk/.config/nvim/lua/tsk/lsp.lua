@@ -5,4 +5,6 @@ lspconfig.bashls.setup({ capabilities = default_capabilities })
 
 lspconfig.cssls.setup({ capabilities = default_capabilities })
 
+lspconfig.gopls.setup({ capabilities = default_capabilities })
+
 lspconfig.html.setup({ capabilities = default_capabilities })
