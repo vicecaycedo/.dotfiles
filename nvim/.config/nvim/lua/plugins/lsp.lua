@@ -1,51 +1,29 @@
 return {
   'neovim/nvim-lspconfig',
-  dependencies = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-  },
   config = function()
-    -- Autoinstall language servers.
-    require('mason').setup()
-    require('mason-lspconfig').setup({
-      ensure_installed = {
-        'bashls',
-        'cssls',
-        'html',
-        'lua_ls',
-      },
-    })
-    require('mason-lspconfig').setup_handlers({
-      -- Default setup for servers installed with Mason.
-      function(server_name)
-        require('lspconfig')[server_name].setup({
-          capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        })
-      end,
-      -- Custom setups for servers installed with Mason.
-      lua_ls = function()
-        require('lspconfig').lua_ls.setup({
-          capabilities = require('cmp_nvim_lsp').default_capabilities(),
-          settings = {
-            Lua = {
-              runtime = {
-                version = 'LuaJIT',
-              },
-              diagnostics = {
-                globals = {
-                  'nmap', -- Custom vim.keymap.set wrapper
-                },
-              },
-              workspace = {
-                -- Make the server aware of Neovim runtime files.
-                library = vim.api.nvim_get_runtime_file('', true),
-                checkThirdParty = false,
-              },
+    require('lspconfig').lua_ls.setup({
+      capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      settings = {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT',
+          },
+          diagnostics = {
+            globals = {
+              'nmap', -- Custom vim.keymap.set wrapper
             },
           },
-        })
-      end,
+          workspace = {
+            -- Make the server aware of Neovim runtime files.
+            library = vim.api.nvim_get_runtime_file('', true),
+            checkThirdParty = false,
+          },
+        },
+      },
     })
+
+    -- Configure The Space Key LSP, if available.
+    pcall(require, 'tsk.lsp')
 
     -- Configure Google LSP, if available.
     pcall(require, 'google.lsp')
