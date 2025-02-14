@@ -1,7 +1,3 @@
-# $PATH
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/.cargo/bin
-
 # Prompt
 PROMPT='%(?..%F{red}%?%f )%F{blue}%~
 %# '
