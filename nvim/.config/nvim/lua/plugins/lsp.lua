@@ -53,11 +53,6 @@ return {
     -- Configure Google LSP, if available.
     pcall(require, 'google.lsp')
 
-    -- Don't show diagnostics as inline virtual text.
-    vim.diagnostic.config({
-      virtual_text = false,
-    })
-
     -- Configure LSP signs.
     local diagnostic_types = { 'Error', 'Warn', 'Hint', 'Info' }
     for _, type in pairs(diagnostic_types) do
