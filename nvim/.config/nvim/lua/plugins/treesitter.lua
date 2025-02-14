@@ -30,6 +30,7 @@ return {
         'query',
         'scss',
         'sql',
+        'svelte',
         'starlark',
         'swift',
         'typescript',
