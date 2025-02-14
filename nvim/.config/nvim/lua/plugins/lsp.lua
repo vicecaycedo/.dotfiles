@@ -47,9 +47,6 @@ return {
       end,
     })
 
-    -- Configure The Space Key LSP, if available.
-    pcall(require, 'tsk.lsp')
-
     -- Configure Google LSP, if available.
     pcall(require, 'google.lsp')
 
