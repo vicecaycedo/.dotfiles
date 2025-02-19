@@ -19,6 +19,10 @@ vim.o.splitright = true
 vim.o.number = true
 vim.o.relativenumber = true
 
+-- Display whitespace characters.
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', lead = '·', trail = '·', nbsp = '␣' }
+
 -- Tabs/indents.
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
