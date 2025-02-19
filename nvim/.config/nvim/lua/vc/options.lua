@@ -24,7 +24,6 @@ vim.o.list = true
 vim.opt.listchars = { tab = '» ', lead = '·', trail = '·', nbsp = '␣' }
 
 -- Tabs/indents.
-vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
 vim.o.softtabstop = 2
