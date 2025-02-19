@@ -25,6 +25,11 @@ luasnip.add_snippets('all', {
   s('vc', t('vicentecaycedo')),
 })
 
+luasnip.add_snippets('go', {
+  s('td', fmt('// TODO: {}', { i(0, '...') })),
+  s('p', fmt('fmt.Printf("%+v\\n", {})', { i(0) })),
+})
+
 luasnip.add_snippets('lua', {
   s('td', fmt('-- TODO: {}', { i(0, '...') })),
   s('p', fmt('vim.print({})', { i(0) })),
