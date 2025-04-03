@@ -7,7 +7,7 @@ end
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
 nmap('g?', 'q?', "cmdline window '?'")
-nmap('<Leader>cs', '<Cmd>let @/ = ""<CR>', 'clear search')
+nmap('<Leader>cs', '<Cmd>nohlsearch<CR>', 'clear search')
 nmap('<Leader>j', '<Cmd>cnext<CR>', 'next quickfix item')
 nmap('<Leader>k', '<Cmd>cprevious<CR>', 'previous quickfix item')
 nmap('<Leader>q', '<Cmd>quit<CR>', 'close window')
