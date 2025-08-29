@@ -15,6 +15,7 @@ return {
       python = { 'black' },
       sql = { 'pg_format' },
       swift = { 'swiftformat' },
+      yaml = prettier,
     },
   },
 }
