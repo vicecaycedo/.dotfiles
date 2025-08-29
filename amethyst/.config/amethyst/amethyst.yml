@@ -8,6 +8,7 @@ floating:
   - com.apple.MobileSMS
   - com.apple.Notes
   - com.apple.Photos
+  - com.apple.Preview
   - com.apple.finder
   - com.apple.systempreferences
   - com.culturedcode.ThingsMac
