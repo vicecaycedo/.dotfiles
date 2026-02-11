@@ -10,6 +10,7 @@ floating:
   - com.apple.Photos
   - com.apple.Preview
   - com.apple.finder
+  - com.apple.iphonesimulator
   - com.apple.systempreferences
   - com.culturedcode.ThingsMac
   - com.spotify.client
