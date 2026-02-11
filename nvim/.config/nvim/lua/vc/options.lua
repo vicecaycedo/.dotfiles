@@ -6,6 +6,7 @@ vim.o.signcolumn = 'yes' -- Always show sign column.
 vim.o.swapfile = false -- Disable swap files.
 vim.o.termguicolors = true -- True colors.
 vim.o.updatetime = 100 -- Decrease updatetime for a better experience.
+vim.opt.fillchars = { eob = ' ' } -- Remove end-of-file characters.
 
 -- Search case sensitivity.
 vim.o.ignorecase = true
