@@ -11,6 +11,8 @@ config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- Disable ligatures
 config.line_height = 1.1
 
 -- Window
+-- config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
 config.window_decorations = 'RESIZE'
 -- config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 30
