@@ -65,6 +65,12 @@ alias td="tmux detach"
 alias ec="$EDITOR $HOME/.zshrc"
 alias so="exec zsh"
 
+# Git Aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+
 # Additional Configs
 [ -f $HOME/.zshrc-glinux ] && source $HOME/.zshrc-glinux
 [ -f $HOME/.zshrc-macos ] && source $HOME/.zshrc-macos
