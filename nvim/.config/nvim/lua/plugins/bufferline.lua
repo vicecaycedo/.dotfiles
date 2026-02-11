@@ -17,7 +17,6 @@ return {
     },
   },
   config = function()
-    -- Configure Bufferline.
     local bufferline = require('bufferline')
     bufferline.setup({
       options = {
@@ -30,7 +29,5 @@ return {
         style_preset = bufferline.style_preset.no_italic,
       },
     })
-    -- Set highlights.
-    vim.api.nvim_set_hl(0, 'BufferLineFill', { bg = '#1f1f1f' })
   end,
 }
