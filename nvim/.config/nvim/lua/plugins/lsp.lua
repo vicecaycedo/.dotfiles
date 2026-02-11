@@ -1,26 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   config = function()
-    require('lspconfig').lua_ls.setup({
-      capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      settings = {
-        Lua = {
-          runtime = {
-            version = 'LuaJIT',
-          },
-          diagnostics = {
-            globals = {
-              'nmap', -- Custom vim.keymap.set wrapper
-            },
-          },
-          workspace = {
-            -- Make the server aware of Neovim runtime files.
-            library = vim.api.nvim_get_runtime_file('', true),
-            checkThirdParty = false,
-          },
-        },
-      },
-    })
+    vim.lsp.enable('lua_ls')
 
     -- Configure The Space Key LSP, if available.
     pcall(require, 'tsk.lsp')
