@@ -26,8 +26,8 @@ return {
     -- grep.
     { '<Leader>fb', require('vc.grep').buffer, desc = 'grep buffer' },
     { '<Leader>fd', require('vc.grep').dotfiles, desc = 'grep dotfiles' },
+    { '<Leader>ff', require('vc.grep').dir, desc = 'grep directory' },
     { '<Leader>fh', require('vc.grep').help, desc = 'grep help tags' },
-    { '<Leader>fp', require('vc.grep').dir, desc = 'grep directory' },
     { '<Leader>ft', '<Cmd>Telescope treesitter<CR>', desc = 'grep treesitter' },
   },
   config = function()

@@ -6,7 +6,7 @@ M.buffer = function()
   })
 end
 
-M.grep_dir = function()
+M.dir = function()
   require('telescope.builtin').live_grep({
     prompt_title = 'grep directory',
   })
