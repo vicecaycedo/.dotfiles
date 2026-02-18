@@ -6,8 +6,7 @@ A collection of configuration files for my development environment.
 
 ### How do you manage your dotfiles?
 
-I use [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html), which
-explains the strange-looking directory structure.
+[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)
 
 ### Are some files missing?
 
