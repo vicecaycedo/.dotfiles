@@ -33,7 +33,7 @@ nmap('Q', function()
   vim.cmd.copen()
 end, 'toggle quickfix')
 
-nmap('<Leader>r', function()
+nmap('<Leader>R', function()
   local filetype = vim.bo.filetype
   if filetype == 'lua' or filetype == 'vim' then
     return '<Cmd>w<CR><Cmd>source %<CR>'
