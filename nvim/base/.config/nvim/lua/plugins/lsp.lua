@@ -6,9 +6,6 @@ return {
     -- Configure The Space Key LSP, if available.
     pcall(require, 'tsk.lsp')
 
-    -- Configure Google LSP, if available.
-    pcall(require, 'google.lsp')
-
     -- Configure LSP signs.
     local diagnostic_types = { 'Error', 'Warn', 'Hint', 'Info' }
     for _, type in pairs(diagnostic_types) do
