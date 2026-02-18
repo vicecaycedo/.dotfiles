@@ -15,6 +15,15 @@ M.files = function()
   })
 end
 
+M.project_files = function()
+  local provider = require('vc.find.providers').pick()
+  if provider then
+    return provider.run()
+  end
+
+  return M.files()
+end
+
 M.history = function()
   require('telescope.builtin').oldfiles({
     prompt_title = 'find in history',

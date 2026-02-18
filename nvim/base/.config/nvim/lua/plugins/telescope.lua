@@ -22,7 +22,12 @@ return {
     -- Files.
     { '<Leader>pd', require('vc.find').dotfiles, desc = 'open from dotfiles' },
     { '<Leader>ph', require('vc.find').history, desc = 'open from history' },
-    { '<Leader>pp', require('vc.find').files, desc = 'open from directory' },
+    {
+      '<Leader>pp',
+      require('vc.find').project_files,
+      desc = 'open from project files',
+    },
+    { '<Leader>pP', require('vc.find').files, desc = 'open from directory' },
     -- grep.
     { '<Leader>fb', require('vc.grep').buffer, desc = 'grep buffer' },
     { '<Leader>fd', require('vc.grep').dotfiles, desc = 'grep dotfiles' },
