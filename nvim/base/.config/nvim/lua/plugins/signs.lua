@@ -1,5 +1,6 @@
 return {
   'mhinz/vim-signify',
+  -- 'lewis6991/gitsigns.nvim',
   init = function()
     vim.g.signify_priority = 5
     vim.g.signify_sign_add = '┃'
@@ -33,5 +34,13 @@ return {
     nmap('H', '<Plug>(signify-prev-hunk)zz', 'previous diff')
     nmap('<Leader>md', '<Cmd>SignifyHunkDiff<CR>', 'hunk diff')
     nmap('<Leader>mu', '<Cmd>SignifyHunkUndo<CR>', 'hunk undo')
+    -- nmap('L', function()
+    --   require('gitsigns').nav_hunk('next')
+    -- end, 'next diff')
+    -- nmap('H', function()
+    --   require('gitsigns').nav_hunk('prev')
+    -- end, 'previous diff')
+    -- nmap('<Leader>md', require('gitsigns').preview_hunk_inline, 'hunk diff')
+    -- nmap('<Leader>mu', require('gitsigns').reset_hunk, 'hunk undo')
   end,
 }
