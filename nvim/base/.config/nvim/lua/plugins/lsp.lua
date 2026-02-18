@@ -1,8 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   config = function()
-    vim.lsp.enable('lua_ls')
-
     -- Configure The Space Key LSP, if available.
     pcall(require, 'tsk.lsp')
 
