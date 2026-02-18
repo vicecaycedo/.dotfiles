@@ -21,6 +21,7 @@ nmap(
   'save buffer without autocommands'
 )
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
+nmap('<Leader>X', '<Cmd>bdelete!<CR>', 'force close buffer')
 
 nmap('Q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
