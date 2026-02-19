@@ -1,3 +1,11 @@
+local file_formatter = require('snacks.picker.format').file
+
+local function trim_prefix_for_display(path)
+  return path:match('^[^/]+/(Sources/.*)$')
+    or path:match('^[^/]+/(Tests/.*)$')
+    or path
+end
+
 local include_globs = {
   '*/Sources/**',
   '*/Tests/**',
@@ -44,6 +52,24 @@ require('vc.workspace_files_provider').register({
       cmd = 'rg',
       hidden = true,
       args = rg_args,
+      transform = function(item)
+        if item.file then
+          local display_file = trim_prefix_for_display(item.file)
+          if display_file ~= item.file then
+            item.display_file = display_file
+          end
+        end
+        return item
+      end,
+      format = function(item, picker)
+        if not item.display_file then
+          return file_formatter(item, picker)
+        end
+        local display_item = vim.tbl_extend('force', {}, item, {
+          file = item.display_file,
+        })
+        return file_formatter(display_item, picker)
+      end,
     })
   end,
 })
