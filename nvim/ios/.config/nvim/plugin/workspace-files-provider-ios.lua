@@ -1,4 +1,4 @@
-require('vc.find.providers').register({
+require('vc.workspace_files_provider').register({
   match = function()
     return vim.fn.filereadable('Tuist.swift') == 1
   end,

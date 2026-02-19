@@ -18,7 +18,7 @@ M.files = function()
 end
 
 M.workspace = function()
-  local provider = require('vc.find.providers').pick()
+  local provider = require('vc.workspace_files_provider').pick()
   if provider then
     return provider.run()
   end
