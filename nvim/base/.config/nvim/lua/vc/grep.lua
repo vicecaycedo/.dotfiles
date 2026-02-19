@@ -1,37 +1,37 @@
 local M = {}
 
 M.buffer = function()
-  require('telescope.builtin').current_buffer_fuzzy_find({
-    prompt_title = 'grep buffer',
+  Snacks.picker.lines({
+    title = 'grep Buffer',
   })
 end
 
 M.dir = function()
-  require('telescope.builtin').live_grep({
-    prompt_title = 'grep directory',
+  Snacks.picker.grep({
+    title = 'grep Directory',
+    hidden = true,
+    follow = true,
   })
 end
 
 M.dotfiles = function()
-  require('telescope.builtin').live_grep({
-    prompt_title = 'grep dotfiles',
+  Snacks.picker.grep({
+    title = 'grep Dotfiles',
     cwd = vim.fn.stdpath('config'),
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--follow',
-    },
+    hidden = true,
+    follow = true,
   })
 end
 
 M.help = function()
-  require('telescope.builtin').help_tags({
-    prompt_title = 'grep help tags',
+  Snacks.picker.help({
+    title = 'grep Help',
+  })
+end
+
+M.lsp_symbols = function()
+  Snacks.picker.lsp_symbols({
+    title = 'grep LSP Symbols',
   })
 end
 

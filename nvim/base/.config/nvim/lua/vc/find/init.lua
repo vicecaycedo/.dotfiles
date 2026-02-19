@@ -1,21 +1,23 @@
 local M = {}
 
 M.dotfiles = function()
-  require('telescope.builtin').find_files({
-    prompt_title = 'find in dotfiles',
+  Snacks.picker.files({
+    title = 'Find in Dotfiles',
     cwd = vim.fn.stdpath('config'),
+    hidden = true,
     follow = true,
   })
 end
 
 M.files = function()
-  require('telescope.builtin').find_files({
-    prompt_title = 'find in directory',
+  Snacks.picker.files({
+    title = 'Find in Directory',
     hidden = true,
+    follow = true,
   })
 end
 
-M.project_files = function()
+M.workspace = function()
   local provider = require('vc.find.providers').pick()
   if provider then
     return provider.run()
@@ -25,8 +27,8 @@ M.project_files = function()
 end
 
 M.history = function()
-  require('telescope.builtin').oldfiles({
-    prompt_title = 'find in history',
+  Snacks.picker.recent({
+    title = 'Find in Recent',
   })
 end
 

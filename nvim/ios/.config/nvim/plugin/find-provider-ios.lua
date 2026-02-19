@@ -24,11 +24,11 @@ require('vc.find.providers').register({
       end
     end
 
-    require('telescope.builtin').find_files({
-      prompt_title = 'find in iOS source files',
+    Snacks.picker.files({
+      title = 'Find in iOS source files',
       hidden = true,
-      search_dirs = search_paths,
-      file_ignore_patterns = { '__Snapshots__/' },
+      dirs = search_paths,
+      exclude = { '**/__Snapshots__/**' },
     })
   end,
 })
