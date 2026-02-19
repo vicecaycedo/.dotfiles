@@ -73,7 +73,7 @@ alias gp="git push"
 
 # Additional Configs
 [ -f $HOME/.zshrc-glinux ] && source $HOME/.zshrc-glinux
-[ -f $HOME/.zshrc-macos ] && source $HOME/.zshrc-macos
+[ -f $HOME/.zshrc-mac ] && source $HOME/.zshrc-mac
 
 # Download plugins, if necessary.
 if [[ ! -e $HOME/.zsh/zsh-autosuggestions ]]; then
