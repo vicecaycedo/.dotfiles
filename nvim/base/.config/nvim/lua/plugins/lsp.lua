@@ -5,11 +5,19 @@ return {
     pcall(require, 'tsk.lsp')
 
     -- Configure LSP signs.
-    local diagnostic_types = { 'Error', 'Warn', 'Hint', 'Info' }
-    for _, type in pairs(diagnostic_types) do
-      local hl = 'DiagnosticSign' .. type
-      vim.fn.sign_define(hl, { text = '•', texthl = hl, numhl = '' })
-    end
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = '•',
+          [vim.diagnostic.severity.WARN] = '•',
+          [vim.diagnostic.severity.HINT] = '•',
+          [vim.diagnostic.severity.INFO] = '•',
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+      },
+    })
 
     -- Set keymaps.
     nmap('gH', vim.lsp.buf.hover, 'show documentation')
