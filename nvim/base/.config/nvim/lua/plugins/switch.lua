@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   'andrewradev/switch.vim',
   keys = {

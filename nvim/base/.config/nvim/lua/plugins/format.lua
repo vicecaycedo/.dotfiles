@@ -1,5 +1,6 @@
 local prettier = { 'prettierd', 'prettier', stop_after_first = true }
 
+---@type LazyPluginSpec
 return {
   'stevearc/conform.nvim',
   opts = {

@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- Manage pairs (e.g. parentheses, brackets, etc.) automatically.
   { 'windwp/nvim-autopairs', config = true },

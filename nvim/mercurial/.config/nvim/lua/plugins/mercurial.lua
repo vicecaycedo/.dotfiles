@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   'mhinz/vim-signify',
   init = function()

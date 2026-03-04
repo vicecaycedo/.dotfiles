@@ -6,6 +6,7 @@ vim.g.cmp_source_to_menu = {
   nvim_lua = 'Lua',
 }
 
+---@type LazyPluginSpec
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {

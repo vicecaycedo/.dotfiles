@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   'cbochs/grapple.nvim',
   event = 'VeryLazy',

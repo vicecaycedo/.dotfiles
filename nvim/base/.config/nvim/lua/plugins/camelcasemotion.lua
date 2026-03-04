@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   'bkad/camelcasemotion',
   event = 'VeryLazy',

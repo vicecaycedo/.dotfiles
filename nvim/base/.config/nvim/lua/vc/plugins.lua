@@ -13,11 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Set up lazy.nvim.
-require('lazy').setup('plugins', {
+---@type LazyConfig
+local opts = {
   change_detection = {
     notify = false, -- Silence notifications for configuration changes.
   },
   ui = {
     size = { height = 0.85, width = 0.85 },
   },
-})
+}
+require('lazy').setup('plugins', opts)
