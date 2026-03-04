@@ -2,3 +2,4 @@ gui:
   expandFocusedSidePanel: true
   showFileTree: false
   useHunkModeInStagingView: false
+  showPanelJumps: false
