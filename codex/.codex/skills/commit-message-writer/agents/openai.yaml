@@ -1,0 +1,3 @@
+interface:
+  display_name: "Commit Message Writer"
+  short_description: "Generate concise, motivation-first commit messages."
