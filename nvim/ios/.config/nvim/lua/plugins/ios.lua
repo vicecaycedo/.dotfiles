@@ -23,8 +23,6 @@ return {
       nmap('<Leader>rc', '<Cmd>XcodebuildCancel<CR>', 'cancel')
       nmap('<Leader>rd', '<Cmd>XcodebuildSelectDevice<CR>', 'select device')
       nmap('<Leader>rr', '<Cmd>XcodebuildBuildRun<CR>', 'build and run')
-      nmap('<Leader>rR', '<Cmd>XcodebuildTestRepeat<CR>', 'repeat tests')
-      nmap('<Leader>rt', '<Cmd>XcodebuildTestExplorerToggle<CR>', 'show tests')
       nmap(
         '<Leader>rp',
         '<Cmd>XcodebuildPreviewGenerateAndShow<CR>',
