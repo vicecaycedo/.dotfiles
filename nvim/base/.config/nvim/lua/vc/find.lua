@@ -26,6 +26,15 @@ M.workspace = function()
   return M.files()
 end
 
+M.related = function()
+  local provider = require('vc.related_files_provider').pick()
+  if provider then
+    return provider.run()
+  end
+
+  return M.workspace()
+end
+
 M.history = function()
   Snacks.picker.recent({
     title = 'Find in Recent',

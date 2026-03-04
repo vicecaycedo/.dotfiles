@@ -33,7 +33,7 @@ return {
   },
   keys = {
     {
-      '<Leader>pr',
+      '<Leader>pR',
       function()
         Snacks.picker.resume()
       end,
@@ -67,6 +67,7 @@ return {
     { '<Leader>pd', require('vc.find').dotfiles, desc = 'find in dotfiles' },
     { '<Leader>ph', require('vc.find').history, desc = 'find in history' },
     { '<Leader>pp', require('vc.find').workspace, desc = 'find in workspace' },
+    { '<Leader>pr', require('vc.find').related, desc = 'find in related' },
     { '<Leader>pP', require('vc.find').files, desc = 'find in directory' },
   },
 }
