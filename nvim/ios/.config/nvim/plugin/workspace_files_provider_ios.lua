@@ -1,11 +1,15 @@
+---@type fun(item: snacks.picker.finder.Item, picker: snacks.Picker): any
 local file_formatter = require('snacks.picker.format').file
 
+---@param path string
+---@return string
 local function trim_prefix_for_display(path)
   return path:match('^[^/]+/(Sources/.*)$')
     or path:match('^[^/]+/(Tests/.*)$')
     or path
 end
 
+---@type string[]
 local include_globs = {
   '*/Sources/**',
   '*/Tests/**',
@@ -21,13 +25,18 @@ local include_globs = {
   'Tuist/Package.swift',
 }
 
+---@type string[]
 local exclude_globs = {
   '**/__Snapshots__/**',
   '**/__snapshots__/**',
   '**/.DS_Store',
 }
 
+---@param includes string[]
+---@param excludes string[]
+---@return string[]
 local function build_rg_glob_args(includes, excludes)
+  ---@type string[]
   local args = {}
   for _, glob in ipairs(includes) do
     table.insert(args, '-g')
@@ -42,7 +51,8 @@ end
 
 local rg_args = build_rg_glob_args(include_globs, exclude_globs)
 
-require('vc.workspace_files_provider').register({
+---@type vc.WorkspaceFilesProvider
+local provider = {
   match = function()
     return vim.fn.filereadable('Tuist.swift') == 1
   end,
@@ -52,6 +62,8 @@ require('vc.workspace_files_provider').register({
       cmd = 'rg',
       hidden = true,
       args = rg_args,
+      ---@param item snacks.picker.finder.Item
+      ---@return snacks.picker.finder.Item
       transform = function(item)
         if item.file then
           local display_file = trim_prefix_for_display(item.file)
@@ -61,6 +73,8 @@ require('vc.workspace_files_provider').register({
         end
         return item
       end,
+      ---@param item snacks.picker.finder.Item
+      ---@param picker snacks.Picker
       format = function(item, picker)
         if not item.display_file then
           return file_formatter(item, picker)
@@ -72,4 +86,6 @@ require('vc.workspace_files_provider').register({
       end,
     })
   end,
-})
+}
+
+require('vc.workspace_files_provider').register(provider)

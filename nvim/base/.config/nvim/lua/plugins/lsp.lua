@@ -6,7 +6,8 @@ return {
     pcall(require, 'tsk.lsp')
 
     -- Configure LSP signs.
-    vim.diagnostic.config({
+    ---@type vim.diagnostic.Opts
+    local diagnostic_opts = {
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = '•',
@@ -18,7 +19,8 @@ return {
           [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
         },
       },
-    })
+    }
+    vim.diagnostic.config(diagnostic_opts)
 
     -- Set keymaps.
     nmap('gH', vim.lsp.buf.hover, 'show documentation')

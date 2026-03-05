@@ -18,6 +18,7 @@ M.files = function()
 end
 
 M.workspace = function()
+  ---@type vc.WorkspaceFilesProvider|nil
   local provider = require('vc.workspace_files_provider').pick()
   if provider then
     return provider.run()
@@ -27,6 +28,7 @@ M.workspace = function()
 end
 
 M.related = function()
+  ---@type vc.RelatedFilesProvider|nil
   local provider = require('vc.related_files_provider').pick()
   if provider then
     return provider.run()

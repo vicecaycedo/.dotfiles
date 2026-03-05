@@ -1,3 +1,7 @@
+---@param lhs string
+---@param rhs string|function
+---@param desc string
+---@param opts? vim.keymap.set.Opts
 function _G.nmap(lhs, rhs, desc, opts)
   opts = opts or {}
   opts.desc = desc

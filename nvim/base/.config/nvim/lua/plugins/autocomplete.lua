@@ -1,4 +1,5 @@
 -- Global cmp source to menu name map so that external configs can update it.
+---@type table<string, string>
 vim.g.cmp_source_to_menu = {
   buffer = 'Buf',
   luasnip = 'Snip',
@@ -58,8 +59,11 @@ return {
     })
 
     -- Set up nvim-cmp.
-    cmp.setup({
+    ---@type cmp.ConfigSchema
+    local cmp_opts = {
       formatting = {
+        ---@param entry cmp.Entry
+        ---@param vim_item vim.CompletedItem
         format = function(entry, vim_item)
           vim_item.menu = vim.g.cmp_source_to_menu[entry.source.name]
           local length_limit = 60
@@ -80,6 +84,7 @@ return {
       },
       preselect = cmp.PreselectMode.None,
       snippet = {
+        ---@param args cmp.SnippetExpansionParams
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
@@ -90,20 +95,25 @@ return {
         { name = 'nvim_lua' },
         { name = 'buffer', max_item_count = 5 },
       },
-    })
+    }
+    cmp.setup(cmp_opts)
 
-    cmp.setup.cmdline(':', {
+    ---@type cmp.ConfigSchema
+    local cmdline_opts = {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'cmdline', max_item_count = 10 },
       },
-    })
+    }
+    cmp.setup.cmdline(':', cmdline_opts)
 
-    cmp.setup.cmdline('/', {
+    ---@type cmp.ConfigSchema
+    local search_opts = {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer', max_item_count = 10 },
       },
-    })
+    }
+    cmp.setup.cmdline('/', search_opts)
   end,
 }

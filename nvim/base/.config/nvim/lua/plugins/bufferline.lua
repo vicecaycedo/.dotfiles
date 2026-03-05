@@ -19,7 +19,8 @@ return {
   },
   config = function()
     local bufferline = require('bufferline')
-    bufferline.setup({
+    ---@type bufferline.UserConfig
+    local opts = {
       options = {
         custom_filter = function(buf_number)
           local buftype = vim.bo[buf_number].buftype
@@ -29,6 +30,7 @@ return {
         show_buffer_close_icons = false,
         style_preset = bufferline.style_preset.no_italic,
       },
-    })
+    }
+    bufferline.setup(opts)
   end,
 }
