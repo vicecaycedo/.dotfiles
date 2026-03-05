@@ -51,6 +51,14 @@ config.keys = {
     action = wezterm.action.ActivatePaneDirection('Down'),
   },
   {
+    key = 'r',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateKeyTable({
+      name = 'resize_pane',
+      one_shot = false,
+    }),
+  },
+  {
     key = 'x',
     mods = 'LEADER',
     action = wezterm.action.CloseCurrentPane({ confirm = false }),
@@ -61,5 +69,50 @@ config.keys = {
     action = wezterm.action.TogglePaneZoomState,
   },
 }
+
+-- Resize panes mode.
+config.key_tables = {
+  resize_pane = {
+    { key = 'h', action = wezterm.action.ActivatePaneDirection('Left') },
+    { key = 'j', action = wezterm.action.ActivatePaneDirection('Down') },
+    { key = 'k', action = wezterm.action.ActivatePaneDirection('Up') },
+    { key = 'l', action = wezterm.action.ActivatePaneDirection('Right') },
+    {
+      key = 'h',
+      mods = 'SHIFT',
+      action = wezterm.action.AdjustPaneSize({ 'Left', 5 }),
+    },
+    {
+      key = 'j',
+      mods = 'SHIFT',
+      action = wezterm.action.AdjustPaneSize({ 'Down', 5 }),
+    },
+    {
+      key = 'k',
+      mods = 'SHIFT',
+      action = wezterm.action.AdjustPaneSize({ 'Up', 5 }),
+    },
+    {
+      key = 'l',
+      mods = 'SHIFT',
+      action = wezterm.action.AdjustPaneSize({ 'Right', 5 }),
+    },
+    { key = 'Escape', action = 'PopKeyTable' },
+    { key = 'q', action = 'PopKeyTable' },
+  },
+}
+
+wezterm.on('update-right-status', function(window, _)
+  local table_name = window:active_key_table()
+  if table_name == 'resize_pane' then
+    window:set_right_status(wezterm.format({
+      { Background = { Color = '#3c3836' } },
+      { Foreground = { Color = '#fabd2f' } },
+      { Text = ' RESIZE ' },
+    }))
+  else
+    window:set_right_status('')
+  end
+end)
 
 return config
