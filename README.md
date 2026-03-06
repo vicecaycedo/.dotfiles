@@ -2,20 +2,21 @@
 
 A collection of configuration files for my development environment.
 
-## FAQs
+## Installation
 
-### How do you manage your dotfiles?
+Requires [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html).
 
-[GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)
-
-### Example commands
-
-Run from `~/.dotfiles`.
+Run these commands from the dotfiles repository root (e.g., `$HOME/.dotfiles`),
+replacing `PACKAGE` with desired configuration to install (e.g. `wezterm`,
+`lazygit`, etc.):
 
 ```sh
-# Nested nvim packages under ./nvim/{base,tsk}
-stow -d nvim -t ~ base tsk
+# Dry run (recommended first)
+stow --simulate --verbose [PACKAGE...]
 
-# Regular top-level package (./wezterm)
-stow wezterm
+# Top-level package, e.g.
+stow [PACKAGE...]
+
+# Nested package set (always include base), e.g.
+stow --dir="nvim" --target="$HOME" base [PACKAGE...]
 ```
