@@ -1,6 +1,7 @@
 # Environment variables
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+export PATH="$HOME/go/bin":$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
