@@ -14,7 +14,6 @@ local include_globs = {
   '*/Sources/**',
   '*/Tests/**',
   '.githooks/**',
-  'scripts/**',
   '.gitignore',
   '.mise.toml',
   '.swift-version',
@@ -23,6 +22,8 @@ local include_globs = {
   'README.md',
   'Tuist.swift',
   'Tuist/Package.swift',
+  'iosrunner.yaml',
+  'scripts/**',
 }
 
 ---@type string[]
