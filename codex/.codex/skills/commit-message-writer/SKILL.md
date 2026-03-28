@@ -31,30 +31,38 @@ git diff --cached --
 ## Message Rules
 
 - Use imperative mood in the subject.
+- The subject line should end with a period.
 - Keep wording direct and not wordy.
 - Emphasize motivation and behavioral impact.
 - Avoid marketing language and filler.
+- Avoid mentioning test coverage unless tests are the primary change or help explain the behavioral impact.
 - Avoid `feat:`, `fix:`, `chore:` prefixes unless explicitly requested.
 - If no staged changes exist, say so and ask the user to stage changes first.
 
 ## Default Output Format
 
-When the user does not request a specific format, return 3 options:
+When the user does not request a specific format, return 3 commit message options.
+Do not number or label the commit messages themselves.
+Separate options with `---`.
 
-1. Very brief subject line.
+1. Brief subject line.
 2. Concise subject + short body (2-4 lines).
 3. Slightly more detailed subject + body.
 
 Use this structure:
 
 ```text
-1) <subject>
+<subject>
 
-2) <subject>
+---
+
+<subject>
 
 <body>
 
-3) <subject>
+---
+
+<subject>
 
 <body>
 ```
