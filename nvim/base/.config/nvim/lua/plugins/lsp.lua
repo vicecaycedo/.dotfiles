@@ -2,9 +2,6 @@
 return {
   'neovim/nvim-lspconfig',
   config = function()
-    -- Configure The Space Key LSP, if available.
-    pcall(require, 'tsk.lsp')
-
     -- Configure LSP signs.
     ---@type vim.diagnostic.Opts
     local diagnostic_opts = {
