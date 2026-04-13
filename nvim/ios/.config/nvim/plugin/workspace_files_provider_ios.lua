@@ -11,6 +11,7 @@ end
 
 ---@type string[]
 local include_globs = {
+  '*/Shared/**',
   '*/Sources/**',
   '*/Tests/**',
   '.githooks/**',
