@@ -3,6 +3,12 @@ return {
   'folke/snacks.nvim',
   ---@type snacks.Config
   opts = {
+    input = {
+      win = {
+        relative = 'cursor',
+        title_pos = 'left',
+      },
+    },
     picker = {
       prompt = '> ',
       layout = {
