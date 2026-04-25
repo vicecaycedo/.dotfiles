@@ -22,7 +22,7 @@ return {
   event = 'InsertEnter',
   config = function()
     vim.o.completeopt = 'menuone,noselect'
-    vim.o.shortmess = vim.o.shortmess .. 'c'
+    vim.opt.shortmess:append('c')
 
     local cmp = require('cmp')
     local luasnip = require('luasnip')

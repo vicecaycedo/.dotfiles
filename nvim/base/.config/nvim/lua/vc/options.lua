@@ -1,6 +1,6 @@
 vim.o.colorcolumn = '80' -- Line limit column.
 vim.o.scrolloff = 15 -- Minimum number of lines to keep above and below the cursor.
-vim.o.shortmess = vim.o.shortmess .. 'I' -- Disable intro message.
+vim.opt.shortmess:append('I') -- Disable intro message.
 vim.o.showmode = false -- Don't show MODE messages.
 vim.o.signcolumn = 'yes' -- Always show sign column.
 vim.o.swapfile = false -- Disable swap files.
