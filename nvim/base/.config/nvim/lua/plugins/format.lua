@@ -4,7 +4,7 @@ local prettier = { 'prettierd', 'prettier', stop_after_first = true }
 ---@type conform.setupOpts
 local opts = {
   format_on_save = {
-    lsp_fallback = true,
+    lsp_format = 'fallback',
     timeout_ms = 500,
   },
   formatters_by_ft = {
