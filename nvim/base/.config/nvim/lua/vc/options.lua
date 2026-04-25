@@ -37,6 +37,5 @@ vim.g.loaded_matchit = true
 vim.g.loaded_matchparen = true
 vim.g.loaded_netrwPlugin = true
 vim.g.loaded_tarPlugin = true
-vim.g.loaded_tohtml = true
 vim.g.loaded_tutor = true
 vim.g.loaded_zipPlugin = true
