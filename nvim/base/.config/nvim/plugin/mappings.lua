@@ -1,12 +1,4 @@
----@param lhs string
----@param rhs string|function
----@param desc string
----@param opts? vim.keymap.set.Opts
-function _G.nmap(lhs, rhs, desc, opts)
-  opts = opts or {}
-  opts.desc = desc
-  vim.keymap.set('n', lhs, rhs, opts)
-end
+local nmap = require('vc.keymap').nmap
 
 nmap('g:', 'q:', "cmdline window ':'")
 nmap('g/', 'q/', "cmdline window '/'")
@@ -18,7 +10,6 @@ nmap('<Leader>h', '<C-w>h', 'move to left window')
 nmap('<Leader>l', '<C-w>l', 'move to right window')
 nmap('<Leader>q', '<Cmd>quit<CR>', 'close window')
 nmap('<Leader>s', '<Cmd>update<CR>', 'save buffer')
-nmap('<Leader>L', '<Cmd>Lazy<CR>', 'open Lazy UI')
 nmap(
   '<Leader>S',
   '<Cmd>noautocmd update<CR>',
