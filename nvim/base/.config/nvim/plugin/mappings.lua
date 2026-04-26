@@ -16,7 +16,6 @@ nmap(
   'save buffer without autocommands'
 )
 nmap('<Leader>x', '<Cmd>bdelete<CR>', 'close buffer')
-nmap('<Leader>X', '<Cmd>bdelete!<CR>', 'force close buffer')
 
 nmap('Q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
@@ -27,15 +26,6 @@ nmap('Q', function()
   end
   vim.cmd.copen()
 end, 'toggle quickfix')
-
-nmap('<Leader>R', function()
-  local filetype = vim.bo.filetype
-  if filetype == 'lua' or filetype == 'vim' then
-    return '<Cmd>w<CR><Cmd>source %<CR>'
-  else
-    error('Can not source filetype: ' .. filetype)
-  end
-end, 'source lua/vim file', { expr = true })
 
 -- <S-CR> and context-aware <CR>.
 nmap('<S-CR>', 'O<Esc>', 'add newline above')
