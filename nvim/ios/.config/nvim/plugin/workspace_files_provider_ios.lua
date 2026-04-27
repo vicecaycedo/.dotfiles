@@ -53,41 +53,45 @@ end
 
 local rg_args = build_rg_glob_args(include_globs, exclude_globs)
 
----@type vc.WorkspaceFilesProvider
-local provider = {
-  match = function()
-    return vim.fn.filereadable('Tuist.swift') == 1
-  end,
-  run = function()
-    Snacks.picker.files({
-      title = 'Find in iOS source files',
-      cmd = 'rg',
-      hidden = true,
-      args = rg_args,
-      ---@param item snacks.picker.finder.Item
-      ---@return snacks.picker.finder.Item
-      transform = function(item)
-        if item.file then
-          local display_file = trim_prefix_for_display(item.file)
-          if display_file ~= item.file then
-            item.display_file = display_file
-          end
-        end
-        return item
-      end,
-      ---@param item snacks.picker.finder.Item
-      ---@param picker snacks.Picker
-      format = function(item, picker)
-        if not item.display_file then
-          return file_formatter(item, picker)
-        end
-        local display_item = vim.tbl_extend('force', {}, item, {
-          file = item.display_file,
-        })
-        return file_formatter(display_item, picker)
-      end,
-    })
-  end,
-}
+local function match()
+  return vim.fn.filereadable('Tuist.swift') == 1
+end
 
-require('vc.workspace_files_provider').register(provider)
+local function run()
+  Snacks.picker.files({
+    title = 'Find in iOS source files',
+    cmd = 'rg',
+    hidden = true,
+    args = rg_args,
+    ---@param item snacks.picker.finder.Item
+    ---@return snacks.picker.finder.Item
+    transform = function(item)
+      if item.file then
+        local display_file = trim_prefix_for_display(item.file)
+        if display_file ~= item.file then
+          item.display_file = display_file
+        end
+      end
+      return item
+    end,
+    ---@param item snacks.picker.finder.Item
+    ---@param picker snacks.Picker
+    format = function(item, picker)
+      if not item.display_file then
+        return file_formatter(item, picker)
+      end
+      local display_item = vim.tbl_extend('force', {}, item, {
+        file = item.display_file,
+      })
+      return file_formatter(display_item, picker)
+    end,
+  })
+end
+
+require('vc.workspace_files_provider').register(
+  ---@type vc.WorkspaceFilesProvider
+  {
+    match = match,
+    run = run,
+  }
+)
