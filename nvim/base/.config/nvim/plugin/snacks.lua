@@ -35,6 +35,13 @@ require('snacks').setup({
     },
   },
   image = {},
+  styles = {
+    -- Position image previews relative to the editor so they do not draw over
+    -- bufferline/tabline. Snacks defaults this style to relative = 'cursor'.
+    snacks_image = {
+      relative = 'editor',
+    },
+  },
 })
 
 local nmap = require('vc.keymap').nmap
