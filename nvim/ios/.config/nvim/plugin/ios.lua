@@ -54,13 +54,12 @@ vim.api.nvim_create_autocmd('BufEnter', {
         and vim.api.nvim_get_current_buf() == ev.buf
       then
         require('snacks.image.buf').attach(ev.buf)
-        vim.bo[ev.buf].modified = false
       end
     end)
   end,
 })
 
-vim.api.nvim_create_autocmd({ 'BufReadCmd', 'BufWinEnter' }, {
+vim.api.nvim_create_autocmd('BufModifiedSet', {
   pattern = '/tmp/xcodebuild.nvim/*.png',
   callback = function(ev)
     vim.schedule(function()
