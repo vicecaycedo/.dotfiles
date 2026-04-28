@@ -34,7 +34,11 @@ require('snacks').setup({
       },
     },
   },
-  image = {},
+  image = {
+    doc = {
+      enabled = false,
+    },
+  },
   styles = {
     -- Position image previews relative to the editor so they do not draw over
     -- bufferline/tabline. Snacks defaults this style to relative = 'cursor'.
